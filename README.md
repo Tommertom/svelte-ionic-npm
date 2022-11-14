@@ -4,16 +4,16 @@
   <a href="https://ionicsvelte.firebaseapp.com">
     <img alt="IonicSvelte" title="IonicSvelteKit" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/static/assets/svelte-ionic-logo.png" width="350">
   </a>
-  
-
 
 </p>
 <br>
 <p align="center">
   A libary to include Ionic in your Svelte and SvelteKit app
 </p>
-NPM library to go along with the Ionic Svelte integration demostrated at ionicsvelte.firebaseapp.com.
+<brt>
 
+<b>NPM library to go along with the Ionic Svelte integration demostrated at ionicsvelte.firebaseapp.com.</b>
+<br>
 ## How to get started with this library?
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)
 ```
@@ -41,6 +41,10 @@ Integration of Ionic
 - npm i @ionic/core ionic-svelte
 - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme)
 - the top-root layour file (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte.
+
+Starterfiles on github: https://github.com/Tommertom/svelte-ionic-npm/tree/main/starterfiles
+
+Use these files as reference to see how to do the final steps integrating Ionic in your svelte project.
 
 ## How to contribute?
 Would you like to contribute to this project? Great!
