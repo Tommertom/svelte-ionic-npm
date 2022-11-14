@@ -5,7 +5,12 @@ import { menuController, } from "@ionic/core";
 import { initialize } from "@ionic/core/components";
 import type { IonicConfig, MenuI } from "@ionic/core/components";
 
-import { defineIonComponents } from "./lib/ionic/svelte/components/defineComponents"
+import { defineIonComponents } from "./components/defineComponents"
+
+// the components
+export { default as IonTabs } from './components/IonTabs.svelte';
+export { default as IonPage } from './components/IonPage.svelte';
+export { default as IonBackButton } from './components/IonBackButton.svelte';
 
 // all exports
 export {
@@ -137,9 +142,9 @@ export {
   getTimeGivenProgression,
 } from "@ionic/core/components";
 
-export * from "./lib/ionic/svelte/controllers";
+export * from "./utils/controllers";
 
-export * from "./lib/ionic/svelte/platform";
+export * from "./utils/platform";
 
 export const setupIonicSvelte = async (config?: IonicConfig) => {
   /* Ionic initialisation */
