@@ -38,9 +38,25 @@ adapter: adapter({
 - Pages that use Ionic must be a SPA - so these routes need to have ssr disabled in their layout files. Kit example: `src/routes/+layout.ts` and add `export const ssr = false;`
 
 Integration of Ionic 
-- npm i @ionic/core ionic-svelte
+- `npm i @ionic/core ionic-svelte`
 - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme)
-- the top-root layour file (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte.
+- the top-root layour file (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
+
+```
+<script lang="ts">
+	import { setupIonicSvelte } from 'ionic-svelte';
+
+	/* Theme variables */
+	import '../theme/variables.css';
+
+	setupIonicSvelte();
+</script>
+
+<ion-app>
+	Hi there <ion-button>test</ion-button>
+</ion-app>
+
+```
 
 Starterfiles on github: https://github.com/Tommertom/svelte-ionic-npm/tree/main/starterfiles
 
