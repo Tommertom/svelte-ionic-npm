@@ -22,7 +22,7 @@ cd my-app
 npm install
 ```
 
-Make sure it is a SPA!!!!
+We need adapter static, because Ionic pages must run as SPA.
 - `npm i -D @sveltejs/adapter-static`
 - `import adapter from '@sveltejs/adapter-static'` in `svelte.config.js`
 - `npm remove @sveltejs/adapter-auto`
@@ -35,7 +35,7 @@ adapter: adapter({
 			precompress: false
 		})
 ```
-- Pages that use Ionic cannot be a SPA - so these routes need to have ssr disabled in their layout files. Kit example: `src/routes/+layout.ts` and add `export const ssr = false;`
+- Pages that use Ionic must be a SPA - so these routes need to have ssr disabled in their layout files. Kit example: `src/routes/+layout.ts` and add `export const ssr = false;`
 
 Integration of Ionic 
 - npm i @ionic/core ionic-svelte
