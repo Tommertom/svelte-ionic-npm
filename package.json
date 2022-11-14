@@ -1,6 +1,6 @@
 {
 	"name": "ionic-svelte",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"private": false,
 	"scripts": {
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",

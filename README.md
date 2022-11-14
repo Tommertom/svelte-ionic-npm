@@ -59,6 +59,7 @@ Integration of Ionic
 </ion-app>
 
 ```
+If you get a 500 internal error-error then likely SSR is not disabled. Making a SvelteKit app a real SPA really requires two steps - adapter static and `ssr=false`
 
 Starterfiles on github: https://github.com/Tommertom/svelte-ionic-npm/tree/main/starterfiles
 Use these files as reference to see how to do the final steps integrating Ionic in your svelte project.
