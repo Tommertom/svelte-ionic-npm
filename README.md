@@ -64,6 +64,12 @@ Starterfiles on github: https://github.com/Tommertom/svelte-ionic-npm/tree/main/
 
 Use these files as reference to see how to do the final steps integrating Ionic in your svelte project.
 
+## Show me Ionic!
+ A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com.
+
+And the code repo at https://github.com/Tommertom/svelte-ionic-app
+
+
 ## How to contribute?
 Would you like to contribute to this project? Great!
 
