@@ -1,5 +1,5 @@
 
-<h1 align="center"> Ionic SvelteKit Demo </h1> <br>
+<h1 align="center"> Ionic SvelteKit NPM </h1> <br>
 <p align="center">
   <a href="https://ionicsvelte.firebaseapp.com">
     <img alt="IonicSvelte" title="IonicSvelteKit" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/static/assets/svelte-ionic-logo.png" width="350">
@@ -12,9 +12,7 @@
 </p>
 <brt>
 
-<h1>NPM library to go along with the Ionic Svelte integration demostrated at ionicsvelte.firebaseapp.com.</h1>
-
-<h2>Active version: 0.5.2</h2>
+<h2>NPM library to go along with the Ionic Svelte integration demostrated at ionicsvelte.firebaseapp.com.</h2>
 
 <br>
 
