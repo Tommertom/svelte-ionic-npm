@@ -66,6 +66,8 @@ Use these files as reference to see how to do the final steps integrating Ionic 
 
 Code for this library - https://github.com/Tommertom/svelte-ionic-npm
 
+Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
+
 ## Show me Ionic!
  A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com.
 
