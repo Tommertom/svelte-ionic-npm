@@ -68,6 +68,14 @@ Code for this library - https://github.com/Tommertom/svelte-ionic-npm
 
 Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
 
+## Special components
+There are three special compontents included that override/fix the ionic standard webcomponents:
+- IonTabs - fixing some default selected tabs as well as fixing compatibility with the router
+- IonPage - wrapping the page and providing the ion-lifecycle hooks. And implementing a basic animation
+- IonBackButton - a rudimentary fix to the IonBackButton
+
+To be imported from the package: `import {IonTabs} from 'ionic-svelte';`
+
 ## Show me Ionic!
  A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com.
 
