@@ -74,7 +74,7 @@ There are three special compontents included that override/fix the ionic standar
 - IonPage - wrapping the page and providing the ion-lifecycle hooks. And implementing a basic animation
 - IonBackButton - a rudimentary fix to the IonBackButton
 
-To be imported from the package: `import {IonTabs} from 'ionic-svelte';`
+To be imported from the package: `import IonTab from 'ionic-svelte/components/IonTabs.svelte';';`
 
 ## Show me Ionic!
  A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com.
