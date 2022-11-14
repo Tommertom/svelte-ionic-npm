@@ -13,9 +13,11 @@
 <brt>
 
 <h1>NPM library to go along with the Ionic Svelte integration demostrated at ionicsvelte.firebaseapp.com.</h1>
-Active version: 0.5.2
+
+<h2>Active version: 0.5.2</h2>
 
 <br>
+
 ## How to get started with this library?
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)
 ```
