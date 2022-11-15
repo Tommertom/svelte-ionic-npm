@@ -8,7 +8,7 @@
 </p>
 <br>
 <p align="center">
-  A libary to include Ionic in your Svelte and SvelteKit app - v0.5.2
+  A libary to include Ionic in your Svelte and SvelteKit app 
 </p>
 <brt>
 
