@@ -2,7 +2,7 @@
   import { fly } from "svelte/transition";
 
   import { onDestroy, onMount } from "svelte";
-  import { beforeNavigate } from "$app/navigation";
+  // import { beforeNavigate } from "$app/navigation"; -- THIS GIVES ERROR
 
   export const ionViewWillEnter = () => {};
   export const ionViewDidEnter = () => {};
@@ -11,10 +11,10 @@
 
   ionViewWillEnter();
 
-  beforeNavigate(() => {
-    ionViewWillLeave();
-    return true;
-  });
+  //  beforeNavigate(() => {
+  //  ionViewWillLeave();
+  //  return true;
+  //});
 
   onMount(() => {
     ionViewDidEnter();
