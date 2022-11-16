@@ -2,7 +2,7 @@
   import { fly } from "svelte/transition";
 
   import { onDestroy, onMount } from "svelte";
-  // import { beforeNavigate } from "$app/navigation"; -- THIS GIVES ERROR
+  // import { beforeNavigate } from "$app/navigation"; -- THIS GIVES ERROR - cannot resolve $app/navigation
 
   export const ionViewWillEnter = () => {};
   export const ionViewDidEnter = () => {};
