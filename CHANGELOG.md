@@ -4,11 +4,13 @@ All notable changes to this project will be documented in this file.
  
 ## 0.5.10
 - starting with changelog
+- added generator scripts to generate svelte wrappers from Core Stencil code on github
 - added "experimental" components - in order to move from kebab-case/webcomponent usage to tree-shakeable and type-safe Pascalcase. So moving from `<ion-button>A great button</ion-button>` to 
 
 ```
 import { IonButton } from 'ionic-svelte/experimental/components/IonButton.svelte';
 <IonButton>A great button</IonButton>
 ```
-
 Experimental also has version of `setupIonicSvelte`. 
+
+So if you want to use this, change imports from ` ... from 'ionic-svelte` to ` ... from 'ionic-svelte/experimental`  
