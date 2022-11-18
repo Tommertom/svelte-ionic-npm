@@ -74,7 +74,18 @@ There are three special compontents included that override/fix the ionic standar
 - IonPage - wrapping the page and providing the ion-lifecycle hooks. And implementing a basic animation
 - IonBackButton - a rudimentary fix to the IonBackButton
 
-To be imported from the package: `import IonTab from 'ionic-svelte/components/IonTabs.svelte';';`
+To be imported from the package: `import IonTab from 'ionic-svelte/components/IonTabs.svelte';`
+
+## Moving to native Svelte components
+In order to support tree shaking, type-safety and auto-completion, I started creating svelte-wrappers. These are experimental.
+So moving from `<ion-button>A great button</ion-button>` to 
+```
+import { IonButton } from 'ionic-svelte/experimental/components/IonButton.svelte';
+<IonButton>A great button</IonButton>
+```
+Experimental also has version of `setupIonicSvelte`. 
+
+So if you want to use this, change imports from ` ... from 'ionic-svelte` to ` ... from 'ionic-svelte/experimental`  
 
 ## Show me Ionic!
  A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com.
