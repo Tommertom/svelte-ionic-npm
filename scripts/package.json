@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@ionic/core": "^6.3.7",
+    "https": "^1.0.0",
+    "ionic-svelte": "^0.5.9"
+  }
+}
