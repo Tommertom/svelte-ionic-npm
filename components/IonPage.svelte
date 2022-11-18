@@ -2,7 +2,7 @@
   import { fly } from "svelte/transition";
 
   import { onDestroy, onMount } from "svelte";
-  // import { beforeNavigate } from "$app/navigation"; -- THIS GIVES ERROR - cannot resolve $app/navigation
+  // import { beforeNavigate } from "@sveltejs/kit/src/runtime/app/navigation"; // gives error - https://github.com/sveltejs/kit/issues/5879
 
   export const ionViewWillEnter = () => {};
   export const ionViewDidEnter = () => {};
@@ -11,16 +11,18 @@
 
   ionViewWillEnter();
 
+  // to include when beforeNavigate issue is fixed
   //  beforeNavigate(() => {
-  //  ionViewWillLeave();
-  //  return true;
-  //});
+  //    ionViewWillLeave();
+  //    return true;
+  //  });
 
   onMount(() => {
     ionViewDidEnter();
   });
 
   onDestroy(() => {
+    ionViewWillLeave(); // to be removed once beforeNavigate is fixed
     ionViewDidLeave();
   });
 </script>

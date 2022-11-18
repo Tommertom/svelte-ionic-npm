@@ -108,7 +108,7 @@ import { IonSelectPopover } from "@ionic/core/components/ion-select-popover";
 import { IonToast } from "@ionic/core/components/ion-toast";
 
 // taken from Vue implementation of ionic
-const defineComponent = (tagName: string, customElement: any) => {
+export const defineComponent = (tagName: string, customElement: any) => {
     if (typeof customElements === "undefined") return;
 
     if (!customElements.get(tagName)) {

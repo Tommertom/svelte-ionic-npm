@@ -81,6 +81,8 @@ To be imported from the package: `import IonTab from 'ionic-svelte/components/Io
 
 And the code repo at https://github.com/Tommertom/svelte-ionic-app
 
+## Known issues with the library
+IonPage - ionViewWillLeave will fire together with ionViewDidLeave - because of issue in Kit
 
 ## How to contribute?
 Would you like to contribute to this project? Great!
