@@ -23,7 +23,7 @@ function pascalize(str) {
 
 const doStuff = () => {
 
-    var dir = './components';
+    var dir = './generated';
 
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
@@ -197,7 +197,7 @@ const getDataFromGithub = async (ionlabel, component) => {
                 code = code.replace('<EXTRA>', extralabel)
 
                 console.log('Writing ', component)
-                fs.writeFile('components/' + component + '.svelte', code, function (err) {
+                fs.writeFile('generated/' + component + '.svelte', code, function (err) {
                     if (err) return console.log(err);
                 });
             }
@@ -212,3 +212,5 @@ const getDataFromGithub = async (ionlabel, component) => {
 }
 
 doStuff();
+
+console.log(' "ion-tabs", and "ion-page" are separate')
