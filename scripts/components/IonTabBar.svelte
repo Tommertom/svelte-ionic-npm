@@ -1,76 +1,73 @@
 <script lang="ts">
-    import type {Color} from '@ionic/core';
-    import { IonTabBar } from '@ionic/core/components/ion-tab-bar';
-	import { defineComponent } from 'ionic-svelte';
+  import type { Color } from "@ionic/core";
+  import { IonTabBar } from "@ionic/core/components/ion-tab-bar";
+  import { defineComponent } from "ionic-svelte";
 
-    
+  const tag = "ion-tab-bar";
+  //@ts-ignore
+  export let color: Color = undefined;
+  //@ts-ignore
+  export let selectedTab: string = undefined;
+  //@ts-ignore
+  export let translucent = false;
 
-    const tag='ion-tab-bar';
-    //@ts-ignore
-   export let color: Color = undefined;
- //@ts-ignore
-   export let selectedTab: string = undefined;
- //@ts-ignore
-   export let translucent = false;
- 
-    defineComponent('ion-tab-bar', IonTabBar);
+  defineComponent("ion-tab-bar", IonTabBar);
 </script>
 
 <svelte:element
-this={tag}
-{color}
- {selectedTab}
- {translucent}
- 
-{...$$props}
- on:ionTabBarChanged
-
-on:focus
-on:blur
-on:fullscreenchange
-on:fullscreenerror
-on:scroll
-on:cut
-on:copy
-on:paste
-on:keydown
-on:keypress
-on:keyup
-on:auxclick
-on:click
-on:contextmenu
-on:dblclick
-on:mousedown
-on:mouseenter
-on:mouseleave
-on:mousemove
-on:mouseover
-on:mouseout
-on:mouseup
-on:pointerlockchange
-on:pointerlockerror
-on:select
-on:wheel
-on:drag
-on:dragend
-on:dragenter
-on:dragstart
-on:dragleave
-on:dragover
-on:drop
-on:touchcancel
-on:touchend
-on:touchmove
-on:touchstart
-on:pointerover
-on:pointerenter
-on:pointerdown
-on:pointermove
-on:pointerup
-on:pointercancel
-on:pointerout
-on:pointerleave
-on:gotpointercapture
-on:lostpointercapture
-on:click><slot /></svelte:element
->
+  this={tag}
+  {color}
+  {selectedTab}
+  {translucent}
+  {...$$props}
+  on:ionTabBarChanged
+  on:focus
+  on:blur
+  on:fullscreenchange
+  on:fullscreenerror
+  on:scroll
+  on:cut
+  on:copy
+  on:paste
+  on:keydown
+  on:keypress
+  on:keyup
+  on:auxclick
+  on:click
+  on:contextmenu
+  on:dblclick
+  on:mousedown
+  on:mouseenter
+  on:mouseleave
+  on:mousemove
+  on:mouseover
+  on:mouseout
+  on:mouseup
+  on:pointerlockchange
+  on:pointerlockerror
+  on:select
+  on:wheel
+  on:drag
+  on:dragend
+  on:dragenter
+  on:dragstart
+  on:dragleave
+  on:dragover
+  on:drop
+  on:touchcancel
+  on:touchend
+  on:touchmove
+  on:touchstart
+  on:pointerover
+  on:pointerenter
+  on:pointerdown
+  on:pointermove
+  on:pointerup
+  on:pointercancel
+  on:pointerout
+  on:pointerleave
+  on:gotpointercapture
+  on:lostpointercapture
+  on:click
+  ><slot />
+</svelte:element>
