@@ -6,7 +6,7 @@
 
   export const ionViewWillEnter = () => {};
   export const ionViewDidEnter = () => {};
-  export const ionViewWillLeave = () => {};
+  export const ionViewWillLeave = undefined; // unsupported as we cannot use beforeNavigate in npm library
   export const ionViewDidLeave = () => {};
 
   ionViewWillEnter();
@@ -22,7 +22,10 @@
   });
 
   onDestroy(() => {
-    ionViewWillLeave(); // to be removed once beforeNavigate is fixed
+    if (ionViewWillLeave != undefined) {
+      console.warn(`ionViewWillLeave is not implemented - use beforeNavigate in $app/navigation.`);
+    }
+
     ionViewDidLeave();
   });
 </script>
