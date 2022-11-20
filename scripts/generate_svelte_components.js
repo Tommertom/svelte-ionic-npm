@@ -213,4 +213,14 @@ const getDataFromGithub = async (ionlabel, component) => {
 
 doStuff();
 
-console.log(' "ion-tabs", and "ion-page" are separate')
+/*
+
+Script to generate exports
+
+components.forEach(component => {
+    const toPascal = pascalize(component);
+    console.log('// @ts-ignore')
+    console.log(`export { default as ${toPascal} } from './components/${toPascal}.svelte';`)
+});
+
+*/

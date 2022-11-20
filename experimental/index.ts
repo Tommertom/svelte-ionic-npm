@@ -169,3 +169,13 @@ export const registerMenu = (menuId: string): boolean => {
   return !!menu;
 }
 
+// component export
+
+// @ts-ignore
+export { default as IonTabs } from './components/IonTabs.svelte';
+// @ts-ignore
+export { default as IonPage } from './components/IonPage.svelte';
+// @ts-ignore
+export { default as IonBackButton } from './components/IonBackButton.svelte';
+
+export * from './component-exports';

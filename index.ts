@@ -22,9 +22,6 @@ import type { IonicConfig, MenuI } from "@ionic/core/components";
 import { defineIonComponents } from "./components/defineComponents"
 export { defineComponent } from "./components/defineComponents";
 
-// export { default as IonTabs } from './components/IonTabs.svelte';
-// export { default as IonPage } from './components/IonPage.svelte';
-// export { default as IonBackButton } from './components/IonBackButton.svelte';
 
 // all exports
 export {
@@ -182,4 +179,14 @@ export const registerMenu = (menuId: string): boolean => {
   }
   return !!menu;
 }
+
+
+// component export
+
+// @ts-ignore
+export { default as IonTabs } from './components/IonTabs.svelte';
+// @ts-ignore
+export { default as IonPage } from './components/IonPage.svelte';
+// @ts-ignore
+export { default as IonBackButton } from './components/IonBackButton.svelte';
 

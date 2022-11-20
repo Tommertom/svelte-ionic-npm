@@ -23,7 +23,9 @@
 
   onDestroy(() => {
     if (ionViewWillLeave != undefined) {
-      console.warn(`ionViewWillLeave is not implemented - use beforeNavigate in $app/navigation.`);
+      console.warn(
+        `ionViewWillLeave is not implemented - use beforeNavigate in $app/navigation. See  https://github.com/sveltejs/kit/issues/5879`
+      );
     }
 
     ionViewDidLeave();
