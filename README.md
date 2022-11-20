@@ -40,7 +40,7 @@ adapter: adapter({
 - Pages that use Ionic must be a SPA - so these routes need to have ssr disabled in their layout files. Kit example: `src/routes/+layout.ts` and add `export const ssr = false;`
 
 Integration of Ionic 
-- `npm i @ionic/core ionic-svelte`
+- `npm i @ionic/core@6.3.0 ionic-svelte` - using Ionic 6.3.0
 - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-npm/main/starterfiles/theme/variables.css 
 - the top-root layout file (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
 
@@ -67,6 +67,30 @@ Use these files as reference to see how to do the final steps integrating Ionic 
 Code for this library - https://github.com/Tommertom/svelte-ionic-npm
 
 Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
+
+## How to use components
+Well there are two ways, the kebab way and the pascal way....
+
+The kebab way is the current default:
+```
+<ion-card>
+Here content
+</ion-card>
+```
+`setupIonicSvelte` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicSvelte` a bit), no type-safety and no intellisence.
+
+So here is pascal to the rescue:
+```
+import {IonCard} from 'ionic-svelte/experimental';
+
+<IonCard>
+Here content
+</IonCard>
+```
+And then you need to import `setupIonicSvelte` from 'ionic-svelte/experimental'. Then no components are registered during setup, and the bundle gets more optimised. As the wording says - this is experimental, there is some testing needed. But most of the components should work.
+
+Would you like to migrate an existing kebab-page to a pascal-page, look into the scripts folder. There is `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`. It will scan for .svelte files, and does the migration for you. A backup will be makde from your svelte file -> named `.svelte.bak`.
+
 
 ## Special components
 There are three special compontents included that override/fix the ionic standard webcomponents:
