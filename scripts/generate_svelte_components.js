@@ -88,7 +88,8 @@ const getDataFromGithub = async (ionlabel, component) => {
                         }
                     }
 
-                    if (line.includes('@Prop')) {
+                    // reserved keyword appearing in IonSelect
+                    if (line.includes('@Prop') && !line.includes('interface')) {
 
                         // clean a bit
                         line = line.replace('@Prop({ reflect: true })', '@Prop()');
@@ -96,6 +97,8 @@ const getDataFromGithub = async (ionlabel, component) => {
                         line = line.replace('@Prop({ reflect: true, mutable: true })', '@Prop()');
                         line = line.replace('!', '');
                         line = line.replace('this.pullMin', 'pullMin')
+                        line = line.replace('config.get("backButtonIcon", arrowBackSharp) as string;', 'arrowBackSharp')
+                        // 
 
                         // checkbox,ionDateTime, ionInput, ionRadio, ionRadioGroup
                         line = line.replace('this.inputId', `'label'+Date.now()`);
