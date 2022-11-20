@@ -2,6 +2,10 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
  
+## 0.5.11
+- minor updates to experimental components
+- added migration script to migrate from kebab-case components to pascal-case - `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`
+
 ## 0.5.10
 - starting with changelog
 - added generator scripts to generate svelte wrappers from Core Stencil code on github
