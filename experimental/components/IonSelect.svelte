@@ -4,6 +4,13 @@
 	import { defineComponent } from 'ionic-svelte';
 
     
+        import { createEventDispatcher } from "svelte";
+        const dispatch=createEventDispatcher()  
+        const ionChange= (event)=>{
+        value=event.detail.value;
+            dispatch("ionChange", event.detail);
+        }
+        
 
     const tag='ion-select';
     //@ts-ignore
@@ -21,10 +28,6 @@
  //@ts-ignore
    export let multiple = false;
  //@ts-ignore
-   export let interface: SelectInterface = 'alert';
- //@ts-ignore
-   export let interfaceOptions: any = {};
- //@ts-ignore
    export let compareWith: string | SelectCompareFn | null = undefined;
  //@ts-ignore
    export let value: any | null = undefined;
@@ -41,8 +44,6 @@ this={tag}
  {name}
  {selectedText}
  {multiple}
- {interface}
- {interfaceOptions}
  {compareWith}
  {value}
  
@@ -66,7 +67,6 @@ on:keydown
 on:keypress
 on:keyup
 on:auxclick
-on:click
 on:contextmenu
 on:dblclick
 on:mousedown

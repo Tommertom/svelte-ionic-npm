@@ -1,65 +1,68 @@
 <script lang="ts">
-  import { IonSkeletonText } from "@ionic/core/components/ion-skeleton-text";
-  import { defineComponent } from "ionic-svelte";
+    
+    import { IonSkeletonText } from '@ionic/core/components/ion-skeleton-text';
+	import { defineComponent } from 'ionic-svelte';
 
-  const tag = "ion-skeleton-text";
-  //@ts-ignore
-  export let animated = false;
+    
 
-  defineComponent("ion-skeleton-text", IonSkeletonText);
+    const tag='ion-skeleton-text';
+    //@ts-ignore
+   export let animated = false;
+ 
+    defineComponent('ion-skeleton-text', IonSkeletonText);
 </script>
 
 <svelte:element
-  this={tag}
-  {animated}
-  {...$$props}
-  on:focus
-  on:blur
-  on:fullscreenchange
-  on:fullscreenerror
-  on:scroll
-  on:cut
-  on:copy
-  on:paste
-  on:keydown
-  on:keypress
-  on:keyup
-  on:auxclick
-  on:click
-  on:contextmenu
-  on:dblclick
-  on:mousedown
-  on:mouseenter
-  on:mouseleave
-  on:mousemove
-  on:mouseover
-  on:mouseout
-  on:mouseup
-  on:pointerlockchange
-  on:pointerlockerror
-  on:select
-  on:wheel
-  on:drag
-  on:dragend
-  on:dragenter
-  on:dragstart
-  on:dragleave
-  on:dragover
-  on:drop
-  on:touchcancel
-  on:touchend
-  on:touchmove
-  on:touchstart
-  on:pointerover
-  on:pointerenter
-  on:pointerdown
-  on:pointermove
-  on:pointerup
-  on:pointercancel
-  on:pointerout
-  on:pointerleave
-  on:gotpointercapture
-  on:lostpointercapture
-  on:click
-  ><slot />
-</svelte:element>
+this={tag}
+{animated}
+ 
+{...$$props}
+
+on:focus
+on:blur
+on:fullscreenchange
+on:fullscreenerror
+on:scroll
+on:cut
+on:copy
+on:paste
+on:keydown
+on:keypress
+on:keyup
+on:auxclick
+on:contextmenu
+on:dblclick
+on:mousedown
+on:mouseenter
+on:mouseleave
+on:mousemove
+on:mouseover
+on:mouseout
+on:mouseup
+on:pointerlockchange
+on:pointerlockerror
+on:select
+on:wheel
+on:drag
+on:dragend
+on:dragenter
+on:dragstart
+on:dragleave
+on:dragover
+on:drop
+on:touchcancel
+on:touchend
+on:touchmove
+on:touchstart
+on:pointerover
+on:pointerenter
+on:pointerdown
+on:pointermove
+on:pointerup
+on:pointercancel
+on:pointerout
+on:pointerleave
+on:gotpointercapture
+on:lostpointercapture
+on:click><slot /> </svelte:element
+>
