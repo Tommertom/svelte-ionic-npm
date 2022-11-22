@@ -123,22 +123,13 @@ const getDataFromGithub = async (ionlabel, component) => {
                             //    console.log('STUFF', line, stuff)
                         }
 
-
-                        //       console.log('STUFF', line, stuff)
-
-
                         // clean stuff
                         line = line.replace(';;', ';');
                         line = line.replace('?', '');
                         line = line.replace('= Color', `='primary'`)
                             .replace(`= 'primary' = undefined`, `= 'primary'`)
-                            //  .replace(`= '' = undefined`, `= ''`)
-                            //   .replace(`= 'none' = undefined`, `= 'none'`)
-                            //   .replace(`'icon-top' = undefined`, `'icon-top'`)
                             .replace('ids++', 'Date.now()')
                             .replace(`= undefined = undefined`, `= undefined`)
-                        //   .replace(`null = '' = undefined`, `null = ''`)
-                        //   .replace(`'on' = undefined`, `'on'`)
 
                         propdeclrs.push('//@ts-ignore')
                         propdeclrs.push(line.replace('@Prop()', 'export let'));
@@ -198,6 +189,11 @@ const getDataFromGithub = async (ionlabel, component) => {
                 let extralabel = ''
                 if (extra[component] !== undefined) extralabel = extra[component]
                 code = code.replace('<EXTRA>', extralabel)
+
+                // and some more cleaning
+                if (code.includes('const ionChange')) {
+                    code = code.replace('on:ionChange\n', 'on:ionChange={ionChange}\n')
+                }
 
                 console.log('Writing ', component)
                 fs.writeFile('generated/' + component + '.svelte', code, function (err) {

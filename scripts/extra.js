@@ -58,15 +58,6 @@ module.exports = {
                     dispatch("ionChange", event.detail);
                  }
                 `,
-
-    'IonRadio': `
-        import { createEventDispatcher } from "svelte";
-        const dispatch=createEventDispatcher()  
-        const ionChange= (event)=>{
-        value=event.detail.value;
-            dispatch("ionChange", event.detail);
-        }
-        `,
     'IonRange': `
         import { createEventDispatcher } from "svelte";
         const dispatch=createEventDispatcher()  
@@ -90,7 +81,7 @@ module.exports = {
         const ionChange= (event)=>{
         value=event.detail.value;
             dispatch("ionChange", event.detail);
-        }
+        } 
         `,
 
     'IonSegment': `
