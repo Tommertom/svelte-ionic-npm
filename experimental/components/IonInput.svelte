@@ -156,6 +156,5 @@
   on:pointerleave
   on:gotpointercapture
   on:lostpointercapture
-  on:click
   ><slot />
 </svelte:element>
