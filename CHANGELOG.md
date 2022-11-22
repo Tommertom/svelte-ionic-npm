@@ -2,7 +2,7 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
  
-## 0.5.15
+## 0.5.16
 - fixed issue with not globally replacing tags
 - added warning that type conversion is not done (like, translucent="true" will not be converted into translucent={true})
 

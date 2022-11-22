@@ -63,9 +63,9 @@ const processFile = (filename, data) => {
         if (err) return console.log(err);
     });
 
-    //   fs.writeFile(filename, newContent, function (err) {
-    //       if (err) return console.log(err);
-    //  });
+    fs.writeFile(filename, newContent, function (err) {
+        if (err) return console.log(err);
+    });
 }
 
 
