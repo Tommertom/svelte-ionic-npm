@@ -2,6 +2,10 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
  
+## 0.5.15
+- fixed issue with not globally replacing tags
+- added warning that type conversion is not done (like, translucent="true" will not be converted into translucent={true})
+
 ## 0.5.13
 - Regenerated all experimental components as they had on:click twice - leading to triggering the event twice
 - Support for bind:value bindings by redispatching and using ionChange events, making property binding finally possible

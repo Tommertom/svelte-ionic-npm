@@ -31,10 +31,12 @@ const processFile = (filename, data) => {
     do {
         replacements = 0;
         components.forEach(component => {
+            let componentReplacements = 0;
+
             if (newContent.includes(component)) {
-                console.log('Replacing', component, replacements, componentMap)
                 replacements = replacements + 1;
-                newContent = newContent.replace(component, pascalize(component))
+                const regex = new RegExp(component, "g");
+                newContent = newContent.replace(regex, pascalize(component))
                 componentMap[pascalize(component)] = true;
             }
         })
@@ -55,15 +57,15 @@ const processFile = (filename, data) => {
        ` + newContent
     }
 
-    // console.log('code', componentMap, importLabel)
+    console.log('code', newContent)
 
     fs.writeFile(filename.replace('.svelte', '.bak'), data, function (err) {
         if (err) return console.log(err);
     });
 
-    fs.writeFile(filename, newContent, function (err) {
-        if (err) return console.log(err);
-    });
+    //   fs.writeFile(filename, newContent, function (err) {
+    //       if (err) return console.log(err);
+    //  });
 }
 
 
@@ -100,4 +102,7 @@ getFiles(dirname).then(s => {
             });
         })
 })
+
+
+console.log('Please note, things like "translucent="true" needs to be replaced by translucent={true}')
 
