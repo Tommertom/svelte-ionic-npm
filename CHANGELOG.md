@@ -2,6 +2,10 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
  
+## 0.5.13
+- Regenerated all experimental components as they had on:click twice - leading to triggering the event twice
+- Support for bind:value bindings by redispatching and using ionChange events, making property binding finally possible
+
 ## 0.5.11
 - minor updates to experimental components
 - added migration script to migrate from kebab-case components to pascal-case - `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`
