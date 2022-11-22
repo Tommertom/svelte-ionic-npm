@@ -89,7 +89,7 @@ Here content
 ```
 And then you need to import `setupIonicSvelte` from 'ionic-svelte/experimental'. Then no components are registered during setup, and the bundle gets more optimised. As the wording says - this is experimental, there is some testing needed. But most of the components should work.
 
-Would you like to migrate an existing kebab-page to a pascal-page, look into the scripts folder. There is `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`. It will scan for .svelte files, and does the migration for you. A backup will be makde from your svelte file -> named `.svelte.bak`.
+Would you like to migrate an existing kebab-page to a pascal-page, look into the scripts folder. There is `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`. It will scan for .svelte files, and does the migration for you. A backup will be makde from your svelte file -> named `.bak`.
 
 
 ## Special components
