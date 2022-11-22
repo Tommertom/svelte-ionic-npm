@@ -47,7 +47,7 @@ const processFile = (filename, data) => {
     if (newContent.includes('</script>')) {
         newContent = newContent
             .replace('<script>', '<script>\n' + importLabel)
-            .replace('<script lang="ts">', '<script lange="ts">\n' + importLabel)
+            .replace('<script lang="ts">', '<script lang="ts">\n' + importLabel)
     } else {
         newContent = `<script>
        ${importLabel} 
