@@ -1,21 +1,33 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    import type {Color} from '@ionic/core';
+    import { IonPickerColumnInternal } from '@ionic/core/components/ion-picker-column-internal';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-picker-column-internal';
+    //@ts-ignore
+   export let items: PickerColumnItem[] = [];
+ //@ts-ignore
+   export let value: string | number = undefined;
+ //@ts-ignore
+   export let color: Color = 'primary';
+ //@ts-ignore
+   export let numericInput = false;
+ 
+    defineComponent('ion-picker-column-internal', IonPickerColumnInternal);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{items}
+ {value}
+ {color}
+ {numericInput}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionChange
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +76,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

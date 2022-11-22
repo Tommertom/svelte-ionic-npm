@@ -1,21 +1,46 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonMenu } from '@ionic/core/components/ion-menu';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-menu';
+    //@ts-ignore
+   export let contentId: string = undefined;
+ //@ts-ignore
+   export let menuId: string = undefined;
+ //@ts-ignore
+   export let type: string = undefined;
+ //@ts-ignore
+   export let disabled = false;
+ //@ts-ignore
+   export let side: Side = 'start';
+ //@ts-ignore
+   export let swipeGesture = true;
+ //@ts-ignore
+   export let maxEdgeStart = 50;
+ 
+    defineComponent('ion-menu', IonMenu);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{contentId}
+ {menuId}
+ {type}
+ {disabled}
+ {side}
+ {swipeGesture}
+ {maxEdgeStart}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionWillOpen
+ on:ionWillClose
+ on:ionDidOpen
+ on:ionDidClose
+ on:ionMenuChange
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +89,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

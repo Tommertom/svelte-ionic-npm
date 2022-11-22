@@ -1,21 +1,45 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonSlides } from '@ionic/core/components/ion-slides';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-slides';
+    //@ts-ignore
+   export let options: any = {}; // SwiperOptions;  // TODO
+ //@ts-ignore
+   export let pager = false;
+ //@ts-ignore
+   export let scrollbar = false;
+ 
+    defineComponent('ion-slides', IonSlides);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{options}
+ {pager}
+ {scrollbar}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionSlidesDidLoad
+ on:ionSlideTap
+ on:ionSlideDoubleTap
+ on:ionSlideWillChange
+ on:ionSlideDidChange
+ on:ionSlideNextStart
+ on:ionSlidePrevStart
+ on:ionSlideNextEnd
+ on:ionSlidePrevEnd
+ on:ionSlideTransitionStart
+ on:ionSlideTransitionEnd
+ on:ionSlideDrag
+ on:ionSlideReachStart
+ on:ionSlideReachEnd
+ on:ionSlideTouchStart
+ on:ionSlideTouchEnd
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +88,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

@@ -57,7 +57,7 @@ const processFile = (filename, data) => {
 
     // console.log('code', componentMap, importLabel)
 
-    fs.writeFile(filename + '.bak', data, function (err) {
+    fs.writeFile(filename.replace('.svelte', '.bak'), data, function (err) {
         if (err) return console.log(err);
     });
 

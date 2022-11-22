@@ -1,21 +1,35 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonAccordion } from '@ionic/core/components/ion-accordion';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-accordion';
+    //@ts-ignore
+   export let value = `ion-accordion-${accordionIds++}`;
+ //@ts-ignore
+   export let disabled = false;
+ //@ts-ignore
+   export let readonly = false;
+ //@ts-ignore
+   export let toggleIcon = chevronDown;
+ //@ts-ignore
+   export let toggleIconSlot: 'start' | 'end' = 'end';
+ 
+    defineComponent('ion-accordion', IonAccordion);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{value}
+ {disabled}
+ {readonly}
+ {toggleIcon}
+ {toggleIconSlot}
+ 
 {...$$props}
-<IONEVENTS>
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +78,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

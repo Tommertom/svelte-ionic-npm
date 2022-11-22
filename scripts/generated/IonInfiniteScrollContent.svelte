@@ -1,21 +1,26 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    import type {SpinnerTypes,IonicSafeString} from '@ionic/core';
+    import { IonInfiniteScrollContent } from '@ionic/core/components/ion-infinite-scroll-content';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-infinite-scroll-content';
+    //@ts-ignore
+   export let loadingSpinner: SpinnerTypes | null = undefined;
+ //@ts-ignore
+   export let loadingText: string | IonicSafeString = undefined;
+ 
+    defineComponent('ion-infinite-scroll-content', IonInfiniteScrollContent);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{loadingSpinner}
+ {loadingText}
+ 
 {...$$props}
-<IONEVENTS>
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +69,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

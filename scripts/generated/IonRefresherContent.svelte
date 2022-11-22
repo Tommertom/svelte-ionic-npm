@@ -1,21 +1,32 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    import type {SpinnerTypes,IonicSafeString} from '@ionic/core';
+    import { IonRefresherContent } from '@ionic/core/components/ion-refresher-content';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-refresher-content';
+    //@ts-ignore
+   export let pullingIcon: SpinnerTypes | string | null = undefined;
+ //@ts-ignore
+   export let pullingText: string | IonicSafeString = undefined;
+ //@ts-ignore
+   export let refreshingSpinner: SpinnerTypes | null = undefined;
+ //@ts-ignore
+   export let refreshingText: string | IonicSafeString = undefined;
+ 
+    defineComponent('ion-refresher-content', IonRefresherContent);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{pullingIcon}
+ {pullingText}
+ {refreshingSpinner}
+ {refreshingText}
+ 
 {...$$props}
-<IONEVENTS>
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +75,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

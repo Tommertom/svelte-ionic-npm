@@ -1,21 +1,37 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonRadioGroup } from '@ionic/core/components/ion-radio-group';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
+        import { createEventDispatcher } from "svelte";
+        const dispatch=createEventDispatcher()  
+        const ionChange= (event)=>{
+        value=event.detail.value;
+            dispatch("ionChange", event.detail);
+        }
+        
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-radio-group';
+    //@ts-ignore
+   export let allowEmptySelection = false;
+ //@ts-ignore
+   export let name: string = 'label'+Date.now();
+ //@ts-ignore
+   export let value: any | null = undefined;
+ 
+    defineComponent('ion-radio-group', IonRadioGroup);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{allowEmptySelection}
+ {name}
+ {value}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionChange
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +80,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

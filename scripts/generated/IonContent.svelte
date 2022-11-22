@@ -1,21 +1,41 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    import type {Color} from '@ionic/core';
+    import { IonContent } from '@ionic/core/components/ion-content';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-content';
+    //@ts-ignore
+   export let color: Color = undefined;
+ //@ts-ignore
+   export let fullscreen = false;
+ //@ts-ignore
+   export let forceOverscroll: boolean = undefined;
+ //@ts-ignore
+   export let scrollX = false;
+ //@ts-ignore
+   export let scrollY = true;
+ //@ts-ignore
+   export let scrollEvents = false;
+ 
+    defineComponent('ion-content', IonContent);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{color}
+ {fullscreen}
+ {forceOverscroll}
+ {scrollX}
+ {scrollY}
+ {scrollEvents}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionScrollStart
+ on:ionScroll
+ on:ionScrollEnd
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +84,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

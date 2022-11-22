@@ -1,21 +1,41 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonRefresher } from '@ionic/core/components/ion-refresher';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-refresher';
+    //@ts-ignore
+   export let pullMin = 60;
+ //@ts-ignore
+   export let pullMax: number = pullMin + 60;
+ //@ts-ignore
+   export let closeDuration = '280ms';
+ //@ts-ignore
+   export let snapbackDuration = '280ms';
+ //@ts-ignore
+   export let pullFactor = 1;
+ //@ts-ignore
+   export let disabled = false;
+ 
+    defineComponent('ion-refresher', IonRefresher);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{pullMin}
+ {pullMax}
+ {closeDuration}
+ {snapbackDuration}
+ {pullFactor}
+ {disabled}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionRefresh
+ on:ionPull
+ on:ionStart
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +84,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

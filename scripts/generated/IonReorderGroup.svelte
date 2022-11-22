@@ -1,21 +1,24 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonReorderGroup } from '@ionic/core/components/ion-reorder-group';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-reorder-group';
+    //@ts-ignore
+   export let disabled = true;
+ 
+    defineComponent('ion-reorder-group', IonReorderGroup);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{disabled}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionItemReorder
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +67,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

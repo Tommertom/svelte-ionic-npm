@@ -1,21 +1,30 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonInfiniteScroll } from '@ionic/core/components/ion-infinite-scroll';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-infinite-scroll';
+    //@ts-ignore
+   export let threshold = '15%';
+ //@ts-ignore
+   export let disabled = false;
+ //@ts-ignore
+   export let position: 'top' | 'bottom' = 'bottom';
+ 
+    defineComponent('ion-infinite-scroll', IonInfiniteScroll);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{threshold}
+ {disabled}
+ {position}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionInfinite
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +73,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

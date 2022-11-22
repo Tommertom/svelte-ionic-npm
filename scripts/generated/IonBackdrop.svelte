@@ -1,21 +1,30 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonBackdrop } from '@ionic/core/components/ion-backdrop';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-backdrop';
+    //@ts-ignore
+   export let visible = true;
+ //@ts-ignore
+   export let tappable = true;
+ //@ts-ignore
+   export let stopPropagation = true;
+ 
+    defineComponent('ion-backdrop', IonBackdrop);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{visible}
+ {tappable}
+ {stopPropagation}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionBackdropTap
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +73,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

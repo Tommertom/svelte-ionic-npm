@@ -1,21 +1,32 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonSegmentButton } from '@ionic/core/components/ion-segment-button';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-segment-button';
+    //@ts-ignore
+   export let disabled = false;
+ //@ts-ignore
+   export let layout: SegmentButtonLayout = 'icon-top';
+ //@ts-ignore
+   export let type: 'submit' | 'reset' | 'button' = 'button';
+ //@ts-ignore
+   export let value: string = 'ion-sb-' + Date.now();
+ 
+    defineComponent('ion-segment-button', IonSegmentButton);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{disabled}
+ {layout}
+ {type}
+ {value}
+ 
 {...$$props}
-<IONEVENTS>
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +75,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

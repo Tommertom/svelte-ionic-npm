@@ -1,21 +1,26 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    import type {Color} from '@ionic/core';
+    import { IonListHeader } from '@ionic/core/components/ion-list-header';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-list-header';
+    //@ts-ignore
+   export let color: Color = undefined;
+ //@ts-ignore
+   export let lines: 'full' | 'inset' | 'none' = undefined;
+ 
+    defineComponent('ion-list-header', IonListHeader);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{color}
+ {lines}
+ 
 {...$$props}
-<IONEVENTS>
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +69,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

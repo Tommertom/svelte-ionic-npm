@@ -1,21 +1,37 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    
+    import { IonSplitPane } from '@ionic/core/components/ion-split-pane';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    const QUERY: { [key: string]: string } = {
+        xs: '(min-width: 0px)',
+        sm: '(min-width: 576px)',
+        md: '(min-width: 768px)',
+        lg: '(min-width: 992px)',
+        xl: '(min-width: 1200px)',
+        never: '',
+      };
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-split-pane';
+    //@ts-ignore
+   export let contentId: string = undefined;
+ //@ts-ignore
+   export let disabled = false;
+ //@ts-ignore
+   export let when: string | boolean = QUERY['lg'];
+ 
+    defineComponent('ion-split-pane', IonSplitPane);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{contentId}
+ {disabled}
+ {when}
+ 
 {...$$props}
-<IONEVENTS>
+ on:ionSplitPaneVisible
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +80,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/

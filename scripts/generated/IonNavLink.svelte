@@ -1,21 +1,32 @@
-module.exports =
-    `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
+<script lang="ts">
+    import type {RouterDirection,AnimationBuilder} from '@ionic/core';
+    import { IonNavLink } from '@ionic/core/components/ion-nav-link';
 	import { defineComponent } from 'ionic-svelte';
 
-    <EXTRA>
+    
 
-    const tag='<TAG>';
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
+    const tag='ion-nav-link';
+    //@ts-ignore
+   export let component: NavComponent = undefined;
+ //@ts-ignore
+   export let componentProps: ComponentProps = undefined;
+ //@ts-ignore
+   export let routerDirection: RouterDirection = 'forward';
+ //@ts-ignore
+   export let routerAnimation: AnimationBuilder = undefined;
+ 
+    defineComponent('ion-nav-link', IonNavLink);
 </script>
 
 <svelte:element
 this={tag}
-<PROPS>
+{component}
+ {componentProps}
+ {routerDirection}
+ {routerAnimation}
+ 
 {...$$props}
-<IONEVENTS>
+
 on:focus
 on:blur
 on:fullscreenchange
@@ -64,11 +75,3 @@ on:gotpointercapture
 on:lostpointercapture
 on:click><slot /> </svelte:element
 >
-`
-
-/*
-Events skipped:
-
-on:click = creates a double event. Probably because of bubbling?
-
-*/
