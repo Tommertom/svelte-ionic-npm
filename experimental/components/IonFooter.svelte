@@ -2,7 +2,6 @@
   import { IonFooter } from "@ionic/core/components/ion-footer";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-footer";
   //@ts-ignore
   export let collapse: "fade" = undefined;
   //@ts-ignore
@@ -11,8 +10,7 @@
   defineComponent("ion-footer", IonFooter);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-footer
   {collapse}
   {translucent}
   {...$$props}
@@ -64,4 +62,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-footer>

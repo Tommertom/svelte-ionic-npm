@@ -2,15 +2,13 @@
   import { IonGrid } from "@ionic/core/components/ion-grid";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-grid";
   //@ts-ignore
   export let fixed = false;
 
   defineComponent("ion-grid", IonGrid);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-grid
   {fixed}
   {...$$props}
   on:focus
@@ -61,4 +59,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-grid>

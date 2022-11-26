@@ -3,7 +3,6 @@
   import { IonLabel } from "@ionic/core/components/ion-label";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-label";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -12,13 +11,12 @@
   defineComponent("ion-label", IonLabel);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-label
   {color}
   {position}
-  {...$$props}
   on:ionColor
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -67,4 +65,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-label>

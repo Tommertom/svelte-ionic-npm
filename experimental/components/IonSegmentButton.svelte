@@ -2,7 +2,6 @@
   import { IonSegmentButton } from "@ionic/core/components/ion-segment-button";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-segment-button";
   //@ts-ignore
   export let disabled = false;
   //@ts-ignore
@@ -15,8 +14,7 @@
   defineComponent("ion-segment-button", IonSegmentButton);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-segment-button
   {disabled}
   {layout}
   {type}
@@ -70,4 +68,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-segment-button>

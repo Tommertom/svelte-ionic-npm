@@ -3,7 +3,6 @@
   import { IonPopover } from "@ionic/core/components/ion-popover";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-popover";
   //@ts-ignore
   export let hasController = false;
   //@ts-ignore
@@ -60,8 +59,7 @@
   defineComponent("ion-popover", IonPopover);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-popover
   {hasController}
   {delegate}
   {overlayIndex}
@@ -88,12 +86,12 @@
   {isOpen}
   {keyboardEvents}
   {keepContentsMounted}
-  {...$$props}
   on:ionPopoverDidPresent
   on:ionPopoverWillPresent
   on:ionPopoverWillDismiss
   on:ionPopoverDidDismiss
   on:ionMount
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -142,4 +140,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-popover>

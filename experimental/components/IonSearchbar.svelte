@@ -10,7 +10,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-searchbar";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -20,7 +19,10 @@
   //@ts-ignore
   export let autocorrect: "on" | "off" = "off";
   //@ts-ignore
-  export let cancelButtonIcon = config.get("backButtonIcon", arrowBackSharp) as string;
+  export let cancelButtonIcon = config.get(
+    "backButtonIcon",
+    arrowBackSharp
+  ) as string;
   //@ts-ignore
   export let cancelButtonText = "Cancel";
   //@ts-ignore
@@ -40,8 +42,14 @@
     | "decimal"
     | "search" = undefined;
   //@ts-ignore
-  export let enterkeyhint: "enter" | "done" | "go" | "next" | "previous" | "search" | "send" =
-    undefined;
+  export let enterkeyhint:
+    | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send" = undefined;
   //@ts-ignore
   export let placeholder = "Search";
   //@ts-ignore
@@ -53,15 +61,21 @@
   //@ts-ignore
   export let spellcheck = false;
   //@ts-ignore
-  export let type: "text" | "password" | "email" | "number" | "search" | "tel" | "url" = "search";
+  export let type:
+    | "text"
+    | "password"
+    | "email"
+    | "number"
+    | "search"
+    | "tel"
+    | "url" = "search";
   //@ts-ignore
   export let value: string | null = "";
 
   defineComponent("ion-searchbar", IonSearchbar);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-searchbar
   {color}
   {animated}
   {autocomplete}
@@ -80,7 +94,6 @@
   {spellcheck}
   {type}
   {value}
-  {...$$props}
   on:ionInput
   on:ionChange={ionChange}
   on:ionCancel
@@ -88,6 +101,7 @@
   on:ionBlur
   on:ionFocus
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -136,4 +150,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-searchbar>

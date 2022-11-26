@@ -10,7 +10,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-textarea";
   //@ts-ignore
   export let fireFocusEvents = true;
   //@ts-ignore
@@ -36,8 +35,14 @@
     | "decimal"
     | "search" = undefined;
   //@ts-ignore
-  export let enterkeyhint: "enter" | "done" | "go" | "next" | "previous" | "search" | "send" =
-    undefined;
+  export let enterkeyhint:
+    | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send" = undefined;
   //@ts-ignore
   export let maxlength: number = undefined;
   //@ts-ignore
@@ -66,8 +71,7 @@
   defineComponent("ion-textarea", IonTextarea);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-textarea
   {fireFocusEvents}
   {color}
   {autocapitalize}
@@ -89,12 +93,12 @@
   {wrap}
   {autoGrow}
   {value}
-  {...$$props}
   on:ionChange={ionChange}
   on:ionInput
   on:ionStyle
   on:ionBlur
   on:ionFocus
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -143,4 +147,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-textarea>

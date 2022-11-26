@@ -3,15 +3,13 @@
   import { IonNote } from "@ionic/core/components/ion-note";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-note";
   //@ts-ignore
   export let color: Color = undefined;
 
   defineComponent("ion-note", IonNote);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-note
   {color}
   {...$$props}
   on:focus
@@ -62,4 +60,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-note>

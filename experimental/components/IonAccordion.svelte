@@ -2,7 +2,6 @@
   import { IonAccordion } from "@ionic/core/components/ion-accordion";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-accordion";
   //@ts-ignore
   export let value = `ion-accordion-${accordionIds++}`;
   //@ts-ignore
@@ -17,8 +16,7 @@
   defineComponent("ion-accordion", IonAccordion);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-accordion
   {value}
   {disabled}
   {readonly}
@@ -72,5 +70,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='header' /><slot='content' />
+</ion-accordion>

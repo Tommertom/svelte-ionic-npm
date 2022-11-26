@@ -3,15 +3,13 @@
   import { IonBadge } from "@ionic/core/components/ion-badge";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-badge";
   //@ts-ignore
   export let color: Color = undefined;
 
   defineComponent("ion-badge", IonBadge);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-badge
   {color}
   {...$$props}
   on:focus
@@ -62,4 +60,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-badge>

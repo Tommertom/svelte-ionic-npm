@@ -3,7 +3,6 @@
   import { IonBreadcrumb } from "@ionic/core/components/ion-breadcrumb";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-breadcrumb";
   //@ts-ignore
   export let collapsed = false;
   //@ts-ignore
@@ -34,8 +33,7 @@
   defineComponent("ion-breadcrumb", IonBreadcrumb);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-breadcrumb
   {collapsed}
   {last}
   {showCollapsedIndicator}
@@ -49,9 +47,9 @@
   {target}
   {routerDirection}
   {routerAnimation}
-  {...$$props}
   on:ionFocus
   on:ionBlur
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -99,5 +97,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='start' /><slot='end' /><slot='separator' />
+</ion-breadcrumb>

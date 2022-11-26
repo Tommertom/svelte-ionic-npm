@@ -9,7 +9,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-radio-group";
   //@ts-ignore
   export let allowEmptySelection = false;
   //@ts-ignore
@@ -20,13 +19,12 @@
   defineComponent("ion-radio-group", IonRadioGroup);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-radio-group
   {allowEmptySelection}
   {name}
   {value}
-  {...$$props}
   on:ionChange={ionChange}
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -75,4 +73,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-radio-group>

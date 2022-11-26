@@ -2,7 +2,6 @@
   import { IonBackdrop } from "@ionic/core/components/ion-backdrop";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-backdrop";
   //@ts-ignore
   export let visible = true;
   //@ts-ignore
@@ -13,13 +12,12 @@
   defineComponent("ion-backdrop", IonBackdrop);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-backdrop
   {visible}
   {tappable}
   {stopPropagation}
-  {...$$props}
   on:ionBackdropTap
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -68,4 +66,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-backdrop>

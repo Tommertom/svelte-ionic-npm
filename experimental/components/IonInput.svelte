@@ -10,7 +10,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-input";
   //@ts-ignore
   export let fireFocusEvents = true;
   //@ts-ignore
@@ -34,8 +33,14 @@
   //@ts-ignore
   export let disabled = false;
   //@ts-ignore
-  export let enterkeyhint: "enter" | "done" | "go" | "next" | "previous" | "search" | "send" =
-    undefined;
+  export let enterkeyhint:
+    | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send" = undefined;
   //@ts-ignore
   export let inputmode:
     | "none"
@@ -80,8 +85,7 @@
   defineComponent("ion-input", IonInput);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-input
   {fireFocusEvents}
   {color}
   {accept}
@@ -110,12 +114,12 @@
   {size}
   {type}
   {value}
-  {...$$props}
   on:ionInput
   on:ionChange={ionChange}
   on:ionBlur
   on:ionFocus
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -164,4 +168,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-input>

@@ -2,13 +2,10 @@
   import { IonAvatar } from "@ionic/core/components/ion-avatar";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-avatar";
-
   defineComponent("ion-avatar", IonAvatar);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-avatar
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-avatar>

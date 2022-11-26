@@ -10,7 +10,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-segment";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -27,18 +26,17 @@
   defineComponent("ion-segment", IonSegment);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-segment
   {color}
   {disabled}
   {scrollable}
   {swipeGesture}
   {value}
   {selectOnFocus}
-  {...$$props}
   on:ionChange={ionChange}
   on:ionSelect
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -87,4 +85,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-segment>

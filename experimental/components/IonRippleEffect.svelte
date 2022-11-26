@@ -2,15 +2,13 @@
   import { IonRippleEffect } from "@ionic/core/components/ion-ripple-effect";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-ripple-effect";
   //@ts-ignore
   export let type: "bounded" | "unbounded" = "bounded";
 
   defineComponent("ion-ripple-effect", IonRippleEffect);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-ripple-effect
   {type}
   {...$$props}
   on:focus
@@ -61,4 +59,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-ripple-effect>

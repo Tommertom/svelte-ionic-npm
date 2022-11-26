@@ -3,7 +3,6 @@
   import { IonProgressBar } from "@ionic/core/components/ion-progress-bar";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-progress-bar";
   //@ts-ignore
   export let type: "determinate" | "indeterminate" = "determinate";
   //@ts-ignore
@@ -18,8 +17,7 @@
   defineComponent("ion-progress-bar", IonProgressBar);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-progress-bar
   {type}
   {reversed}
   {value}
@@ -74,4 +72,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-progress-bar>

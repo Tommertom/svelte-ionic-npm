@@ -2,13 +2,10 @@
   import { IonItemGroup } from "@ionic/core/components/ion-item-group";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-item-group";
-
   defineComponent("ion-item-group", IonItemGroup);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-item-group
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-item-group>

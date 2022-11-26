@@ -2,7 +2,6 @@
   import { IonCol } from "@ionic/core/components/ion-col";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-col";
   //@ts-ignore
   export let offset: string = undefined;
   //@ts-ignore
@@ -55,8 +54,7 @@
   defineComponent("ion-col", IonCol);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-col
   {offset}
   {offsetXs}
   {offsetSm}
@@ -130,4 +128,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-col>

@@ -1,9 +1,12 @@
 <script lang="ts">
-  import type { AnimationBuilder, IonicSafeString, SpinnerTypes } from "@ionic/core";
+  import type {
+    AnimationBuilder,
+    IonicSafeString,
+    SpinnerTypes,
+  } from "@ionic/core";
   import { IonLoading } from "@ionic/core/components/ion-loading";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-loading";
   //@ts-ignore
   export let overlayIndex: number;
   //@ts-ignore
@@ -34,8 +37,7 @@
   defineComponent("ion-loading", IonLoading);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-loading
   {overlayIndex}
   {keyboardClose}
   {enterAnimation}
@@ -49,11 +51,11 @@
   {translucent}
   {animated}
   {htmlAttributes}
-  {...$$props}
   on:ionLoadingDidPresent
   on:ionLoadingWillPresent
   on:ionLoadingWillDismiss
   on:ionLoadingDidDismiss
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -102,4 +104,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-loading>

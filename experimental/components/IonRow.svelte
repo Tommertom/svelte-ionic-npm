@@ -2,13 +2,10 @@
   import { IonRow } from "@ionic/core/components/ion-row";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-row";
-
   defineComponent("ion-row", IonRow);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-row
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-row>

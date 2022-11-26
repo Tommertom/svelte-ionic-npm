@@ -2,7 +2,6 @@
   import { IonSelectOption } from "@ionic/core/components/ion-select-option";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-select-option";
   //@ts-ignore
   export let disabled = false;
   //@ts-ignore
@@ -11,8 +10,7 @@
   defineComponent("ion-select-option", IonSelectOption);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-select-option
   {disabled}
   {value}
   {...$$props}
@@ -64,4 +62,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-select-option>

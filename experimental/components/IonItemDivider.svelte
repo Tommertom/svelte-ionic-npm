@@ -3,7 +3,6 @@
   import { IonItemDivider } from "@ionic/core/components/ion-item-divider";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-item-divider";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -12,8 +11,7 @@
   defineComponent("ion-item-divider", IonItemDivider);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-item-divider
   {color}
   {sticky}
   {...$$props}
@@ -64,5 +62,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='start' /><slot='end' />
+</ion-item-divider>

@@ -2,13 +2,10 @@
   import { IonReorder } from "@ionic/core/components/ion-reorder";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-reorder";
-
   defineComponent("ion-reorder", IonReorder);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-reorder
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-reorder>

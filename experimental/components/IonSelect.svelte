@@ -9,7 +9,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-select";
   //@ts-ignore
   export let disabled = false;
   //@ts-ignore
@@ -32,8 +31,7 @@
   defineComponent("ion-select", IonSelect);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-select
   {disabled}
   {cancelText}
   {okText}
@@ -43,13 +41,13 @@
   {multiple}
   {compareWith}
   {value}
-  {...$$props}
   on:ionChange={ionChange}
   on:ionCancel
   on:ionDismiss
   on:ionFocus
   on:ionBlur
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -98,4 +96,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-select>

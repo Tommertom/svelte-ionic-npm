@@ -2,18 +2,16 @@
   import { IonReorderGroup } from "@ionic/core/components/ion-reorder-group";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-reorder-group";
   //@ts-ignore
   export let disabled = true;
 
   defineComponent("ion-reorder-group", IonReorderGroup);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-reorder-group
   {disabled}
-  {...$$props}
   on:ionItemReorder
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -62,4 +60,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-reorder-group>

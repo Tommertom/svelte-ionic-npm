@@ -10,7 +10,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-datetime";
   //@ts-ignore
   export let color: Color = "primary";
   //@ts-ignore
@@ -48,7 +47,8 @@
   //@ts-ignore
   export let firstDayOfWeek = 0;
   //@ts-ignore
-  export let titleSelectedDatesFormatter: TitleSelectedDatesFormatter = undefined;
+  export let titleSelectedDatesFormatter: TitleSelectedDatesFormatter =
+    undefined;
   //@ts-ignore
   export let multiple = false;
   //@ts-ignore
@@ -71,8 +71,7 @@
   defineComponent("ion-datetime", IonDatetime);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-datetime
   {color}
   {name}
   {disabled}
@@ -101,13 +100,13 @@
   {hourCycle}
   {size}
   {preferWheel}
-  {...$$props}
   on:ionCancel
   on:ionChange={ionChange}
   on:ionFocus
   on:ionBlur
   on:ionStyle
   on:ionRender
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -155,5 +154,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='buttons' /><slot='time-label' /><slot='title' />
+</ion-datetime>

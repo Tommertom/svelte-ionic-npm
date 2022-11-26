@@ -2,13 +2,10 @@
   import { IonCardContent } from "@ionic/core/components/ion-card-content";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-card-content";
-
   defineComponent("ion-card-content", IonCardContent);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-card-content
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-card-content>

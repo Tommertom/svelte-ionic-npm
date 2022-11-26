@@ -11,7 +11,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-checkbox";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -28,19 +27,18 @@
   defineComponent("ion-checkbox", IonCheckbox);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-checkbox
   {color}
   {name}
   {checked}
   {indeterminate}
   {disabled}
   {value}
-  {...$$props}
   on:ionChange={ionChange}
   on:ionFocus
   on:ionBlur
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -89,4 +87,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-checkbox>

@@ -3,7 +3,6 @@
   import { IonButton } from "@ionic/core/components/ion-button";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-button";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -40,8 +39,7 @@
   defineComponent("ion-button", IonButton);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-button
   {color}
   {buttonType}
   {disabled}
@@ -58,9 +56,9 @@
   {target}
   {type}
   {form}
-  {...$$props}
   on:ionFocus
   on:ionBlur
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -108,5 +106,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='icon-only' /><slot='start' /><slot='end' />
+</ion-button>

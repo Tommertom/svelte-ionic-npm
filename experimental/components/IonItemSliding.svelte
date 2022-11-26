@@ -2,18 +2,16 @@
   import { IonItemSliding } from "@ionic/core/components/ion-item-sliding";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-item-sliding";
   //@ts-ignore
   export let disabled = false;
 
   defineComponent("ion-item-sliding", IonItemSliding);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-item-sliding
   {disabled}
-  {...$$props}
   on:ionDrag
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -62,4 +60,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-item-sliding>

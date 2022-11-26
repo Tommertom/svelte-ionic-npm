@@ -9,7 +9,6 @@
   import { IonAlert } from "@ionic/core/components/ion-alert";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-alert";
   //@ts-ignore
   export let overlayIndex: number;
   //@ts-ignore
@@ -42,8 +41,7 @@
   defineComponent("ion-alert", IonAlert);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-alert
   {overlayIndex}
   {keyboardClose}
   {enterAnimation}
@@ -58,11 +56,11 @@
   {translucent}
   {animated}
   {htmlAttributes}
-  {...$$props}
   on:ionAlertDidPresent
   on:ionAlertWillPresent
   on:ionAlertWillDismiss
   on:ionAlertDidDismiss
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -111,4 +109,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-alert>

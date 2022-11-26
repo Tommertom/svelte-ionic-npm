@@ -11,7 +11,6 @@
     never: "",
   };
 
-  const tag = "ion-split-pane";
   //@ts-ignore
   export let contentId: string = undefined;
   //@ts-ignore
@@ -22,13 +21,12 @@
   defineComponent("ion-split-pane", IonSplitPane);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-split-pane
   {contentId}
   {disabled}
   {when}
-  {...$$props}
   on:ionSplitPaneVisible
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -77,4 +75,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-split-pane>

@@ -2,7 +2,6 @@
   import { IonSlides } from "@ionic/core/components/ion-slides";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-slides";
   //@ts-ignore
   export let options: any = {}; // SwiperOptions;  // TODO
   //@ts-ignore
@@ -13,12 +12,10 @@
   defineComponent("ion-slides", IonSlides);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-slides
   {options}
   {pager}
   {scrollbar}
-  {...$$props}
   on:ionSlidesDidLoad
   on:ionSlideTap
   on:ionSlideDoubleTap
@@ -35,6 +32,7 @@
   on:ionSlideReachEnd
   on:ionSlideTouchStart
   on:ionSlideTouchEnd
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -83,4 +81,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-slides>

@@ -2,7 +2,6 @@
   import { IonInfiniteScroll } from "@ionic/core/components/ion-infinite-scroll";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-infinite-scroll";
   //@ts-ignore
   export let threshold = "15%";
   //@ts-ignore
@@ -13,13 +12,12 @@
   defineComponent("ion-infinite-scroll", IonInfiniteScroll);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-infinite-scroll
   {threshold}
   {disabled}
   {position}
-  {...$$props}
   on:ionInfinite
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -68,4 +66,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-infinite-scroll>

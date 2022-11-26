@@ -2,13 +2,10 @@
   import { IonApp } from "@ionic/core/components/ion-app";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-app";
-
   defineComponent("ion-app", IonApp);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-app
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-app>

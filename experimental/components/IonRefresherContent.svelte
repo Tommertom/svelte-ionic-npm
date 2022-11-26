@@ -3,7 +3,6 @@
   import { IonRefresherContent } from "@ionic/core/components/ion-refresher-content";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-refresher-content";
   //@ts-ignore
   export let pullingIcon: SpinnerTypes | string | null = undefined;
   //@ts-ignore
@@ -16,8 +15,7 @@
   defineComponent("ion-refresher-content", IonRefresherContent);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-refresher-content
   {pullingIcon}
   {pullingText}
   {refreshingSpinner}
@@ -71,4 +69,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-refresher-content>

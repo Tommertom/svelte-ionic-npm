@@ -3,7 +3,6 @@
   import { IonTitle } from "@ionic/core/components/ion-title";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-title";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -12,12 +11,11 @@
   defineComponent("ion-title", IonTitle);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-title
   {color}
   {size}
-  {...$$props}
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -66,4 +64,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-title>

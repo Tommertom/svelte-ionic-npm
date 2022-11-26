@@ -2,13 +2,10 @@
   import { IonSlide } from "@ionic/core/components/ion-slide";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-slide";
-
   defineComponent("ion-slide", IonSlide);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-slide
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-slide>

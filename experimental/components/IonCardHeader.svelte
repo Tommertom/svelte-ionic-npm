@@ -3,7 +3,6 @@
   import { IonCardHeader } from "@ionic/core/components/ion-card-header";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-card-header";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -12,8 +11,7 @@
   defineComponent("ion-card-header", IonCardHeader);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-card-header
   {color}
   {translucent}
   {...$$props}
@@ -65,4 +63,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-card-header>

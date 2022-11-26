@@ -10,7 +10,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-range";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -26,7 +25,8 @@
   //@ts-ignore
   export let pin = false;
   //@ts-ignore
-  export let pinFormatter: PinFormatter = (value: number): number => Math.round(value);
+  export let pinFormatter: PinFormatter = (value: number): number =>
+    Math.round(value);
   //@ts-ignore
   export let snaps = false;
   //@ts-ignore
@@ -43,8 +43,7 @@
   defineComponent("ion-range", IonRange);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-range
   {color}
   {debounce}
   {name}
@@ -59,13 +58,13 @@
   {activeBarStart}
   {disabled}
   {value}
-  {...$$props}
   on:ionChange={ionChange}
   on:ionStyle
   on:ionFocus
   on:ionBlur
   on:ionKnobMoveStart
   on:ionKnobMoveEnd
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -113,5 +112,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='start' /><slot='end' />
+</ion-range>

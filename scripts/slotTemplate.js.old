@@ -1,15 +1,8 @@
-module.exports = `<script lang="ts">
-    <IMPORTS>
-    import { <COMPONENT> } from '@ionic/core/components/<TAG>';
-	import { defineComponent } from 'ionic-svelte';
-    
-    <EXTRA>
-
-    <DECLRS>
-    defineComponent('<TAG>', <COMPONENT>);
-</script>
+module.exports =
+    `
 
 <<TAG>
+this={tag}
 <PROPS>
 <IONEVENTS>
 {...$$props}
@@ -60,4 +53,4 @@ on:pointerleave
 on:gotpointercapture
 on:lostpointercapture
 on:click><SLOTCODE> </<TAG>>
-`;
+`

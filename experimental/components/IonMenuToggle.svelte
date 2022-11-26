@@ -2,7 +2,6 @@
   import { IonMenuToggle } from "@ionic/core/components/ion-menu-toggle";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-menu-toggle";
   //@ts-ignore
   export let menu: string = undefined;
   //@ts-ignore
@@ -11,8 +10,7 @@
   defineComponent("ion-menu-toggle", IonMenuToggle);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-menu-toggle
   {menu}
   {autoHide}
   {...$$props}
@@ -64,4 +62,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-menu-toggle>

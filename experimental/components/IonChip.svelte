@@ -3,7 +3,6 @@
   import { IonChip } from "@ionic/core/components/ion-chip";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-chip";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -14,8 +13,7 @@
   defineComponent("ion-chip", IonChip);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-chip
   {color}
   {outline}
   {disabled}
@@ -68,4 +66,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-chip>

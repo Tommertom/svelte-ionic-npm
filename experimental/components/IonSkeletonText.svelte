@@ -2,15 +2,13 @@
   import { IonSkeletonText } from "@ionic/core/components/ion-skeleton-text";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-skeleton-text";
   //@ts-ignore
   export let animated = false;
 
   defineComponent("ion-skeleton-text", IonSkeletonText);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-skeleton-text
   {animated}
   {...$$props}
   on:focus
@@ -61,4 +59,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-skeleton-text>

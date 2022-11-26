@@ -3,7 +3,6 @@
   import { IonRadio } from "@ionic/core/components/ion-radio";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-radio";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -16,16 +15,15 @@
   defineComponent("ion-radio", IonRadio);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-radio
   {color}
   {name}
   {disabled}
   {value}
-  {...$$props}
   on:ionStyle
   on:ionFocus
   on:ionBlur
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -74,4 +72,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-radio>

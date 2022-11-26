@@ -1,4 +1,3 @@
-
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/core/css/core.css";
 
@@ -109,107 +108,107 @@ import { IonToast } from "@ionic/core/components/ion-toast";
 
 // taken from Vue implementation of ionic
 export const defineComponent = (tagName: string, customElement: any) => {
-    if (typeof customElements === "undefined") return;
+  if (typeof customElements === "undefined") return;
 
-    if (!customElements.get(tagName)) {
-        customElements.define(tagName, customElement);
-    }
+  if (!customElements.get(tagName)) {
+    customElements.define(tagName, customElement);
+  }
 };
 
 export const defineIonComponents = () => {
-    defineComponent("ion-accordion", IonAccordion);
-    defineComponent("ion-accordion-group", IonAccordionGroup);
-    defineComponent("ion-app", IonApp);
-    defineComponent("ion-avatar", IonAvatar);
-    defineComponent("ion-backdrop", IonBackdrop);
-    defineComponent("ion-back-button", IonBackButton);
-    defineComponent("ion-badge", IonBadge);
-    defineComponent("ion-breadcrumb", IonBreadcrumb);
-    defineComponent("ion-breadcrumbs", IonBreadcrumbs);
-    defineComponent("ion-button", IonButton);
-    defineComponent("ion-buttons", IonButtons);
-    defineComponent("ion-card", IonCard);
-    defineComponent("ion-card-content", IonCardContent);
-    defineComponent("ion-card-header", IonCardHeader);
-    defineComponent("ion-card-subtitle", IonCardSubtitle);
-    defineComponent("ion-card-title", IonCardTitle);
-    defineComponent("ion-checkbox", IonCheckbox);
-    defineComponent("ion-chip", IonChip);
-    defineComponent("ion-col", IonCol);
-    defineComponent("ion-content", IonContent);
-    defineComponent("ion-datetime", IonDatetime);
-    defineComponent("ion-fab", IonFab);
-    defineComponent("ion-fab-button", IonFabButton);
-    defineComponent("ion-fab-list", IonFabList);
-    defineComponent("ion-footer", IonFooter);
-    defineComponent("ion-grid", IonGrid);
-    defineComponent("ion-header", IonHeader);
-    defineComponent("ion-icon", IonIcon);
-    defineComponent("ion-img", IonImg);
-    defineComponent("ion-infinite-scroll", IonInfiniteScroll);
-    defineComponent("ion-infinite-scroll-content", IonInfiniteScrollContent);
-    defineComponent("ion-input", IonInput);
-    defineComponent("ion-item", IonItem);
-    defineComponent("ion-item-divider", IonItemDivider);
-    defineComponent("ion-item-group", IonItemGroup);
-    defineComponent("ion-item-option", IonItemOption);
-    defineComponent("ion-item-options", IonItemOptions);
-    defineComponent("ion-item-sliding", IonItemSliding);
-    defineComponent("ion-label", IonLabel);
-    defineComponent("ion-list", IonList);
-    defineComponent("ion-list-header", IonListHeader);
-    defineComponent("ion-menu", IonMenu);
-    defineComponent("ion-menu-button", IonMenuButton);
-    defineComponent("ion-menu-toggle", IonMenuToggle);
-    defineComponent("ion-nav", IonNav);
-    defineComponent("ion-nav-link", IonNavLink);
-    defineComponent("ion-note", IonNote);
-    defineComponent("ion-progress-bar", IonProgressBar);
-    defineComponent("ion-popover", IonPopover);
-    defineComponent("ion-radio", IonRadio);
-    defineComponent("ion-radio-group", IonRadioGroup);
-    defineComponent("ion-range", IonRange);
-    defineComponent("ion-refresher", IonRefresher);
-    defineComponent("ion-refresher-content", IonRefresherContent);
-    defineComponent("ion-reorder", IonReorder);
-    defineComponent("ion-reorder-group", IonReorderGroup);
-    defineComponent("ion-ripple-effect", IonRippleEffect);
-    defineComponent("ion-row", IonRow);
-    defineComponent("ion-searchbar", IonSearchbar);
-    defineComponent("ion-segment", IonSegment);
-    defineComponent("ion-segment-button", IonSegmentButton);
-    defineComponent("ion-select", IonSelect);
-    defineComponent("ion-select-option", IonSelectOption);
-    defineComponent("ion-select-popover", IonSelectPopover);
-    defineComponent("ion-skeleton-text", IonSkeletonText);
-    defineComponent("ion-slide", IonSlide);
-    defineComponent("ion-slides", IonSlides);
-    defineComponent("ion-spinner", IonSpinner);
-    defineComponent("ion-split-pane", IonSplitPane);
-    defineComponent("ion-tab", IonTab);
-    defineComponent("ion-tabs", IonTabs);
-    defineComponent("ion-tab-bar", IonTabBar);
-    defineComponent("ion-tab-button", IonTabButton);
+  defineComponent("ion-accordion", IonAccordion);
+  defineComponent("ion-accordion-group", IonAccordionGroup);
+  defineComponent("ion-app", IonApp);
+  defineComponent("ion-avatar", IonAvatar);
+  defineComponent("ion-backdrop", IonBackdrop);
+  defineComponent("ion-back-button", IonBackButton);
+  defineComponent("ion-badge", IonBadge);
+  defineComponent("ion-breadcrumb", IonBreadcrumb);
+  defineComponent("ion-breadcrumbs", IonBreadcrumbs);
+  defineComponent("ion-button", IonButton);
+  defineComponent("ion-buttons", IonButtons);
+  defineComponent("ion-card", IonCard);
+  defineComponent("ion-card-content", IonCardContent);
+  defineComponent("ion-card-header", IonCardHeader);
+  defineComponent("ion-card-subtitle", IonCardSubtitle);
+  defineComponent("ion-card-title", IonCardTitle);
+  defineComponent("ion-checkbox", IonCheckbox);
+  defineComponent("ion-chip", IonChip);
+  defineComponent("ion-col", IonCol);
+  defineComponent("ion-content", IonContent);
+  defineComponent("ion-datetime", IonDatetime);
+  defineComponent("ion-fab", IonFab);
+  defineComponent("ion-fab-button", IonFabButton);
+  defineComponent("ion-fab-list", IonFabList);
+  defineComponent("ion-footer", IonFooter);
+  defineComponent("ion-grid", IonGrid);
+  defineComponent("ion-header", IonHeader);
+  defineComponent("ion-icon", IonIcon);
+  defineComponent("ion-img", IonImg);
+  defineComponent("ion-infinite-scroll", IonInfiniteScroll);
+  defineComponent("ion-infinite-scroll-content", IonInfiniteScrollContent);
+  defineComponent("ion-input", IonInput);
+  defineComponent("ion-item", IonItem);
+  defineComponent("ion-item-divider", IonItemDivider);
+  defineComponent("ion-item-group", IonItemGroup);
+  defineComponent("ion-item-option", IonItemOption);
+  defineComponent("ion-item-options", IonItemOptions);
+  defineComponent("ion-item-sliding", IonItemSliding);
+  defineComponent("ion-label", IonLabel);
+  defineComponent("ion-list", IonList);
+  defineComponent("ion-list-header", IonListHeader);
+  defineComponent("ion-menu", IonMenu);
+  defineComponent("ion-menu-button", IonMenuButton);
+  defineComponent("ion-menu-toggle", IonMenuToggle);
+  defineComponent("ion-nav", IonNav);
+  defineComponent("ion-nav-link", IonNavLink);
+  defineComponent("ion-note", IonNote);
+  defineComponent("ion-progress-bar", IonProgressBar);
+  defineComponent("ion-popover", IonPopover);
+  defineComponent("ion-radio", IonRadio);
+  defineComponent("ion-radio-group", IonRadioGroup);
+  defineComponent("ion-range", IonRange);
+  defineComponent("ion-refresher", IonRefresher);
+  defineComponent("ion-refresher-content", IonRefresherContent);
+  defineComponent("ion-reorder", IonReorder);
+  defineComponent("ion-reorder-group", IonReorderGroup);
+  defineComponent("ion-ripple-effect", IonRippleEffect);
+  defineComponent("ion-row", IonRow);
+  defineComponent("ion-searchbar", IonSearchbar);
+  defineComponent("ion-segment", IonSegment);
+  defineComponent("ion-segment-button", IonSegmentButton);
+  defineComponent("ion-select", IonSelect);
+  defineComponent("ion-select-option", IonSelectOption);
+  defineComponent("ion-select-popover", IonSelectPopover);
+  defineComponent("ion-skeleton-text", IonSkeletonText);
+  defineComponent("ion-slide", IonSlide);
+  defineComponent("ion-slides", IonSlides);
+  defineComponent("ion-spinner", IonSpinner);
+  defineComponent("ion-split-pane", IonSplitPane);
+  defineComponent("ion-tab", IonTab);
+  defineComponent("ion-tabs", IonTabs);
+  defineComponent("ion-tab-bar", IonTabBar);
+  defineComponent("ion-tab-button", IonTabButton);
 
-    defineComponent("ion-text", IonText);
-    defineComponent("ion-textarea", IonTextarea);
-    defineComponent("ion-thumbnail", IonThumbnail);
-    defineComponent("ion-title", IonTitle);
-    defineComponent("ion-toggle", IonToggle);
-    defineComponent("ion-toolbar", IonToolbar);
-    defineComponent("ion-virtual-scroll", IonVirtualScroll);
+  defineComponent("ion-text", IonText);
+  defineComponent("ion-textarea", IonTextarea);
+  defineComponent("ion-thumbnail", IonThumbnail);
+  defineComponent("ion-title", IonTitle);
+  defineComponent("ion-toggle", IonToggle);
+  defineComponent("ion-toolbar", IonToolbar);
+  defineComponent("ion-virtual-scroll", IonVirtualScroll);
 
-    defineComponent("ion-action-sheet", IonActionSheet);
-    defineComponent("ion-alert", IonAlert);
-    defineComponent("ion-loading", IonLoading);
-    defineComponent("ion-modal", IonModal);
-    defineComponent("ion-picker", IonPicker);
-    defineComponent("ion-picker-column", IonPickerColumn);
-    defineComponent("ion-picker-column-internal", IonPickerColumnInternal);
-    defineComponent("ion-picker-internal", IonPickerInternal);
+  defineComponent("ion-action-sheet", IonActionSheet);
+  defineComponent("ion-alert", IonAlert);
+  defineComponent("ion-loading", IonLoading);
+  defineComponent("ion-modal", IonModal);
+  defineComponent("ion-picker", IonPicker);
+  defineComponent("ion-picker-column", IonPickerColumn);
+  defineComponent("ion-picker-column-internal", IonPickerColumnInternal);
+  defineComponent("ion-picker-internal", IonPickerInternal);
 
-    defineComponent("ion-toast", IonToast);
+  defineComponent("ion-toast", IonToast);
 
-    // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
-    // https://github.com/ionic-team/ionic-framework/blob/5bb1414f7fa04ea07954cb3f68883ee2f162586a/packages/react/src/components/proxies.ts
-}
+  // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
+  // https://github.com/ionic-team/ionic-framework/blob/5bb1414f7fa04ea07954cb3f68883ee2f162586a/packages/react/src/components/proxies.ts
+};

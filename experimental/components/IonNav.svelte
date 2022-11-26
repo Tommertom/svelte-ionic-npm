@@ -3,7 +3,6 @@
   import { IonNav } from "@ionic/core/components/ion-nav";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-nav";
   //@ts-ignore
   export let delegate: FrameworkDelegate = undefined;
   //@ts-ignore
@@ -20,16 +19,15 @@
   defineComponent("ion-nav", IonNav);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-nav
   {delegate}
   {swipeGesture}
   {animated}
   {animation}
   {rootParams}
   {root}
-  {...$$props}
   on:ionNavWillLoad
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -78,4 +76,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-nav>

@@ -2,7 +2,6 @@
   import { IonFab } from "@ionic/core/components/ion-fab";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-fab";
   //@ts-ignore
   export let horizontal: "start" | "end" | "center" = undefined;
   //@ts-ignore
@@ -15,8 +14,7 @@
   defineComponent("ion-fab", IonFab);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-fab
   {horizontal}
   {vertical}
   {edge}
@@ -70,4 +68,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-fab>

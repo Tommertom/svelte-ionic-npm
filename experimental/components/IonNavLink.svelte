@@ -3,7 +3,6 @@
   import { IonNavLink } from "@ionic/core/components/ion-nav-link";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-nav-link";
   //@ts-ignore
   export let component: NavComponent = undefined;
   //@ts-ignore
@@ -16,8 +15,7 @@
   defineComponent("ion-nav-link", IonNavLink);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-nav-link
   {component}
   {componentProps}
   {routerDirection}
@@ -71,4 +69,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-nav-link>

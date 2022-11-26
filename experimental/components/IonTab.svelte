@@ -2,7 +2,6 @@
   import { IonTab } from "@ionic/core/components/ion-tab";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-tab";
   //@ts-ignore
   export let active = false;
   //@ts-ignore
@@ -15,8 +14,7 @@
   defineComponent("ion-tab", IonTab);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-tab
   {active}
   {delegate}
   {tab}
@@ -70,4 +68,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-tab>

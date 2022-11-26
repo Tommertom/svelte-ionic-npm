@@ -2,7 +2,6 @@
   import { IonSelectPopover } from "@ionic/core/components/ion-select-popover";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-select-popover";
   //@ts-ignore
   export let header: string = undefined;
   //@ts-ignore
@@ -17,8 +16,7 @@
   defineComponent("ion-select-popover", IonSelectPopover);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-select-popover
   {header}
   {subHeader}
   {message}
@@ -73,4 +71,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-select-popover>

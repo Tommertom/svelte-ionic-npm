@@ -3,15 +3,13 @@
   import { IonToolbar } from "@ionic/core/components/ion-toolbar";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-toolbar";
   //@ts-ignore
   export let color: Color = undefined;
 
   defineComponent("ion-toolbar", IonToolbar);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-toolbar
   {color}
   {...$$props}
   on:focus
@@ -61,5 +59,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='start' /><slot='secondary' /><slot='primary' /><slot='end' />
+</ion-toolbar>

@@ -1,9 +1,12 @@
 <script lang="ts">
-  import type { AnimationBuilder, PickerButton, PickerColumn } from "@ionic/core";
+  import type {
+    AnimationBuilder,
+    PickerButton,
+    PickerColumn,
+  } from "@ionic/core";
   import { IonPicker } from "@ionic/core/components/ion-picker";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-picker";
   //@ts-ignore
   export let overlayIndex: number;
   //@ts-ignore
@@ -32,8 +35,7 @@
   defineComponent("ion-picker", IonPicker);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-picker
   {overlayIndex}
   {keyboardClose}
   {enterAnimation}
@@ -46,11 +48,11 @@
   {backdropDismiss}
   {animated}
   {htmlAttributes}
-  {...$$props}
   on:ionPickerDidPresent
   on:ionPickerWillPresent
   on:ionPickerWillDismiss
   on:ionPickerDidDismiss
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -99,4 +101,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-picker>

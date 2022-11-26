@@ -2,13 +2,10 @@
   import { IonIcon } from "@ionic/core/components/ion-icon";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-icon";
-
   defineComponent("ion-icon", IonIcon);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-icon
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-icon>

@@ -3,7 +3,6 @@
   import { IonItemOption } from "@ionic/core/components/ion-item-option";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-item-option";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -24,8 +23,7 @@
   defineComponent("ion-item-option", IonItemOption);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-item-option
   {color}
   {disabled}
   {download}
@@ -82,5 +80,6 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='top' /><slot='start' /><slot='icon-only' /><slot='end'
+  /><slot='bottom' />
+</ion-item-option>

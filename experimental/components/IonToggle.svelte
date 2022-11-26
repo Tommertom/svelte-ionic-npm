@@ -10,7 +10,6 @@
     dispatch("ionChange", event.detail);
   };
 
-  const tag = "ion-toggle";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -27,19 +26,18 @@
   defineComponent("ion-toggle", IonToggle);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-toggle
   {color}
   {name}
   {checked}
   {disabled}
   {value}
   {enableOnOffLabels}
-  {...$$props}
   on:ionChange={ionChange}
   on:ionFocus
   on:ionBlur
   on:ionStyle
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -88,4 +86,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-toggle>

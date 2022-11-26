@@ -1,9 +1,13 @@
 <script lang="ts">
-  import type { Color, AnimationBuilder, IonicSafeString, ToastButton } from "@ionic/core";
+  import type {
+    Color,
+    AnimationBuilder,
+    IonicSafeString,
+    ToastButton,
+  } from "@ionic/core";
   import { IonToast } from "@ionic/core/components/ion-toast";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-toast";
   //@ts-ignore
   export let overlayIndex: number;
   //@ts-ignore
@@ -38,8 +42,7 @@
   defineComponent("ion-toast", IonToast);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-toast
   {overlayIndex}
   {color}
   {enterAnimation}
@@ -55,11 +58,11 @@
   {animated}
   {icon}
   {htmlAttributes}
-  {...$$props}
   on:ionToastDidPresent
   on:ionToastWillPresent
   on:ionToastWillDismiss
   on:ionToastDidDismiss
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -108,4 +111,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-toast>

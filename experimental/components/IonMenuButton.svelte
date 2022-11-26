@@ -3,7 +3,6 @@
   import { IonMenuButton } from "@ionic/core/components/ion-menu-button";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-menu-button";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -18,8 +17,7 @@
   defineComponent("ion-menu-button", IonMenuButton);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-menu-button
   {color}
   {disabled}
   {menu}
@@ -74,4 +72,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-menu-button>

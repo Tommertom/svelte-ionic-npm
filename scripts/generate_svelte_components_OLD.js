@@ -45,9 +45,21 @@ const doStuff = () => {
     }, i * 1000);
   });
 
-  // bit hacky - but we need this output to check for errors
+  // Empty slot - very rude way to do this
   setTimeout(() => {
-    console.log("All slots identified", allSlots);
+    let emptyTekst = "<slot/>\n";
+    allSlots.forEach((slot) => {
+      emptyTekst =
+        emptyTekst +
+        `<slot name='${slot}' />
+        `;
+    });
+
+    console.log("Empty component\n", emptyTekst, allSlots);
+
+    fs.writeFile("generated/Empty.svelte", emptyTekst, function (err) {
+      if (err) return console.log(err);
+    });
   }, (components.length + 2) * 1000);
 };
 
@@ -176,15 +188,19 @@ const getDataFromGithub = async (ionlabel, component) => {
             //         throw "STOP"
             //    }
             // rude way to parse the slot
-
-            // we do some cleaning
             let slotRaw = line
               .replace("return", "")
               .replace("Time")
               .replace("Select Date", "");
             slotRaw = slotRaw
+              //    .replace('return', '') // date-time has special slot
+              //    .replace('Time') // date-time has special slot
               .replace('<slot name="', "")
               .replace('"></slot>', "")
+
+              //   .replace('">', '')
+              //   .replace('>Select Date</slot>', '/>')
+              //   .replace(`">undefined</slot>;'`, '')
               .trim()
               .replace(`">undefined</slot>;`, "")
               .replace('">', "")
@@ -201,12 +217,42 @@ const getDataFromGithub = async (ionlabel, component) => {
         let code = svelteTemplate;
         const component = pascalize(ionlabel);
 
-        //  the default slot and all named slots
-        let slotCode = "<slot/>";
+        // first generate the SLOT stuff
+        let slotTemplate = require("./slotTemplate");
+
+        //  the overall slot (not named)
+        let slotCode =
+          `
+                {#if ionSlot === undefined}
+                ` + slotTemplate.replace("<SLOTNAME>", "");
+
+        // then all slots present
         slots.forEach((slot) => {
-          slotCode = slotCode + `<slot='${slot}'/>`;
+          slotCode =
+            slotCode +
+            `
+                    {:else if ionSlot === '${slot}'}
+                    <Empty>
+                    ` +
+            slotTemplate.replace(/<SLOTNAME>/g, `slot='${slot}'`) +
+            `
+                    </Empty>`;
         });
+
+        slotCode =
+          slotCode +
+          `
+                {:else}
+            	Unknown slot '{ionSlot}' in ${component}
+                {/if}`;
         code = code.replace(/<SLOTCODE>/g, slotCode);
+
+        if (slots.length > 1) {
+          code = code.replace(
+            /<EMPTYIMPORT>/g,
+            `import { Empty } from "ionic-svelte/experimental";`
+          );
+        } else code = code.replace(/<EMPTYIMPORT>/g, ``);
 
         // do here the magic for the other tags - to check if we want to do a global replace here
         code = code.replace(/<TAG>/g, ionlabel);

@@ -2,7 +2,6 @@
   import { IonFabList } from "@ionic/core/components/ion-fab-list";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-fab-list";
   //@ts-ignore
   export let activated = false;
   //@ts-ignore
@@ -11,8 +10,7 @@
   defineComponent("ion-fab-list", IonFabList);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-fab-list
   {activated}
   {side}
   {...$$props}
@@ -64,4 +62,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-fab-list>

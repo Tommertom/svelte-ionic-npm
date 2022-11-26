@@ -3,7 +3,6 @@
   import { IonModal } from "@ionic/core/components/ion-modal";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-modal";
   //@ts-ignore
   export let hasController = false;
   //@ts-ignore
@@ -51,13 +50,13 @@
   //@ts-ignore
   export let keepContentsMounted = false;
   //@ts-ignore
-  export let canDismiss: undefined | boolean | (() => Promise<boolean>) = undefined;
+  export let canDismiss: undefined | boolean | (() => Promise<boolean>) =
+    undefined;
 
   defineComponent("ion-modal", IonModal);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-modal
   {hasController}
   {overlayIndex}
   {delegate}
@@ -82,12 +81,12 @@
   {trigger}
   {keepContentsMounted}
   {canDismiss}
-  {...$$props}
   on:ionModalDidPresent
   on:ionModalWillPresent
   on:ionModalWillDismiss
   on:ionModalDidDismiss
   on:ionBreakpointDidChange
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -136,4 +135,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-modal>

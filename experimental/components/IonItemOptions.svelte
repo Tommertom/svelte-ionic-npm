@@ -2,18 +2,16 @@
   import { IonItemOptions } from "@ionic/core/components/ion-item-options";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-item-options";
   //@ts-ignore
   export let side: Side = "end";
 
   defineComponent("ion-item-options", IonItemOptions);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-item-options
   {side}
-  {...$$props}
   on:ionSwipe
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -62,4 +60,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-item-options>

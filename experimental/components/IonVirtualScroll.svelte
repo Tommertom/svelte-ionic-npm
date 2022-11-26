@@ -2,7 +2,6 @@
   import { IonVirtualScroll } from "@ionic/core/components/ion-virtual-scroll";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-virtual-scroll";
   //@ts-ignore
   export let approxItemHeight = 45;
   //@ts-ignore
@@ -35,8 +34,7 @@
   defineComponent("ion-virtual-scroll", IonVirtualScroll);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-virtual-scroll
   {approxItemHeight}
   {approxHeaderHeight}
   {approxFooterHeight}
@@ -100,4 +98,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-virtual-scroll>

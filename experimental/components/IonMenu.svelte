@@ -2,7 +2,8 @@
   import { IonMenu } from "@ionic/core/components/ion-menu";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-menu";
+  throw "Manual action - migrate menu-id/content-id to menuId/contentId if present in your code";
+
   //@ts-ignore
   export let contentId: string = undefined;
   //@ts-ignore
@@ -21,8 +22,7 @@
   defineComponent("ion-menu", IonMenu);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-menu
   {contentId}
   {menuId}
   {type}
@@ -30,12 +30,12 @@
   {side}
   {swipeGesture}
   {maxEdgeStart}
-  {...$$props}
   on:ionWillOpen
   on:ionWillClose
   on:ionDidOpen
   on:ionDidClose
   on:ionMenuChange
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -84,4 +84,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-menu>

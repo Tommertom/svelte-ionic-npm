@@ -3,7 +3,6 @@
   import { IonActionSheet } from "@ionic/core/components/ion-action-sheet";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-action-sheet";
   //@ts-ignore
   export let overlayIndex: number;
   //@ts-ignore
@@ -32,8 +31,7 @@
   defineComponent("ion-action-sheet", IonActionSheet);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-action-sheet
   {overlayIndex}
   {keyboardClose}
   {enterAnimation}
@@ -46,11 +44,11 @@
   {translucent}
   {animated}
   {htmlAttributes}
-  {...$$props}
   on:ionActionSheetDidPresent
   on:ionActionSheetWillPresent
   on:ionActionSheetWillDismiss
   on:ionActionSheetDidDismiss
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -99,4 +97,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-action-sheet>

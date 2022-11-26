@@ -2,15 +2,13 @@
   import { IonButtons } from "@ionic/core/components/ion-buttons";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-buttons";
   //@ts-ignore
   export let collapse = false;
 
   defineComponent("ion-buttons", IonButtons);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-buttons
   {collapse}
   {...$$props}
   on:focus
@@ -61,4 +59,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-buttons>

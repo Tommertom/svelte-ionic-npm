@@ -3,7 +3,8 @@
   import { IonItem } from "@ionic/core/components/ion-item";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-item";
+  import { chevronForward } from "ionicons/icons";
+
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -42,8 +43,7 @@
   defineComponent("ion-item", IonItem);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-item
   {color}
   {button}
   {detail}
@@ -109,5 +109,5 @@
   on:gotpointercapture
   on:lostpointercapture
   on:click
-  ><slot />
-</svelte:element>
+  ><slot /><slot='start' /><slot='end' /><slot='error' /><slot='helper' />
+</ion-item>

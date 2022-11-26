@@ -2,7 +2,6 @@
   import { IonList } from "@ionic/core/components/ion-list";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-list";
   //@ts-ignore
   export let lines: "full" | "inset" | "none" = undefined;
   //@ts-ignore
@@ -11,8 +10,7 @@
   defineComponent("ion-list", IonList);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-list
   {lines}
   {inset}
   {...$$props}
@@ -64,4 +62,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-list>

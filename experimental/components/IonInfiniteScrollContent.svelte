@@ -3,7 +3,6 @@
   import { IonInfiniteScrollContent } from "@ionic/core/components/ion-infinite-scroll-content";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-infinite-scroll-content";
   //@ts-ignore
   export let loadingSpinner: SpinnerTypes | null = undefined;
   //@ts-ignore
@@ -12,8 +11,7 @@
   defineComponent("ion-infinite-scroll-content", IonInfiniteScrollContent);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-infinite-scroll-content
   {loadingSpinner}
   {loadingText}
   {...$$props}
@@ -65,4 +63,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-infinite-scroll-content>

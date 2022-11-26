@@ -3,7 +3,6 @@
   import { IonBreadcrumbs } from "@ionic/core/components/ion-breadcrumbs";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-breadcrumbs";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -16,14 +15,13 @@
   defineComponent("ion-breadcrumbs", IonBreadcrumbs);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-breadcrumbs
   {color}
   {maxItems}
   {itemsBeforeCollapse}
   {itemsAfterCollapse}
-  {...$$props}
   on:ionCollapsedClick
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -72,4 +70,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-breadcrumbs>

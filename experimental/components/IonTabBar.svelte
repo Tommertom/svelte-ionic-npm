@@ -3,7 +3,6 @@
   import { IonTabBar } from "@ionic/core/components/ion-tab-bar";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-tab-bar";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -14,13 +13,12 @@
   defineComponent("ion-tab-bar", IonTabBar);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-tab-bar
   {color}
   {selectedTab}
   {translucent}
-  {...$$props}
   on:ionTabBarChanged
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -69,4 +67,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-tab-bar>

@@ -2,15 +2,12 @@
   import { IonPickerInternal } from "@ionic/core/components/ion-picker-internal";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-picker-internal";
-
   defineComponent("ion-picker-internal", IonPickerInternal);
 </script>
 
-<svelte:element
-  this={tag}
-  {...$$props}
+<ion-picker-internal
   on:ionInputModeChange
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -59,4 +56,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-picker-internal>

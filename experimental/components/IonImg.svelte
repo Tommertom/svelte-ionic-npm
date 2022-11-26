@@ -2,7 +2,6 @@
   import { IonImg } from "@ionic/core/components/ion-img";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-img";
   //@ts-ignore
   export let alt: string = undefined;
   //@ts-ignore
@@ -11,14 +10,13 @@
   defineComponent("ion-img", IonImg);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-img
   {alt}
   {src}
-  {...$$props}
   on:ionImgWillLoad
   on:ionImgDidLoad
   on:ionError
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -67,4 +65,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-img>

@@ -3,7 +3,6 @@
   import { IonCard } from "@ionic/core/components/ion-card";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-card";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -28,8 +27,7 @@
   defineComponent("ion-card", IonCard);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-card
   {color}
   {button}
   {type}
@@ -89,4 +87,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-card>

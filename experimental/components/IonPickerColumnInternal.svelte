@@ -3,7 +3,6 @@
   import { IonPickerColumnInternal } from "@ionic/core/components/ion-picker-column-internal";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-picker-column-internal";
   //@ts-ignore
   export let items: PickerColumnItem[] = [];
   //@ts-ignore
@@ -16,14 +15,13 @@
   defineComponent("ion-picker-column-internal", IonPickerColumnInternal);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-picker-column-internal
   {items}
   {value}
   {color}
   {numericInput}
-  {...$$props}
   on:ionChange
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -72,4 +70,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-picker-column-internal>

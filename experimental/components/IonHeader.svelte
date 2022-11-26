@@ -2,7 +2,6 @@
   import { IonHeader } from "@ionic/core/components/ion-header";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-header";
   //@ts-ignore
   export let collapse: "condense" | "fade" = undefined;
   //@ts-ignore
@@ -11,8 +10,7 @@
   defineComponent("ion-header", IonHeader);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-header
   {collapse}
   {translucent}
   {...$$props}
@@ -64,4 +62,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-header>

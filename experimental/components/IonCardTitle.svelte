@@ -3,15 +3,13 @@
   import { IonCardTitle } from "@ionic/core/components/ion-card-title";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-card-title";
   //@ts-ignore
   export let color: Color = undefined;
 
   defineComponent("ion-card-title", IonCardTitle);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-card-title
   {color}
   {...$$props}
   on:focus
@@ -62,4 +60,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-card-title>

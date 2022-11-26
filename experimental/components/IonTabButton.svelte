@@ -2,7 +2,6 @@
   import { IonTabButton } from "@ionic/core/components/ion-tab-button";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-tab-button";
   //@ts-ignore
   export let disabled = false;
   //@ts-ignore
@@ -23,8 +22,7 @@
   defineComponent("ion-tab-button", IonTabButton);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-tab-button
   {disabled}
   {download}
   {href}
@@ -33,8 +31,8 @@
   {selected}
   {tab}
   {target}
-  {...$$props}
   on:ionTabButtonClick
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -83,4 +81,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-tab-button>

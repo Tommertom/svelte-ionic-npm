@@ -2,13 +2,10 @@
   import { IonThumbnail } from "@ionic/core/components/ion-thumbnail";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-thumbnail";
-
   defineComponent("ion-thumbnail", IonThumbnail);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-thumbnail
   {...$$props}
   on:focus
   on:blur
@@ -58,4 +55,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-thumbnail>

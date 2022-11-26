@@ -2,7 +2,6 @@
   import { IonAccordionGroup } from "@ionic/core/components/ion-accordion-group";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-accordion-group";
   //@ts-ignore
   export let animated = true;
   //@ts-ignore
@@ -19,16 +18,15 @@
   defineComponent("ion-accordion-group", IonAccordionGroup);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-accordion-group
   {animated}
   {multiple}
   {value}
   {disabled}
   {readonly}
   {expand}
-  {...$$props}
   on:ionChange
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -77,4 +75,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-accordion-group>

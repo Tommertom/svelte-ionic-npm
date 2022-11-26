@@ -3,7 +3,6 @@
   import { IonListHeader } from "@ionic/core/components/ion-list-header";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-list-header";
   //@ts-ignore
   export let color: Color = undefined;
   //@ts-ignore
@@ -12,8 +11,7 @@
   defineComponent("ion-list-header", IonListHeader);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-list-header
   {color}
   {lines}
   {...$$props}
@@ -65,4 +63,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-list-header>

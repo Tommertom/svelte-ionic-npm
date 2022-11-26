@@ -2,7 +2,6 @@
   import { IonRefresher } from "@ionic/core/components/ion-refresher";
   import { defineComponent } from "ionic-svelte";
 
-  const tag = "ion-refresher";
   //@ts-ignore
   export let pullMin = 60;
   //@ts-ignore
@@ -19,18 +18,17 @@
   defineComponent("ion-refresher", IonRefresher);
 </script>
 
-<svelte:element
-  this={tag}
+<ion-refresher
   {pullMin}
   {pullMax}
   {closeDuration}
   {snapbackDuration}
   {pullFactor}
   {disabled}
-  {...$$props}
   on:ionRefresh
   on:ionPull
   on:ionStart
+  {...$$props}
   on:focus
   on:blur
   on:fullscreenchange
@@ -79,4 +77,4 @@
   on:lostpointercapture
   on:click
   ><slot />
-</svelte:element>
+</ion-refresher>

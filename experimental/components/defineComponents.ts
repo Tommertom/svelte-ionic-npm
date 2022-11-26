@@ -1,6 +1,3 @@
-
-
-
 /* All Ionic components 
 import { IonAccordion } from "@ionic/core/components/ion-accordion";
 import { IonAccordionGroup } from "@ionic/core/components/ion-accordion-group";
@@ -95,16 +92,15 @@ import { IonToast } from "@ionic/core/components/ion-toast";
 */
 // taken from Vue implementation of ionic
 export const defineComponent = (tagName: string, customElement: any) => {
-    if (typeof customElements === "undefined") return;
+  if (typeof customElements === "undefined") return;
 
-    if (!customElements.get(tagName)) {
-        customElements.define(tagName, customElement);
-    }
+  if (!customElements.get(tagName)) {
+    customElements.define(tagName, customElement);
+  }
 };
 
 export const defineIonComponents = () => {
-
-    /*
+  /*
     defineComponent("ion-accordion", IonAccordion);
     defineComponent("ion-accordion-group", IonAccordionGroup);
     defineComponent("ion-app", IonApp);
@@ -201,4 +197,4 @@ export const defineIonComponents = () => {
     // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
     // https://github.com/ionic-team/ionic-framework/blob/5bb1414f7fa04ea07954cb3f68883ee2f162586a/packages/react/src/components/proxies.ts
 */
-}
+};
