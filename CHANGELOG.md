@@ -3,11 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 ## 0.5.18
+
 - multiple fixes on generate script (slots missing in ion-buttons - source code does not have slots)
 - comments added for manual post processing
 - removed warning in IonMenu.svelte
 
 ## 0.5.17
+
 - added typing in IonTabs
 - fixed issue icon in IonItem
 - ion-menu warning added

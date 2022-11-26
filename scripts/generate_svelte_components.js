@@ -47,7 +47,6 @@ const doStuff = () => {
 
   // bit hacky - but we need this output to check for errors
   setTimeout(() => {
-
     console.log("Slots identified", allSlots);
     console.log(`
     Some things you to do manually:
@@ -209,8 +208,8 @@ const getDataFromGithub = async (ionlabel, component) => {
         //    console.log('Events', ionlabel, events, props, propdeclrs);
 
         // not found in source code
-        if (ionlabel === 'ion-buttons') {
-          slots = ['primary', 'secondary', 'start', 'end']
+        if (ionlabel === "ion-buttons") {
+          slots = ["primary", "secondary", "start", "end"];
         }
 
         // let's populate the component template

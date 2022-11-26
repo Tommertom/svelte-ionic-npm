@@ -23,7 +23,7 @@ function pascalize(str) {
 
 const processFile = (filename, data) => {
   // let's do the tag-replacements
-  let newContent = '';
+  let newContent = "";
   const componentMap = {};
   let replacements = 0;
 
@@ -31,16 +31,16 @@ const processFile = (filename, data) => {
 
   const lines = data.split("\n");
   let inStyle = false;
-  lines.forEach(line => {
+  lines.forEach((line) => {
     components.forEach((component) => {
-      if (line.includes('<style')) inStyle = true; // we don't want to replace stuff in style
+      if (line.includes("<style")) inStyle = true; // we don't want to replace stuff in style
       if (line.includes(component) && !inStyle) {
         const regex = new RegExp(component, "g");
         newContent = newContent + line.replace(regex, pascalize(component));
         componentMap[pascalize(component)] = true;
-      } else newContent = newContent + line
+      } else newContent = newContent + line;
     });
-  })
+  });
 
   /*
   do {
