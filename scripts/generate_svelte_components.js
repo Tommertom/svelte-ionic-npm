@@ -47,7 +47,18 @@ const doStuff = () => {
 
   // bit hacky - but we need this output to check for errors
   setTimeout(() => {
-    console.log("All slots identified", allSlots);
+
+    console.log("Slots identified", allSlots);
+    console.log(`
+    Some things you to do manually:
+    - classes, animations, etc assigned to ion-components (kebab) need a DOM wrapper
+    - your styles might be affected
+    - multiple slot='fixed' in IonContent
+    - translucent="true" and similar booleans need to be replaced by translucent={true}
+    - ionButtons does not have slots in source (so slots and default values, how to get them)
+    - IonButtons start, end, primary, secondary
+    - Migrate menu-id/content-id to menuId/contentId if present in your code
+    `);
   }, (components.length + 2) * 1000);
 };
 
@@ -78,7 +89,7 @@ const getDataFromGithub = async (ionlabel, component) => {
         const events = [];
         const props = [];
         const propdeclrs = [];
-        const slots = [];
+        let slots = [];
         let importsToInclude = [];
         //   console.log('Lines', lines, lines.length);
         lines.map((line) => {
@@ -196,6 +207,11 @@ const getDataFromGithub = async (ionlabel, component) => {
           //
         });
         //    console.log('Events', ionlabel, events, props, propdeclrs);
+
+        // not found in source code
+        if (ionlabel === 'ion-buttons') {
+          slots = ['primary', 'secondary', 'start', 'end']
+        }
 
         // let's populate the component template
         let code = svelteTemplate;

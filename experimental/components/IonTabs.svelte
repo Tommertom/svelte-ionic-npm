@@ -6,7 +6,7 @@
   let ionTabBarElement;
 
   export let tabs;
-  export let selected = undefined;
+  export let selected: string | undefined = undefined;
   export let ionTabsDidChange = (event) => {};
   export let ionNavWillLoad = (event) => {};
   export let ionTabsWillChange = (event) => {};

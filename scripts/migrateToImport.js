@@ -23,12 +23,26 @@ function pascalize(str) {
 
 const processFile = (filename, data) => {
   // let's do the tag-replacements
-  let newContent = data;
+  let newContent = '';
   const componentMap = {};
   let replacements = 0;
 
-  console.log("Getting data ", filename, newContent.length);
+  console.log("Getting data ", filename, data.length);
 
+  const lines = data.split("\n");
+  let inStyle = false;
+  lines.forEach(line => {
+    components.forEach((component) => {
+      if (line.includes('<style')) inStyle = true; // we don't want to replace stuff in style
+      if (line.includes(component) && !inStyle) {
+        const regex = new RegExp(component, "g");
+        newContent = newContent + line.replace(regex, pascalize(component));
+        componentMap[pascalize(component)] = true;
+      } else newContent = newContent + line
+    });
+  })
+
+  /*
   do {
     replacements = 0;
     components.forEach((component) => {
@@ -42,7 +56,7 @@ const processFile = (filename, data) => {
       }
     });
   } while (replacements > 0);
-
+*/
   // find if we have a script to do the imports
   const imports = Object.keys(componentMap).map((component) => component);
   const importLabel =
