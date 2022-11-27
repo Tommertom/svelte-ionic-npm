@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.21
+- Fixed issue with generation of slots - experimental is working again
+
 ## 0.5.20
 - Package.json main added - so working with new Kit
 - Experimental package is BROKEN

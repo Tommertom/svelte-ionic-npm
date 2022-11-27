@@ -1,69 +1,72 @@
 <script lang="ts">
-  import { IonBackdrop } from "@ionic/core/components/ion-backdrop";
-  import { defineComponent } from "ionic-svelte";
+    
+    import { IonBackdrop } from '@ionic/core/components/ion-backdrop';
+	import { defineComponent } from 'ionic-svelte';
+    
+    
 
-  //@ts-ignore
-  export let visible = true;
-  //@ts-ignore
-  export let tappable = true;
-  //@ts-ignore
-  export let stopPropagation = true;
-
-  defineComponent("ion-backdrop", IonBackdrop);
+    //@ts-ignore
+   export let visible = true;
+ //@ts-ignore
+   export let tappable = true;
+ //@ts-ignore
+   export let stopPropagation = true;
+ 
+    defineComponent('ion-backdrop', IonBackdrop);
 </script>
 
 <ion-backdrop
-  {visible}
-  {tappable}
-  {stopPropagation}
-  on:ionBackdropTap
-  {...$$props}
-  on:focus
-  on:blur
-  on:fullscreenchange
-  on:fullscreenerror
-  on:scroll
-  on:cut
-  on:copy
-  on:paste
-  on:keydown
-  on:keypress
-  on:keyup
-  on:auxclick
-  on:contextmenu
-  on:dblclick
-  on:mousedown
-  on:mouseenter
-  on:mouseleave
-  on:mousemove
-  on:mouseover
-  on:mouseout
-  on:mouseup
-  on:pointerlockchange
-  on:pointerlockerror
-  on:select
-  on:wheel
-  on:drag
-  on:dragend
-  on:dragenter
-  on:dragstart
-  on:dragleave
-  on:dragover
-  on:drop
-  on:touchcancel
-  on:touchend
-  on:touchmove
-  on:touchstart
-  on:pointerover
-  on:pointerenter
-  on:pointerdown
-  on:pointermove
-  on:pointerup
-  on:pointercancel
-  on:pointerout
-  on:pointerleave
-  on:gotpointercapture
-  on:lostpointercapture
-  on:click
-  ><slot />
-</ion-backdrop>
+{visible}
+ {tappable}
+ {stopPropagation}
+ 
+ on:ionBackdropTap
+
+{...$$props}
+on:focus
+on:blur
+on:fullscreenchange
+on:fullscreenerror
+on:scroll
+on:cut
+on:copy
+on:paste
+on:keydown
+on:keypress
+on:keyup
+on:auxclick
+on:contextmenu
+on:dblclick
+on:mousedown
+on:mouseenter
+on:mouseleave
+on:mousemove
+on:mouseover
+on:mouseout
+on:mouseup
+on:pointerlockchange
+on:pointerlockerror
+on:select
+on:wheel
+on:drag
+on:dragend
+on:dragenter
+on:dragstart
+on:dragleave
+on:dragover
+on:drop
+on:touchcancel
+on:touchend
+on:touchmove
+on:touchstart
+on:pointerover
+on:pointerenter
+on:pointerdown
+on:pointermove
+on:pointerup
+on:pointercancel
+on:pointerout
+on:pointerleave
+on:gotpointercapture
+on:lostpointercapture
+on:click><slot/> </ion-backdrop>

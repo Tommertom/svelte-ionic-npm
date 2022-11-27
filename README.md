@@ -109,6 +109,8 @@ And then you need to import `setupIonicSvelte` from 'ionic-svelte/experimental'.
 
 Would you like to migrate an existing kebab-page to a pascal-page, look into the scripts folder. There is `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`. It will scan for .svelte files, and does the migration for you. A backup will be makde from your svelte file -> named `.bak`.
 
+Also `migrateToImport.js` is EXPERIMENTAL - back your code up before using. Use at own risk.
+
 ## Special components
 
 There are three special compontents included that override/fix the ionic standard webcomponents:
