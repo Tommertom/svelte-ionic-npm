@@ -48,7 +48,7 @@ const doStuff = () => {
   // bit hacky - but we need this output to check for errors
   setTimeout(() => {
     console.log("Slots identified", allSlots);
-
+    console.log("Run npm ru format");
   }, (components.length + 2) * 1000);
 };
 

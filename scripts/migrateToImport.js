@@ -128,7 +128,10 @@ console.log(`
 Some things you to do manually:
 - classes, animations, etc assigned to ion-components (kebab) need a DOM wrapper like a div
 - your styles might be affected by the conversion if they have ionic kebab notation in there
+- also if your classes have ionic kebab notations
 - multiple slot='fixed' in IonContent are not permitted (one slot can be used only)
 - translucent="true" and similar booleans props need to be replaced by translucent={true}
 - Migrate menu-id/content-id to menuId/contentId if present in your code - look for IonMenu
+- If you have been using IonTabs, IonBackbutton or IonPage from the kebab package, then you may need to check their imports
+- class="ion-page" wil be transformed into kebab
 `);
