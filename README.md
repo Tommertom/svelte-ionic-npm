@@ -15,6 +15,9 @@
 
 <br>
 
+<h1>WARNING - broken as of or after Kit next-512...</h1>
+npm run dev will fail, but npm run build won't. Some thing with compatibility of libraries....
+
 ## How to get started with this library?
 
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)
@@ -47,7 +50,7 @@ Integration of Ionic
 
 - `npm i @ionic/core@6.3.0 ionic-svelte` - using Ionic 6.3.0
 - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-npm/main/starterfiles/theme/variables.css
-- the top-root layout file (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
+- the top-route layout file `+layout.svelte` (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
 
 ```
 <script lang="ts">
@@ -60,10 +63,17 @@ Integration of Ionic
 </script>
 
 <ion-app>
-	Hi there <ion-button>test</ion-button>
+   <slot />
 </ion-app>
 
 ```
+
+And then start working on the content of the app in `+page.svelte`:
+
+```
+	Hi there <ion-button>test</ion-button>
+```
+
 
 If you get a 500 internal error-error then likely SSR is not disabled. Making a SvelteKit app a real SPA really requires two steps - adapter static and `ssr=false`
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { IonMenu } from "@ionic/core/components/ion-menu";
-  import { defineComponent } from "ionic-svelte";
+  import { defineComponent } from "ionic-svelte"  ;
 
   //@ts-ignore
   export let contentId: string = undefined;
