@@ -7,6 +7,17 @@
     "type": "git",
     "url": "https://github.com/Tommertom/svelte-ionic-npm.git"
   },
+  "keywords": [
+    "ionic",
+    "svelte",
+    "sveltekit",
+    "vite"
+  ],
+  "main": "index.ts",
+  "bugs": {
+    "url": "https://github.com/Tommertom/svelte-ionic-npm/issues"
+  },
+  "description": "The NPM library to implement Ionic in any Svelte project - supporting SvelteKit and Svelte with Vite",
   "scripts": {
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write ."

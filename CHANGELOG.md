@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.20
+- Package.json main added - so working with new Kit
+- Experimental package is BROKEN
+
 ## 0.5.19
 - FAIL warning when working with newer SvelteKit versions...
 

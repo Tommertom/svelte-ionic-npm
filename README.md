@@ -15,9 +15,6 @@
 
 <br>
 
-<h1>WARNING - broken as of or after Kit next-512...</h1>
-npm run dev will fail, but npm run build won't. Some thing with compatibility of libraries....
-
 ## How to get started with this library?
 
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)
@@ -98,7 +95,7 @@ Here content
 
 `setupIonicSvelte` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicSvelte` a bit), no type-safety and no intellisence.
 
-So here is pascal to the rescue:
+So here is PascalCase to the rescue - EXPERIMENTAL!!!! WILL AND CAN BREAK ANY TIME
 
 ```
 import {IonCard} from 'ionic-svelte/experimental';
