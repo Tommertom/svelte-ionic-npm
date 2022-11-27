@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.19
+- FAIL warning when working with newer SvelteKit versions...
+
 ## 0.5.18
 
 - multiple fixes on generate script (slots missing in ion-buttons - source code does not have slots)
