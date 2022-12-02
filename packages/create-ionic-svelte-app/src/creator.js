@@ -86,7 +86,6 @@ export async function createIonicSvelte(opts) {
 		console.log('Working: Installing project dependencies.');
 	}
 
-	console.log('... -D dependencies');
 	let result = spawnSync(opts.packagemanager, ['add', '-D', ...packages], {
 		shell: true,
 	});
