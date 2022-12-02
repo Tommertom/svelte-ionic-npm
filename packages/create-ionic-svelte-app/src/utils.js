@@ -160,8 +160,8 @@ export function getDemoIonicApp() {
 	</ion-card-header>
 
 	<ion-card-content>
-		Thank you for using this starter and happy coding!! Click items below to open these guides (will
-		open in new window)
+		Thank you for using this starter and happy coding!! Click buttons below to open these guides (will
+		open in new window). Don't forget to open DevTools to see this app in mobile mode!
 	</ion-card-content>
 
 	<ion-item>
