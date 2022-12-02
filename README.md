@@ -15,6 +15,15 @@
 
 <br>
 
+
+## How to get started - npm create ionic-svelte-app@latest
+On the CLI just type `npm create ionic-svelte-app@latest` to spin a SvelteKit project from the CLI. This will
+do all the lifting for you to create a SvelteKit SPA app.
+
+
+<img alt="create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-npm/raw/main/packages/create-ionic-svelte-app/create-ionic-svelte-app.png" width="45%">
+
+
 ## How to get started with this library?
 
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)

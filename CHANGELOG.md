@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.22
+- Added create-ionic-svelte-app package
+
 ## 0.5.21
 
 - Fixed issue with generation of slots - experimental is working again
