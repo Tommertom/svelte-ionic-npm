@@ -120,6 +120,7 @@ async function parseArgs() {
 			m: 'monorepo',
 			q: 'quiet',
 			v: 'verbose',
+			i: 'ionicons'
 		},
 		boolean: [
 			'help',
@@ -129,7 +130,8 @@ async function parseArgs() {
 			'eslint',
 			'playwright',
 			'verbose',
-			'vitest'
+			'vitest',
+			'ionicons'
 		],
 	});
 
@@ -254,6 +256,18 @@ Problems? Open an issue on ${cyan('https://github.com/Tommertom/svelte-ionic-npm
 			type: 'toggle',
 			name: 'vitest',
 			message: 'Add Vitest for unit testing?',
+			initial: false,
+			active: 'Yes',
+			inactive: 'No'
+		}
+		questions.push(q);
+	}
+
+	if (!('ionicons' in opts)) {
+		const q = {
+			type: 'toggle',
+			name: 'ionicons',
+			message: 'Add Ionicons?',
 			initial: false,
 			active: 'Yes',
 			inactive: 'No'

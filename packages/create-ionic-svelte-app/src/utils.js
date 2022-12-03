@@ -55,6 +55,7 @@ Option              Short   Quiet Default   Values                      Descript
 --playwright                false           true|false                  Whether Playwright is added
 --framework         -f      svelte-kit      svelte-kit|svelte-kit-lib   Setup as Svelte Kit library project or library
 --path              -p      ''              relative or absolute path   Location to install, name is appended
+--ionicons          -i      false           true|false                  Ìnclude Ionic icon library Ionicons
 
 Quiet mode is for automated installs for testing, CI/CD.  It will take all of the default values in the
 Quiet Default column, but you can provide any other flags to override as you see fit.  If you just want
@@ -160,8 +161,8 @@ export function getDemoIonicApp() {
 	</ion-card-header>
 
 	<ion-card-content>
-		Thank you for using this starter and happy coding!! Click buttons below to open these guides (will
-		open in new window). Don't forget to open DevTools to see this app in mobile mode!
+		Thank you for using this starter. Click buttons below to open these guides (will
+		open in new window). Don't forget to open DevTools to see this app in mobile mode. Happy coding!!!
 	</ion-card-content>
 
 	<ion-item>

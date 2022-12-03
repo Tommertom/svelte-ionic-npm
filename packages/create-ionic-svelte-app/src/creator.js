@@ -5,7 +5,7 @@ import { spawnSync } from 'node:child_process';
 import fs from 'fs-extra';
 import path from 'path';
 import { dist, whichPMRuns, mkdirp, getIonicVariables, getDemoIonicApp } from './utils.js';
-import { bold, red, cyan } from 'kleur/colors';
+import { bold, red, cyan, grey } from 'kleur/colors';
 
 // NOTE: Any changes here must also be reflected in the --help output in utils.ts and shortcut expansions in bin.ts.
 // Probably a good idea to do a search on the values you are changing to catch any other areas they are used in
@@ -22,6 +22,9 @@ export class IonicSvelteOptions {
 	eslint = true;
 	playwright = false;
 	vitest = false;
+
+	// Ionic
+	ionicons = false;
 
 	// create-skeleton-app additions
 	// _ = []; //catch all for extraneous params from mri, used to capture project name.
@@ -83,7 +86,7 @@ export async function createIonicSvelte(opts) {
 	// if (opts?.lineclamp) packages.push('@tailwindcss/line-clamp');
 
 	if (!(opts?.quiet)) {
-		console.log('Working: Installing project dependencies.');
+		console.log('Working: Installing project dependencies ' + grey(packages.toString()));
 	}
 
 	let result = spawnSync(opts.packagemanager, ['add', '-D', ...packages], {
@@ -98,14 +101,17 @@ export async function createIonicSvelte(opts) {
 		process.exit();
 	}
 
-	console.log('... -S dependencies');
-	packages = ['@ionic/core@6.3.0', 'ionic-svelte']
+
+	packages = ['@ionic/core', 'ionic-svelte']
+	if (opts?.ionicons) packages.push('ionicons/icons');
+	console.log('....adding ' + grey(packages.toString()));
 	result = spawnSync(opts.packagemanager, ['add', '-S', ...packages], {
 		shell: true,
 	});
 
-	console.log('... removing @sveltejs/adapter-auto');
+
 	packages = ['@sveltejs/adapter-auto']
+	console.log('... removing ' + grey(packages.toString()));
 	result = spawnSync(opts.packagemanager, ['remove', '-D', ...packages], {
 		shell: true,
 	});
