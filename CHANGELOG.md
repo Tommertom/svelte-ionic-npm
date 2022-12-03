@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.23
+- Removed Experimental package - no ES-imports because of style encapsulation
+- Added typings (need a bit more testing)
+
 ## 0.5.22
 - Added create-ionic-svelte-app package
 

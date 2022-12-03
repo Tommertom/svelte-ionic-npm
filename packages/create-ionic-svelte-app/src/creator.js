@@ -183,7 +183,7 @@ export async function createIonicSvelte(opts) {
 			"ionic-svelte"
 		],`);
 
-			console.log('TSCONFIG', tsconfig, tsconfignew);
+			//	console.log('TSCONFIG', tsconfig, tsconfignew);
 
 			out(path.resolve(process.cwd(), './', 'tsconfig.json'), tsconfignew)
 		}
