@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.26
+- Ionic event type bindings fix
+
 ## 0.5.25
 - Fixes in type definitions (slots)
 

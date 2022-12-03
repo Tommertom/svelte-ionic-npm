@@ -83,6 +83,11 @@ declare namespace svelte.JSX {
       * The value of the accordion group.
       */
       "value"?: null | string | string[] | undefined;
+
+      /**
+      * (event : AccordionGroupChangeEventDetail<any>) => void :  Emitted when the value property has changed.
+      */
+      "on:ionChange"?: (event: AccordionGroupChangeEventDetail<any>) => void;
     }
 
     'ion-action-sheet': {
@@ -151,6 +156,26 @@ declare namespace svelte.JSX {
       * If `true`, the action sheet will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
       */
       "translucent"?: boolean;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the alert has dismissed.
+      */
+      "on:ionActionSheetDidDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the alert has presented.
+      */
+      "on:ionActionSheetDidPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the alert has dismissed.
+      */
+      "on:ionActionSheetWillDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the alert has presented.
+      */
+      "on:ionActionSheetWillPresent"?: (event: void) => void;
     }
 
     'ion-alert': {
@@ -229,6 +254,26 @@ declare namespace svelte.JSX {
       * If `true`, the alert will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
       */
       "translucent"?: boolean;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the alert has dismissed.
+      */
+      "on:ionAlertDidDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the alert has presented.
+      */
+      "on:ionAlertDidPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the alert has dismissed.
+      */
+      "on:ionAlertWillDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the alert has presented.
+      */
+      "on:ionAlertWillPresent"?: (event: void) => void;
     }
 
     'ion-app': {
@@ -316,6 +361,11 @@ declare namespace svelte.JSX {
       * If `true`, the backdrop will be visible.
       */
       "visible"?: boolean;
+
+      /**
+      * (event : void) => void :  Emitted when the backdrop is tapped.
+      */
+      "on:ionBackdropTap"?: (event: void) => void;
     }
 
     'ion-badge': {
@@ -397,6 +447,16 @@ declare namespace svelte.JSX {
       * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
       */
       "target"?: string | undefined;
+
+      /**
+      * (event : void) => void :  Emitted when the breadcrumb loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the breadcrumb has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-breadcrumbs': {
@@ -430,6 +490,11 @@ declare namespace svelte.JSX {
       * The mode determines which platform styles to use.
       */
       "mode"?: "ios" | "md";
+
+      /**
+      * (event : BreadcrumbCollapsedClickEventDetail) => void :  Emitted when the collapsed indicator is clicked on.
+      */
+      "on:ionCollapsedClick"?: (event: BreadcrumbCollapsedClickEventDetail) => void;
     }
 
     'ion-button': {
@@ -523,6 +588,16 @@ declare namespace svelte.JSX {
       * The type of the button.
       */
       "type"?: "button" | "reset" | "submit";
+
+      /**
+      * (event : void) => void :  Emitted when the button loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the button has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-buttons': {
@@ -714,6 +789,21 @@ declare namespace svelte.JSX {
       * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
       */
       "value"?: any;
+
+      /**
+      * (event : void) => void :  Emitted when the checkbox loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : CheckboxChangeEventDetail<any>) => void :  Emitted when the checked property has changed.
+      */
+      "on:ionChange"?: (event: CheckboxChangeEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the checkbox has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-chip': {
@@ -908,6 +998,21 @@ declare namespace svelte.JSX {
       * If you want to disable the content scrolling in the Y axis, set this property to `false`.
       */
       "scrollY"?: boolean;
+
+      /**
+      * (event : ScrollDetail) => void :  Emitted while scrolling. This event is disabled by default. Set `scrollEvents` to `true` to enable.
+      */
+      "on:ionScroll"?: (event: ScrollDetail) => void;
+
+      /**
+      * (event : ScrollBaseDetail) => void :  Emitted when the scroll has ended. This event is disabled by default. Set `scrollEvents` to `true` to enable.
+      */
+      "on:ionScrollEnd"?: (event: ScrollBaseDetail) => void;
+
+      /**
+      * (event : ScrollBaseDetail) => void :  Emitted when the scroll has started. This event is disabled by default. Set `scrollEvents` to `true` to enable.
+      */
+      "on:ionScrollStart"?: (event: ScrollBaseDetail) => void;
     }
 
     'ion-datetime': {
@@ -1061,6 +1166,26 @@ declare namespace svelte.JSX {
       * Values used to create the list of selectable years. By default the year values range between the `min` and `max` datetime inputs. However, to control exactly which years to display, the `yearValues` input can take a number, an array of numbers, or string of comma separated numbers. For example, to show upcoming and recent leap years, then this input's value would be `yearValues="2024,2020,2016,2012,2008"`.
       */
       "yearValues"?: number | number[] | string | undefined;
+
+      /**
+      * (event : void) => void :  Emitted when the datetime loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the datetime selection was cancelled.
+      */
+      "on:ionCancel"?: (event: void) => void;
+
+      /**
+      * (event : DatetimeChangeEventDetail) => void :  Emitted when the value (selected date) has changed.
+      */
+      "on:ionChange"?: (event: DatetimeChangeEventDetail) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the datetime has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-datetime-button': {
@@ -1200,6 +1325,16 @@ declare namespace svelte.JSX {
       * The type of the button.
       */
       "type"?: "button" | "reset" | "submit";
+
+      /**
+      * (event : void) => void :  Emitted when the button loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the button has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-fab-list': {
@@ -1295,6 +1430,21 @@ declare namespace svelte.JSX {
       * The image URL. This attribute is mandatory for the `<img>` element.
       */
       "src"?: string | undefined;
+
+      /**
+      * (event : void) => void :  Emitted when the img fails to load
+      */
+      "on:ionError"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the image has finished loading
+      */
+      "on:ionImgDidLoad"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the img src has been set
+      */
+      "on:ionImgWillLoad"?: (event: void) => void;
     }
 
     'ion-infinite-scroll': {
@@ -1318,6 +1468,11 @@ declare namespace svelte.JSX {
       * The threshold distance from the bottom of the content to call the `infinite` output event when scrolled. The threshold value can be either a percent, or in pixels. For example, use the value of `10%` for the `infinite` output event to get called when the user has scrolled 10% from the bottom of the page. Use the value `100px` when the scroll is within 100 pixels from the bottom of the page.
       */
       "threshold"?: string;
+
+      /**
+      * (event : void) => void :  Emitted when the scroll reaches the threshold distance. From within your infinite handler, you must call the infinite scroll's `complete()` method when your async operation has completed.
+      */
+      "on:ionInfinite"?: (event: void) => void;
     }
 
     'ion-infinite-scroll-content': {
@@ -1484,6 +1639,26 @@ declare namespace svelte.JSX {
       * The value of the input.
       */
       "value"?: null | number | string | undefined;
+
+      /**
+      * (event : FocusEvent) => void :  Emitted when the input loses focus.
+      */
+      "on:ionBlur"?: (event: FocusEvent) => void;
+
+      /**
+      * (event : InputChangeEventDetail) => void :  Emitted when the value has changed.
+      */
+      "on:ionChange"?: (event: InputChangeEventDetail) => void;
+
+      /**
+      * (event : FocusEvent) => void :  Emitted when the input has focus.
+      */
+      "on:ionFocus"?: (event: FocusEvent) => void;
+
+      /**
+      * (event : InputEvent) => void :  Emitted when a keyboard input occurred.
+      */
+      "on:ionInput"?: (event: InputEvent) => void;
     }
 
     'ion-item': {
@@ -1679,6 +1854,11 @@ declare namespace svelte.JSX {
       * The side the option button should be on. Possible values: `"start"` and `"end"`. If you have multiple `ion-item-options`, a side must be provided for each.
       */
       "side"?: "end" | "start";
+
+      /**
+      * (event : any) => void :  Emitted when the item has been fully swiped.
+      */
+      "on:ionSwipe"?: (event: any) => void;
     }
 
     'ion-item-sliding': {
@@ -1692,6 +1872,11 @@ declare namespace svelte.JSX {
       * If `true`, the user cannot interact with the sliding item.
       */
       "disabled"?: boolean;
+
+      /**
+      * (event : any) => void :  Emitted when the sliding position changes.
+      */
+      "on:ionDrag"?: (event: any) => void;
     }
 
     'ion-label': {
@@ -1834,6 +2019,26 @@ declare namespace svelte.JSX {
       * If `true`, the loading indicator will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
       */
       "translucent"?: boolean;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the loading has dismissed.
+      */
+      "on:ionLoadingDidDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the loading has presented.
+      */
+      "on:ionLoadingDidPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the loading has dismissed.
+      */
+      "on:ionLoadingWillDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the loading has presented.
+      */
+      "on:ionLoadingWillPresent"?: (event: void) => void;
     }
 
     'ion-menu': {
@@ -1877,6 +2082,26 @@ declare namespace svelte.JSX {
       * The display type of the menu. Available options: `"overlay"`, `"reveal"`, `"push"`.
       */
       "type"?: string | undefined;
+
+      /**
+      * (event : void) => void :  Emitted when the menu is closed.
+      */
+      "on:ionDidClose"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the menu is open.
+      */
+      "on:ionDidOpen"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the menu is about to be closed.
+      */
+      "on:ionWillClose"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the menu is about to be opened.
+      */
+      "on:ionWillOpen"?: (event: void) => void;
     }
 
     'ion-menu-button': {
@@ -2036,6 +2261,51 @@ declare namespace svelte.JSX {
       * An ID corresponding to the trigger element that causes the modal to open when clicked.
       */
       "trigger"?: string | undefined;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the modal has dismissed. Shorthand for ionModalDidDismiss.
+      */
+      "on:didDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the modal has presented. Shorthand for ionModalWillDismiss.
+      */
+      "on:didPresent"?: (event: void) => void;
+
+      /**
+      * (event : ModalBreakpointChangeEventDetail) => void :  Emitted after the modal breakpoint has changed.
+      */
+      "on:ionBreakpointDidChange"?: (event: ModalBreakpointChangeEventDetail) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the modal has dismissed.
+      */
+      "on:ionModalDidDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the modal has presented.
+      */
+      "on:ionModalDidPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the modal has dismissed.
+      */
+      "on:ionModalWillDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the modal has presented.
+      */
+      "on:ionModalWillPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the modal has dismissed. Shorthand for ionModalWillDismiss.
+      */
+      "on:willDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the modal has presented. Shorthand for ionModalWillPresent.
+      */
+      "on:willPresent"?: (event: void) => void;
     }
 
     'ion-nav': {
@@ -2069,6 +2339,16 @@ declare namespace svelte.JSX {
       * If the nav component should allow for swipe-to-go-back.
       */
       "swipeGesture"?: boolean | undefined;
+
+      /**
+      * (event : void) => void :  Event fired when the nav has changed components
+      */
+      "on:ionNavDidChange"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Event fired when the nav will change components
+      */
+      "on:ionNavWillChange"?: (event: void) => void;
     }
 
     'ion-nav-link': {
@@ -2183,6 +2463,26 @@ declare namespace svelte.JSX {
       * If `true`, a backdrop will be displayed behind the picker.
       */
       "showBackdrop"?: boolean;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the picker has dismissed.
+      */
+      "on:ionPickerDidDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the picker has presented.
+      */
+      "on:ionPickerDidPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the picker has dismissed.
+      */
+      "on:ionPickerWillDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the picker has presented.
+      */
+      "on:ionPickerWillPresent"?: (event: void) => void;
     }
 
     'ion-popover': {
@@ -2301,6 +2601,46 @@ declare namespace svelte.JSX {
       * Describes what kind of interaction with the trigger that should cause the popover to open. Does not apply when the `trigger` property is `undefined`. If `'click'`, the popover will be presented when the trigger is left clicked. If `'hover'`, the popover will be presented when a pointer hovers over the trigger. If `'context-menu'`, the popover will be presented when the trigger is right clicked on desktop and long pressed on mobile. This will also prevent your device's normal context menu from appearing.
       */
       "triggerAction"?: "click" | "context-menu" | "hover";
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the popover has dismissed. Shorthand for ionPopoverDidDismiss.
+      */
+      "on:didDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the popover has presented. Shorthand for ionPopoverWillDismiss.
+      */
+      "on:didPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the popover has dismissed.
+      */
+      "on:ionPopoverDidDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the popover has presented.
+      */
+      "on:ionPopoverDidPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the popover has dismissed.
+      */
+      "on:ionPopoverWillDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the popover has presented.
+      */
+      "on:ionPopoverWillPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the popover has dismissed. Shorthand for ionPopoverWillDismiss.
+      */
+      "on:willDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the popover has presented. Shorthand for ionPopoverWillPresent.
+      */
+      "on:willPresent"?: (event: void) => void;
     }
 
     'ion-progress-bar': {
@@ -2372,6 +2712,16 @@ declare namespace svelte.JSX {
       * the value of the radio.
       */
       "value"?: any;
+
+      /**
+      * (event : void) => void :  Emitted when the radio button loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the radio button has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-radio-group': {
@@ -2395,6 +2745,11 @@ declare namespace svelte.JSX {
       * the value of the radio group.
       */
       "value"?: any;
+
+      /**
+      * (event : RadioGroupChangeEventDetail<any>) => void :  Emitted when the value has changed.
+      */
+      "on:ionChange"?: (event: RadioGroupChangeEventDetail<any>) => void;
     }
 
     'ion-range': {
@@ -2478,6 +2833,31 @@ declare namespace svelte.JSX {
       * the value of the range.
       */
       "value"?: number | { lower: number; upper: number; };
+
+      /**
+      * (event : void) => void :  Emitted when the range loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : RangeChangeEventDetail) => void :  Emitted when the value property has changed.
+      */
+      "on:ionChange"?: (event: RangeChangeEventDetail) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the range has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
+
+      /**
+      * (event : RangeKnobMoveEndEventDetail) => void :  Emitted when the user finishes moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.
+      */
+      "on:ionKnobMoveEnd"?: (event: RangeKnobMoveEndEventDetail) => void;
+
+      /**
+      * (event : RangeKnobMoveStartEventDetail) => void :  Emitted when the user starts moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.
+      */
+      "on:ionKnobMoveStart"?: (event: RangeKnobMoveStartEventDetail) => void;
     }
 
     'ion-refresher': {
@@ -2516,6 +2896,21 @@ declare namespace svelte.JSX {
       * Time it takes the refresher to snap back to the `refreshing` state. Does not apply when the refresher content uses a spinner, enabling the native refresher.
       */
       "snapbackDuration"?: string;
+
+      /**
+      * (event : void) => void :  Emitted while the user is pulling down the content and exposing the refresher.
+      */
+      "on:ionPull"?: (event: void) => void;
+
+      /**
+      * (event : RefresherEventDetail) => void :  Emitted when the user lets go of the content and has pulled down further than the `pullMin` or pulls the content down and exceeds the pullMax. Updates the refresher state to `refreshing`. The `complete()` method should be called when the async operation has completed.
+      */
+      "on:ionRefresh"?: (event: RefresherEventDetail) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the user begins to start pulling down.
+      */
+      "on:ionStart"?: (event: void) => void;
     }
 
     'ion-refresher-content': {
@@ -2565,6 +2960,11 @@ declare namespace svelte.JSX {
       * If `true`, the reorder will be hidden.
       */
       "disabled"?: boolean;
+
+      /**
+      * (event : ItemReorderEventDetail) => void :  Event that needs to be listened to in order to complete the reorder action. Once the event has been emitted, the `complete()` method then needs to be called in order to finalize the reorder action.
+      */
+      "on:ionItemReorder"?: (event: ItemReorderEventDetail) => void;
     }
 
     'ion-ripple-effect': {
@@ -2611,6 +3011,11 @@ declare namespace svelte.JSX {
       * Relative path that needs to match in order for this route to apply.  Accepts paths similar to expressjs so that you can define parameters in the url /foo/:bar where bar would be available in incoming props.
       */
       "url"?: string;
+
+      /**
+      * (event : any) => void :  Used internally by `ion-router` to know when this route did change.
+      */
+      "on:ionRouteDataChanged"?: (event: any) => void;
     }
 
     'ion-route-redirect': {
@@ -2629,6 +3034,11 @@ declare namespace svelte.JSX {
       * A redirect route, redirects "from" a URL "to" another URL. This property is that "to" URL. When the defined `ion-route-redirect` rule matches, the router will redirect to the path specified in this property.  The value of this property is always an absolute path inside the scope of routes defined in `ion-router` it can't be used with another router or to perform a redirection to a different domain.  Note that this is a virtual redirect, it will not cause a real browser refresh, again, it's a redirect inside the context of ion-router.  When this property is not specified or his value is `undefined` the whole redirect route is noop, even if the "from" value matches.
       */
       "to"?: null | string | undefined;
+
+      /**
+      * (event : any) => void :  Internal event that fires when any value of this rule is added/removed from the DOM, or any of his public properties changes.  `ion-router` captures this event in order to update his internal registry of router rules.
+      */
+      "on:ionRouteRedirectChanged"?: (event: any) => void;
     }
 
     'ion-router': {
@@ -2647,6 +3057,16 @@ declare namespace svelte.JSX {
       * The router can work in two "modes": - With hash: `/index.html#/path/to/page` - Without hash: `/path/to/page`  Using one or another might depend in the requirements of your app and/or where it's deployed.  Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might requires additional server-side configuration in order to properly work.  On the other side hash-navigation is much easier to deploy, it even works over the file protocol.  By default, this property is `true`, change to `false` to allow hash-less URLs.
       */
       "useHash"?: boolean;
+
+      /**
+      * (event : RouterEventDetail) => void :  Emitted when the route had changed
+      */
+      "on:ionRouteDidChange"?: (event: RouterEventDetail) => void;
+
+      /**
+      * (event : RouterEventDetail) => void :  Event emitted when the route is about to change
+      */
+      "on:ionRouteWillChange"?: (event: RouterEventDetail) => void;
     }
 
     'ion-router-link': {
@@ -2819,6 +3239,36 @@ declare namespace svelte.JSX {
       * the value of the searchbar.
       */
       "value"?: null | string | undefined;
+
+      /**
+      * (event : void) => void :  Emitted when the input loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the cancel button is clicked.
+      */
+      "on:ionCancel"?: (event: void) => void;
+
+      /**
+      * (event : SearchbarChangeEventDetail) => void :  Emitted when the value has changed.
+      */
+      "on:ionChange"?: (event: SearchbarChangeEventDetail) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the clear input button is clicked.
+      */
+      "on:ionClear"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the input has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
+
+      /**
+      * (event : KeyboardEvent) => void :  Emitted when a keyboard input occurred.
+      */
+      "on:ionInput"?: (event: KeyboardEvent) => void;
     }
 
     'ion-segment': {
@@ -2862,6 +3312,11 @@ declare namespace svelte.JSX {
       * the value of the segment.
       */
       "value"?: null | string | undefined;
+
+      /**
+      * (event : SegmentChangeEventDetail) => void :  Emitted when the value property has changed and any dragging pointer has been released from `ion-segment`.
+      */
+      "on:ionChange"?: (event: SegmentChangeEventDetail) => void;
     }
 
     'ion-segment-button': {
@@ -2963,6 +3418,31 @@ declare namespace svelte.JSX {
       * the value of the select.
       */
       "value"?: any;
+
+      /**
+      * (event : void) => void :  Emitted when the select loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the selection is cancelled.
+      */
+      "on:ionCancel"?: (event: void) => void;
+
+      /**
+      * (event : SelectChangeEventDetail<any>) => void :  Emitted when the value has changed.
+      */
+      "on:ionChange"?: (event: SelectChangeEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the overlay is dismissed.
+      */
+      "on:ionDismiss"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the select has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-select-option': {
@@ -3030,6 +3510,86 @@ declare namespace svelte.JSX {
       * If `true`, show the scrollbar.
       */
       "scrollbar"?: boolean;
+
+      /**
+      * (event : void) => void :  Emitted after the active slide has changed.
+      */
+      "on:ionSlideDidChange"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the user double taps on the slide's container.
+      */
+      "on:ionSlideDoubleTap"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the slider is actively being moved.
+      */
+      "on:ionSlideDrag"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the next slide has ended.
+      */
+      "on:ionSlideNextEnd"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the next slide has started.
+      */
+      "on:ionSlideNextStart"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the previous slide has ended.
+      */
+      "on:ionSlidePrevEnd"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the previous slide has started.
+      */
+      "on:ionSlidePrevStart"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the slider is at the last slide.
+      */
+      "on:ionSlideReachEnd"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the slider is at its initial position.
+      */
+      "on:ionSlideReachStart"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted after Swiper initialization
+      */
+      "on:ionSlidesDidLoad"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the user taps/clicks on the slide's container.
+      */
+      "on:ionSlideTap"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the user releases the touch.
+      */
+      "on:ionSlideTouchEnd"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the user first touches the slider.
+      */
+      "on:ionSlideTouchStart"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the slide transition has ended.
+      */
+      "on:ionSlideTransitionEnd"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the slide transition has started.
+      */
+      "on:ionSlideTransitionStart"?: (event: void) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the active slide has changed.
+      */
+      "on:ionSlideWillChange"?: (event: void) => void;
     }
 
     'ion-spinner': {
@@ -3081,6 +3641,11 @@ declare namespace svelte.JSX {
       * When the split-pane should be shown. Can be a CSS media query expression, or a shortcut expression. Can also be a boolean expression.
       */
       "when"?: boolean | string;
+
+      /**
+      * (event : { visible: boolean; }) => void :  Expression to be called when the split-pane visibility has changed
+      */
+      "on:ionSplitPaneVisible"?: (event: { visible: boolean; }) => void;
     }
 
     'ion-tab': {
@@ -3188,6 +3753,16 @@ declare namespace svelte.JSX {
        * slots - See documentation for parent component on available slots
        */
       "slot"?: string | undefined; // this is a hack - help needed, how to type slots properly
+
+      /**
+      * (event : { tab: string; }) => void :  Emitted when the navigation has finished transitioning to a new component.
+      */
+      "on:ionTabsDidChange"?: (event: { tab: string; }) => void;
+
+      /**
+      * (event : { tab: string; }) => void :  Emitted when the navigation is about to transition to a new component.
+      */
+      "on:ionTabsWillChange"?: (event: { tab: string; }) => void;
     }
 
     'ion-text': {
@@ -3319,6 +3894,26 @@ declare namespace svelte.JSX {
       * Indicates how the control wraps text.
       */
       "wrap"?: "hard" | "off" | "soft" | undefined;
+
+      /**
+      * (event : FocusEvent) => void :  Emitted when the input loses focus.
+      */
+      "on:ionBlur"?: (event: FocusEvent) => void;
+
+      /**
+      * (event : TextareaChangeEventDetail) => void :  Emitted when the input value has changed.
+      */
+      "on:ionChange"?: (event: TextareaChangeEventDetail) => void;
+
+      /**
+      * (event : FocusEvent) => void :  Emitted when the input has focus.
+      */
+      "on:ionFocus"?: (event: FocusEvent) => void;
+
+      /**
+      * (event : InputEvent) => void :  Emitted when a keyboard input occurred.
+      */
+      "on:ionInput"?: (event: InputEvent) => void;
     }
 
     'ion-thumbnail': {
@@ -3428,6 +4023,26 @@ declare namespace svelte.JSX {
       * If `true`, the toast will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
       */
       "translucent"?: boolean;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted after the toast has dismissed.
+      */
+      "on:ionToastDidDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted after the toast has presented.
+      */
+      "on:ionToastDidPresent"?: (event: void) => void;
+
+      /**
+      * (event : OverlayEventDetail<any>) => void :  Emitted before the toast has dismissed.
+      */
+      "on:ionToastWillDismiss"?: (event: OverlayEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted before the toast has presented.
+      */
+      "on:ionToastWillPresent"?: (event: void) => void;
     }
 
     'ion-toggle': {
@@ -3471,6 +4086,21 @@ declare namespace svelte.JSX {
       * The value of the toggle does not mean if it's checked or not, use the `checked` property for that.  The value of a toggle is analogous to the value of a `<input type="checkbox">`, it's only used when the toggle participates in a native `<form>`.
       */
       "value"?: null | string | undefined;
+
+      /**
+      * (event : void) => void :  Emitted when the toggle loses focus.
+      */
+      "on:ionBlur"?: (event: void) => void;
+
+      /**
+      * (event : ToggleChangeEventDetail<any>) => void :  Emitted when the value property has changed.
+      */
+      "on:ionChange"?: (event: ToggleChangeEventDetail<any>) => void;
+
+      /**
+      * (event : void) => void :  Emitted when the toggle has focus.
+      */
+      "on:ionFocus"?: (event: void) => void;
     }
 
     'ion-toolbar': {

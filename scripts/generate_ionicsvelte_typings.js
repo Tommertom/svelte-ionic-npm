@@ -24,9 +24,9 @@ const doStuff = () => {
   `;
 
   components
-    // .filter(component => component.tag == 'ion-button')
+    // .filter(component => component.tag == 'ion-input')
     .forEach(component => {
-      const { props } = component;
+      const { props, events } = component;
 
       // if (props.length > 0) {
       // pre-amble of this tag
@@ -53,6 +53,19 @@ const doStuff = () => {
           */
           "${prop.name}"?: ${prop.type};
         `;
+      })
+
+      // let's dump the events
+      console.log('has props', events);
+      events.forEach(event => {
+
+        //     "on:ionSlideReachEnd"?: () => void;
+        typingOutput = typingOutput + `
+              /**
+              * (event : ${event.detail}) => void :  ${event.docs.replace(/\n/g, ' ')}
+              */
+              "on:${event.event}"?: (event : ${event.detail}) => void;
+            `;
       })
 
       // close definition
