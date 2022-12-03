@@ -212,3 +212,104 @@ export const defineIonComponents = () => {
   // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
   // https://github.com/ionic-team/ionic-framework/blob/5bb1414f7fa04ea07954cb3f68883ee2f162586a/packages/react/src/components/proxies.ts
 };
+
+
+/*
+For later use possibly, dynamic imports... which delays the styling, so creates FUOC when used
+
+
+  const { IonAccordion } = await import("@ionic/core/components/ion-accordion");
+  const { IonAccordionGroup } = await import("@ionic/core/components/ion-accordion-group");
+  const { IonApp } = await import("@ionic/core/components/ion-app");
+  const { IonAvatar } = await import("@ionic/core/components/ion-avatar");
+  const { IonBackdrop } = await import("@ionic/core/components/ion-backdrop");
+  const { IonBackButton } = await import("@ionic/core/components/ion-back-button");
+  const { IonBadge } = await import("@ionic/core/components/ion-badge");
+  const { IonBreadcrumb } = await import("@ionic/core/components/ion-breadcrumb");
+  const { IonBreadcrumbs } = await import("@ionic/core/components/ion-breadcrumbs");
+  const { IonButton } = await import("@ionic/core/components/ion-button");
+  const { IonButtons } = await import("@ionic/core/components/ion-buttons");
+  const { IonCard } = await import("@ionic/core/components/ion-card");
+  const { IonCardContent } = await import("@ionic/core/components/ion-card-content");
+  const { IonCardHeader } = await import("@ionic/core/components/ion-card-header");
+  const { IonCardSubtitle } = await import("@ionic/core/components/ion-card-subtitle");
+  const { IonCardTitle } = await import("@ionic/core/components/ion-card-title");
+  const { IonCheckbox } = await import("@ionic/core/components/ion-checkbox");
+  const { IonChip } = await import("@ionic/core/components/ion-chip");
+  const { IonCol } = await import("@ionic/core/components/ion-col");
+  const { IonContent } = await import("@ionic/core/components/ion-content");
+  const { IonDatetime } = await import("@ionic/core/components/ion-datetime");
+  const { IonFab } = await import("@ionic/core/components/ion-fab");
+  const { IonFabButton } = await import("@ionic/core/components/ion-fab-button");
+  const { IonFabList } = await import("@ionic/core/components/ion-fab-list");
+  const { IonFooter } = await import("@ionic/core/components/ion-footer");
+  const { IonGrid } = await import("@ionic/core/components/ion-grid");
+  const { IonHeader } = await import("@ionic/core/components/ion-header");
+  const { IonIcon } = await import("@ionic/core/components/ion-icon");
+  const { IonImg } = await import("@ionic/core/components/ion-img");
+  const { IonInfiniteScroll } = await import("@ionic/core/components/ion-infinite-scroll");
+  const { IonInfiniteScrollContent } = await import("@ionic/core/components/ion-infinite-scroll-content");
+  const { IonInput } = await import("@ionic/core/components/ion-input");
+  const { IonItem } = await import("@ionic/core/components/ion-item");
+  const { IonItemDivider } = await import("@ionic/core/components/ion-item-divider");
+  const { IonItemGroup } = await import("@ionic/core/components/ion-item-group");
+  const { IonItemOption } = await import("@ionic/core/components/ion-item-option");
+  const { IonItemOptions } = await import("@ionic/core/components/ion-item-options");
+  const { IonItemSliding } = await import("@ionic/core/components/ion-item-sliding");
+  const { IonLabel } = await import("@ionic/core/components/ion-label");
+  const { IonList } = await import("@ionic/core/components/ion-list");
+  const { IonListHeader } = await import("@ionic/core/components/ion-list-header");
+  const { IonMenu } = await import("@ionic/core/components/ion-menu");
+  const { IonMenuButton } = await import("@ionic/core/components/ion-menu-button");
+  const { IonMenuToggle } = await import("@ionic/core/components/ion-menu-toggle");
+  const { IonNav } = await import("@ionic/core/components/ion-nav");
+  const { IonNavLink } = await import("@ionic/core/components/ion-nav-link");
+  const { IonNote } = await import("@ionic/core/components/ion-note");
+  const { IonProgressBar } = await import("@ionic/core/components/ion-progress-bar");
+  const { IonRadio } = await import("@ionic/core/components/ion-radio");
+  const { IonRadioGroup } = await import("@ionic/core/components/ion-radio-group");
+  const { IonRange } = await import("@ionic/core/components/ion-range");
+  const { IonRefresher } = await import("@ionic/core/components/ion-refresher");
+  const { IonRefresherContent } = await import("@ionic/core/components/ion-refresher-content");
+  const { IonReorder } = await import("@ionic/core/components/ion-reorder");
+  const { IonReorderGroup } = await import("@ionic/core/components/ion-reorder-group");
+  const { IonRippleEffect } = await import("@ionic/core/components/ion-ripple-effect");
+  const { IonRow } = await import("@ionic/core/components/ion-row");
+  const { IonSearchbar } = await import("@ionic/core/components/ion-searchbar");
+  const { IonSegment } = await import("@ionic/core/components/ion-segment");
+  const { IonSegmentButton } = await import("@ionic/core/components/ion-segment-button");
+  const { IonSelect } = await import("@ionic/core/components/ion-select");
+  const { IonSelectOption } = await import("@ionic/core/components/ion-select-option");
+  const { IonSkeletonText } = await import("@ionic/core/components/ion-skeleton-text");
+  const { IonSlide } = await import("@ionic/core/components/ion-slide");
+  const { IonSlides } = await import("@ionic/core/components/ion-slides");
+  const { IonSpinner } = await import("@ionic/core/components/ion-spinner");
+  const { IonSplitPane } = await import("@ionic/core/components/ion-split-pane");
+  const { IonTab } = await import("@ionic/core/components/ion-tab");
+  const { IonTabs } = await import("@ionic/core/components/ion-tabs");
+  const { IonTabBar } = await import("@ionic/core/components/ion-tab-bar");
+  const { IonTabButton } = await import("@ionic/core/components/ion-tab-button");
+  const { IonText } = await import("@ionic/core/components/ion-text");
+  const { IonTextarea } = await import("@ionic/core/components/ion-textarea");
+  const { IonThumbnail } = await import("@ionic/core/components/ion-thumbnail");
+  const { IonTitle } = await import("@ionic/core/components/ion-title");
+  const { IonToggle } = await import("@ionic/core/components/ion-toggle");
+  const { IonToolbar } = await import("@ionic/core/components/ion-toolbar");
+  const { IonVirtualScroll } = await import("@ionic/core/components/ion-virtual-scroll");
+
+  const { IonActionSheet } = await import("@ionic/core/components/ion-action-sheet");
+  const { IonAlert } = await import("@ionic/core/components/ion-alert");
+  const { IonLoading } = await import("@ionic/core/components/ion-loading");
+  const { IonModal } = await import("@ionic/core/components/ion-modal");
+  const { IonPicker } = await import("@ionic/core/components/ion-picker");
+  const { IonPickerColumn } = await import("@ionic/core/components/ion-picker-column");
+  const { IonPickerColumnInternal } = await import("@ionic/core/components/ion-picker-column-internal");
+  const { IonPickerInternal } = await import("@ionic/core/components/ion-picker-internal");
+  const { IonPopover } = await import("@ionic/core/components/ion-popover");
+  const { IonSelectPopover } = await import("@ionic/core/components/ion-select-popover");
+  const { IonToast } = await import("@ionic/core/components/ion-toast");
+
+
+
+
+*/

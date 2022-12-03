@@ -79,8 +79,6 @@ export async function createIonicSvelte(opts) {
 
 	];
 
-	// packages = [];
-
 	// if (opts?.typography) packages.push('@tailwindcss/typography');
 	// if (opts?.forms) packages.push('@tailwindcss/forms');
 	// if (opts?.lineclamp) packages.push('@tailwindcss/line-clamp');
@@ -88,7 +86,7 @@ export async function createIonicSvelte(opts) {
 	if (!(opts?.quiet)) {
 		console.log('Working: Installing project dependencies ' + grey(packages.toString()));
 	}
-
+	// packages = [];
 	let result = spawnSync(opts.packagemanager, ['add', '-D', ...packages], {
 		shell: true,
 	});
@@ -103,6 +101,7 @@ export async function createIonicSvelte(opts) {
 
 
 	packages = ['@ionic/core', 'ionic-svelte']
+	// packages = [];
 	if (opts?.ionicons) packages.push('ionicons/icons');
 	console.log('....adding ' + grey(packages.toString()));
 	result = spawnSync(opts.packagemanager, ['add', '-S', ...packages], {
@@ -167,14 +166,30 @@ export async function createIonicSvelte(opts) {
 			getDemoIonicApp()
 		);
 
-
-
-
 		//	out(
 		//		path.resolve(process.cwd(), 'src/', 'app.postcss'),
 		//		'/*place global styles here */',
 		//	);
+
+
+		// tsconfig
+		if (opts.types == 'typescript') {
+			const tsconfig = fs.readFileSync(dist(`../${opts.name}/tsconfig.json`), 'utf-8');
+			const tsconfignew = tsconfig.replace('"compilerOptions": {', `"compilerOptions": {
+		"typeRoots": [
+			"./node_modules/ionic-svelte"
+		],
+		"types": [
+			"ionic-svelte"
+		],`);
+
+			console.log('TSCONFIG', tsconfig, tsconfignew);
+
+			out(path.resolve(process.cwd(), './', 'tsconfig.json'), tsconfignew)
+		}
 	}
+
+
 
 	// copy over selected template
 	//	copyTemplate(opts);
