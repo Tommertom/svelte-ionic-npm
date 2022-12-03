@@ -1,6 +1,6 @@
 {
   "name": "ionic-svelte",
-  "version": "0.5.22",
+  "version": "0.5.23",
   "private": false,
   "homepage": "https://ionicsvelte.firebaseapp.com",
   "repository": {
@@ -8,6 +8,8 @@
     "url": "https://github.com/Tommertom/svelte-ionic-npm.git"
   },
   "keywords": [
+    "ui library",
+    "ui",
     "ionic",
     "svelte",
     "sveltekit",
