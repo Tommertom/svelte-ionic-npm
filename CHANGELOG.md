@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.27
+- Typings for style, default events, class added
+- Still problem with ok-text (ion-select), is-open (modal) etc...
+- How to deal with svelte specific goodies like use: and bind:....?
+- Also padding (with =true), checked (without parameter)
+
 ## 0.5.26
 - Ionic event type bindings fix
 

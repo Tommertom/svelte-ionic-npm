@@ -4,6 +4,17 @@ const fs = require("fs");
 // load static
 const coreJson = require("./core.json"); // 6.3.8 downloaded
 
+const defaultDefinitions = `
+/**
+ * slots - See documentation for parent component on available slots
+ */
+"slot"?: string | undefined; // this is a hack - help needed, how to type slots properly
+
+"class"?:string | undefined;
+"style"?:string | undefined;
+"on:click"? : (ev?:any) => void;
+`;
+
 const doStuff = () => {
   var dir = "./generated";
 
@@ -35,12 +46,7 @@ const doStuff = () => {
       `;
 
       // slots support
-      typingOutput = typingOutput + `
-      /**
-       * slots - See documentation for parent component on available slots
-       */
-     "slot"?: string | undefined; // this is a hack - help needed, how to type slots properly
-`;
+      typingOutput = typingOutput + defaultDefinitions;
 
       // let's dump the props
       console.log('has props', props);
