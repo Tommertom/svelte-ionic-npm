@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.25
+- Fixes in type definitions (slots)
+
 ## 0.5.24
 - Removed Experimental package - no ES-imports because of style encapsulation
 - Added typings (need a bit more testing)

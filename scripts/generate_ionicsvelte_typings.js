@@ -28,30 +28,38 @@ const doStuff = () => {
     .forEach(component => {
       const { props } = component;
 
-      if (props.length > 0) {
-        // pre-amble of this tag
-        console.log('Processing ', component.tag)
-        typingOutput = typingOutput + `'${component.tag}': {
+      // if (props.length > 0) {
+      // pre-amble of this tag
+      console.log('Processing ', component.tag)
+      typingOutput = typingOutput + `'${component.tag}': {
       `;
 
-        // let's dump the props
-        console.log('has props', props);
-        props.forEach(prop => {
+      // slots support
+      typingOutput = typingOutput + `
+      /**
+       * slots - See documentation for parent component on available slots
+       */
+     "slot"?: string | undefined; // this is a hack - help needed, how to type slots properly
+`;
 
-          //   "disabled"?: boolean;
-          typingOutput = typingOutput + `
+      // let's dump the props
+      console.log('has props', props);
+      props.forEach(prop => {
+
+        //   "disabled"?: boolean;
+        typingOutput = typingOutput + `
           /**
           * ${prop.docs.replace(/\n/g, ' ')}
           */
           "${prop.name}"?: ${prop.type};
         `;
-        })
+      })
 
-        // close definition
-        typingOutput = typingOutput + `}
+      // close definition
+      typingOutput = typingOutput + `}
 
   `;
-      }
+      //   }
     });
 
   typingOutput = typingOutput + `    }
