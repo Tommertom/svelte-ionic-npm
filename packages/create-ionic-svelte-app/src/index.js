@@ -155,9 +155,11 @@ export async function askForMissingParams(opts) {
 	const disclaimer = `
 ${bold(cyan('Welcome to Ionic Svelte '))}
 
+This script will install a SvelteKit project using their SvelteKit create script. And then adds Ionic power to it.
+
 ${bold(red('This is BETA software; expect bugs and missing features.'))}
 
-Problems? Open an issue on ${cyan('https://github.com/Tommertom/svelte-ionic-npm/issues')} if none exists already.
+Problems? Open an issue on ${cyan('https://github.com/Tommertom/svelte-ionic-npm/issues')}.
 `;
 
 	const { version } = JSON.parse(

@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - Still problem with ok-text (ion-select), is-open (modal) etc...
 - How to deal with svelte specific goodies like use: and bind:....?
 - Also padding (with =true), checked (without parameter)
+- Fixed issue create-app script (now 0.0.7) - Package warnings are treated as errors 
 
 ## 0.5.26
 - Ionic event type bindings fix

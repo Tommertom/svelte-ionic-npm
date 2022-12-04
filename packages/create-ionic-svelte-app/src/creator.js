@@ -50,6 +50,10 @@ export class IonicSvelteOptions {
 export async function createIonicSvelte(opts) {
 	//create-svelte will happily overwrite an existing directory, foot guns are bad mkay
 
+	let s = 0;
+	opts.verbose = true;
+
+
 	opts.path = path.resolve(
 		opts?.path,
 		opts.name.replace(/\s+/g, '-').toLowerCase(),
@@ -66,6 +70,7 @@ export async function createIonicSvelte(opts) {
 	fs.mkdirp(opts.path);
 
 	//create-svelte will build the base install for us
+	// npm create svelte@latest my-project
 	create(opts.path, opts);
 	process.chdir(opts.path);
 
@@ -86,14 +91,14 @@ export async function createIonicSvelte(opts) {
 	if (!(opts?.quiet)) {
 		console.log('Working: Installing project dependencies ' + grey(packages.toString()));
 	}
+
 	// packages = [];
 	let result = spawnSync(opts.packagemanager, ['add', '-D', ...packages], {
 		shell: true,
 	});
-	// Capture any errors from stderr and display for the user to report it to us
-	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length) {
+	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length && !result?.stderr.toString().includes('WARN')) {
 		console.log(
-			'An error has occurred trying to install packages with your package manager, please send us the following text onto our Github or Discord:\n',
+			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
 		);
 		process.exit();
@@ -103,20 +108,29 @@ export async function createIonicSvelte(opts) {
 	packages = ['@ionic/core', 'ionic-svelte']
 	// packages = [];
 	if (opts?.ionicons) packages.push('ionicons/icons');
-	console.log('....adding ' + grey(packages.toString()));
+
+	console.log('Working: Adding ' + grey(packages.toString()));
+
 	result = spawnSync(opts.packagemanager, ['add', '-S', ...packages], {
 		shell: true,
 	});
+	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length && !result?.stderr.toString().includes('WARN')) {
+		console.log(
+			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
+			result?.stderr.toString(),
+		);
+		process.exit();
+	}
 
 
 	packages = ['@sveltejs/adapter-auto']
-	console.log('... removing ' + grey(packages.toString()));
+	console.log('Working: Removing ' + grey(packages.toString()));
 	result = spawnSync(opts.packagemanager, ['remove', '-D', ...packages], {
 		shell: true,
 	});
-	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length) {
+	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length && !result?.stderr.toString().includes('WARN')) {
 		console.log(
-			'An error has occurred trying to remove packages with your package manager, please send us the following text onto our Github or Discord:\n',
+			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
 		);
 		process.exit();
@@ -131,7 +145,7 @@ export async function createIonicSvelte(opts) {
 	}
 
 
-	console.log('... writing configs and default files');
+	console.log('Working: Writing configs and default files');
 	// write out config files
 	out('svelte.config.js', createSvelteConfig());
 	//	out('tailwind.config.cjs', createTailwindConfig(opts));
@@ -141,6 +155,7 @@ export async function createIonicSvelte(opts) {
 	// if (opts.monorepo) {
 	// 	//		createViteConfig(opts)
 	// }
+
 	if (opts.framework == 'svelte-kit' || opts.framework == 'svelte-kit-lib') {
 		mkdirp(path.join('src', 'lib'))
 		mkdirp(path.join('src', 'theme'))
