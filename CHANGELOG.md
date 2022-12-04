@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.29
+- Updated typings
+- Modular imports available, but not defaulted yet
+
 ## 0.5.28/27
 - Typings for style, default events, class added
 - Still problem with ok-text (ion-select), is-open (modal) etc...

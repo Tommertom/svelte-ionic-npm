@@ -105,7 +105,7 @@ export async function createIonicSvelte(opts) {
 	}
 
 
-	packages = ['@ionic/core', 'ionic-svelte']
+	packages = ['@ionic/core@6.3.8', 'ionic-svelte']
 	// packages = [];
 	if (opts?.ionicons) packages.push('ionicons/icons');
 
