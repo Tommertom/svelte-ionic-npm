@@ -262,9 +262,19 @@ function createSvelteKitLayout(opts) {
 		You can also choose to import each component you want to use separately.
 
 		It is recommended to do this in this file, as you only need to do such once. But you are free
-		to do this elsewhere if you like to code-split differently.
+		to do this elsewhere if you like to code-split differently. 
 
-		Click the import below to go to the full list of possible imports.
+		Example:
+		import 'ionic-svelte/components/ion-app';
+		import 'ionic-svelte/components/ion-card';
+		import 'ionic-svelte/components/ion-card-title';
+		import 'ionic-svelte/components/ion-card-subtitle';
+		import 'ionic-svelte/components/ion-card-header';
+		import 'ionic-svelte/components/ion-card-content';
+		import 'ionic-svelte/components/ion-chip';
+		import 'ionic-svelte/components/ion-button';
+
+		Click the ionic-svelte-components-all-import below to go to the full list of possible imports.
 
 		Please don't forget to import ion-app in this file when you decide to code-split:
 	    >>>>>> import 'ionic-svelte/components/ion-app';

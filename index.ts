@@ -126,7 +126,7 @@ export * from "./utils/platform";
 
 export const setupIonicSvelte = async (config?: IonicConfig) => {
 
-  console.warn(`setupIonicSvelte will be deprecated - use setupIonicBase and add import 'ionic-svelte/components/all'; - see README for module-shaking options to reduce the size of your bundle. `)
+  console.warn(`setupIonicSvelte will be deprecated - use setupIonicBase and add import 'ionic-svelte/components/all'; - see https://github.com/Tommertom/svelte-ionic-npm/blob/main/CHANGELOG.md#0530 and also for module-shaking options to reduce the size of your bundle. `)
 
   /* Ionic initialisation */
   initialize(config);

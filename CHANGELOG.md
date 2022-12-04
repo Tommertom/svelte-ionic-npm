@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.31
+- ...
+
 ## 0.5.30
 - Changed the default starter to use the cjs import, also to enable codesplitting - creator 0.0.8
 - Config routine changed for base `+layout.svelte`
@@ -39,16 +42,25 @@ Should become:
 
 		This adds at least >800kb (uncompressed) to your bundle.
 
-		You can also choose to import each component you want to use separately.
+		You can also choose to import each component you want to use separately. Example:
+
+        	import 'ionic-svelte/components/ion-app';
+            import 'ionic-svelte/components/ion-card';
+            import 'ionic-svelte/components/ion-card-title';
+            import 'ionic-svelte/components/ion-card-subtitle';
+            import 'ionic-svelte/components/ion-card-header';
+            import 'ionic-svelte/components/ion-card-content';
+            import 'ionic-svelte/components/ion-chip';
+            import 'ionic-svelte/components/ion-button';
 
 		It is recommended to do this in this file, as you only need to do such once. But you are free
 		to do this elsewhere if you like to code-split differently.
 
-		You can find these import lines to copy here - https://github.com/Tommertom/svelte-ionic-npm/blob/main/components/all.js
+		You can find these import lines to copy here by going to the imported file below (ionic-svelte/components/all).
 	
 		Please don't forget to import ion-app in this file when you decide to code-split:
 		
-	    import 'ionic-svelte/components/ion-app';
+	        import 'ionic-svelte/components/ion-app';
 	*/
 	import 'ionic-svelte/components/all';
 </script>
@@ -59,7 +71,6 @@ Should become:
 
 
 ```
-
 
 ## 0.5.29
 - Updated typings
