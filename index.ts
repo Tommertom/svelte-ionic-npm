@@ -125,11 +125,25 @@ export * from "./utils/controllers";
 export * from "./utils/platform";
 
 export const setupIonicSvelte = async (config?: IonicConfig) => {
+
+  console.warn(`setupIonicSvelte will be deprecated - use setupIonicBase and add import 'ionic-svelte/components/all'; - see README for module-shaking options to reduce the size of your bundle. `)
+
   /* Ionic initialisation */
   initialize(config);
 
   /* Loading webcomponents en styles */
   defineIonComponents();
+
+  /* something else needed */
+  if (typeof (document as any) !== "undefined") {
+    document.documentElement.classList.add("ion-ce");
+  }
+};
+
+
+export const setupIonicBase = async (config?: IonicConfig) => {
+  /* Ionic initialisation */
+  initialize(config);
 
   /* something else needed */
   if (typeof (document as any) !== "undefined") {

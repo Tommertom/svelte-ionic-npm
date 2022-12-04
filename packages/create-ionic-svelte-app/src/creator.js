@@ -246,10 +246,10 @@ function createViteConfig(opts) {
 
 function createSvelteKitLayout(opts) {
 	const str = `<script${opts.types == 'typescript' ? ` lang='ts'` : ''}>
-	import { setupIonicSvelte } from 'ionic-svelte';
+	import { setupIonicBase } from 'ionic-svelte';
 
 	/* Call Ionic's setup routine */
-	setupIonicSvelte();
+	setupIonicBase();
 
 	/* Theme variables */
 	import '../theme/variables.css';
