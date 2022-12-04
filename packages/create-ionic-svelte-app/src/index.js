@@ -9,10 +9,8 @@ import path from 'path';
 
 /* Ionic Svelte Create NPM script
 
-Fully taken from 
+Taken from 
 https://github.com/skeletonlabs/create-skeleton-app
-
-https://www.reddit.com/r/sveltejs/comments/z9fg0r/comment/iyil17f/?utm_source=share&utm_medium=web2x&context=3
 
 So all kudos to the Skeleton crew
 

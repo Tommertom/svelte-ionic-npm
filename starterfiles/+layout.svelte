@@ -1,6 +1,6 @@
 <script lang="ts">
   // here your menu component
-  import Menu from "$lib/components/Menu.svelte";
+  // import Menu from "...";
 
   import { setupIonicSvelte } from "ionic-svelte";
 

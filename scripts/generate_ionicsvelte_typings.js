@@ -112,9 +112,9 @@ const doStuff = () => {
     // .filter(component => component.tag == 'ion-input')
     .forEach(component => {
       const { tag } = component;
-      const componentCode = `import { defineCustomElement } from "@ionic/core/components/${tag}";\ndefineCustomElement();`;
+      const componentCode = `import { defineCustomElement } from '@ionic/core/components/${tag}';\ndefineCustomElement();`;
 
-      allImportsCode = allImportsCode + `import "ionic-svelte/components/${tag}";\n`;
+      allImportsCode = allImportsCode + `import 'ionic-svelte/components/${tag}';\n`;
 
       fs.writeFile(
         `../components/${tag}.js`,
@@ -122,6 +122,7 @@ const doStuff = () => {
         function (err) {
           if (err) return console.log(err);
         }
+
       );
     })
 

@@ -96,7 +96,9 @@ export async function createIonicSvelte(opts) {
 	let result = spawnSync(opts.packagemanager, ['add', '-D', ...packages], {
 		shell: true,
 	});
-	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length && !result?.stderr.toString().includes('WARN')) {
+	if (opts.packagemanager != 'yarn'
+		&& result?.stderr.toString().length
+		&& (result?.stderr.toString().includes('ERR_PNPM') || result?.stderr.toString().includes('ERR!'))) {
 		console.log(
 			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
@@ -114,7 +116,9 @@ export async function createIonicSvelte(opts) {
 	result = spawnSync(opts.packagemanager, ['add', '-S', ...packages], {
 		shell: true,
 	});
-	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length && !result?.stderr.toString().includes('WARN')) {
+	if (opts.packagemanager != 'yarn'
+		&& result?.stderr.toString().length
+		&& (result?.stderr.toString().includes('ERR_PNPM') || result?.stderr.toString().includes('ERR!'))) {
 		console.log(
 			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
@@ -128,7 +132,9 @@ export async function createIonicSvelte(opts) {
 	result = spawnSync(opts.packagemanager, ['remove', '-D', ...packages], {
 		shell: true,
 	});
-	if (!(opts.packagemanager == 'yarn') && result?.stderr.toString().length && !result?.stderr.toString().includes('WARN')) {
+	if (opts.packagemanager != 'yarn'
+		&& result?.stderr.toString().length
+		&& (result?.stderr.toString().includes('ERR_PNPM') || result?.stderr.toString().includes('ERR!'))) {
 		console.log(
 			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
@@ -144,17 +150,8 @@ export async function createIonicSvelte(opts) {
 		if (stderr.length) console.log(bold(red('stderr:')), stderr);
 	}
 
-
 	console.log('Working: Writing configs and default files');
-	// write out config files
 	out('svelte.config.js', createSvelteConfig());
-	//	out('tailwind.config.cjs', createTailwindConfig(opts));
-	//	out('postcss.config.cjs', createPostCssConfig());
-
-	// add vite.server.fs.allow of skeleton path for sites in monorepo
-	// if (opts.monorepo) {
-	// 	//		createViteConfig(opts)
-	// }
 
 	if (opts.framework == 'svelte-kit' || opts.framework == 'svelte-kit-lib') {
 		mkdirp(path.join('src', 'lib'))
@@ -181,12 +178,6 @@ export async function createIonicSvelte(opts) {
 			getDemoIonicApp()
 		);
 
-		//	out(
-		//		path.resolve(process.cwd(), 'src/', 'app.postcss'),
-		//		'/*place global styles here */',
-		//	);
-
-
 		// tsconfig
 		if (opts.types == 'typescript') {
 			const tsconfig = fs.readFileSync(dist(`../${opts.name}/tsconfig.json`), 'utf-8');
@@ -198,16 +189,9 @@ export async function createIonicSvelte(opts) {
 			"ionic-svelte"
 		],`);
 
-			//	console.log('TSCONFIG', tsconfig, tsconfignew);
-
 			out(path.resolve(process.cwd(), './', 'tsconfig.json'), tsconfignew)
 		}
 	}
-
-
-
-	// copy over selected template
-	//	copyTemplate(opts);
 
 	return opts;
 }
@@ -264,10 +248,31 @@ function createSvelteKitLayout(opts) {
 	const str = `<script${opts.types == 'typescript' ? ` lang='ts'` : ''}>
 	import { setupIonicSvelte } from 'ionic-svelte';
 
+	/* Call Ionic's setup routine */
+	setupIonicSvelte();
+
 	/* Theme variables */
 	import '../theme/variables.css';
 
-	setupIonicSvelte();
+	/* 
+		The next command loads and registers all Ionic Webcomponents for you to use.
+
+		This adds at least >800kb (uncompressed) to your bundle.
+
+		You can also choose to import each component you want to use separately.
+
+		It is recommended to do this in this file, as you only need to do such once. But you are free
+		to do this elsewhere if you like to code-split differently.
+
+		Click the import below to go to the full list of possible imports.
+
+		Please don't forget to import ion-app in this file when you decide to code-split:
+	    >>>>>> import 'ionic-svelte/components/ion-app';
+
+		You can report issues here - https://github.com/Tommertom/svelte-ionic-npm/issues
+		Want to know what is happening more - follow me on Twitter - https://twitter.com/Tommertomm
+	*/
+	import 'ionic-svelte/components/all';
 </script>
 
 <ion-app>
@@ -275,33 +280,6 @@ function createSvelteKitLayout(opts) {
 </ion-app>
 `;
 	return str;
-}
-
-function copyTemplate(opts) {
-	const src = path.resolve(
-		dist(opts.skeletontemplatedir),
-		opts.skeletontemplate,
-	);
-
-	fs.copySync(src + '/src', './src', { overwrite: true });
-	fs.copySync(src + '/static', './static', { overwrite: true });
-
-	// patch back in their theme choice - it may have been replaced by the theme template, it may still be the correct auto-genned one, depends on the template - we don't care, this fixes it.
-	// let content = fs.readFileSync('./src/routes/+layout.svelte', {
-	// 	encoding: 'utf8',
-	// 	flag: 'r',
-	// });
-	// const reg = /theme-.*\.css';$/gim;
-	// fs.writeFileSync(
-	// 	'./src/routes/+layout.svelte',
-	// 	content.replace(reg, `theme-${opts.skeletontheme}.css';`),
-	// );
-	// // update the <body> to have the data-theme
-	// content = fs.readFileSync('./src/app.html', { encoding: 'utf8', flag: 'r' });
-	// fs.writeFileSync(
-	// 	'./src/app.html',
-	// 	content.replace('<body>', `<body data-theme="${opts.skeletontheme}">`),
-	// );
 }
 
 function out(filename, data) {

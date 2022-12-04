@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.30
+- Changed the default starter to use the cjs import, also to enable codesplitting
+
 ## 0.5.29
 - Updated typings
 - Modular imports available, but not defaulted yet
