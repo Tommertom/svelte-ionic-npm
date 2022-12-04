@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## 0.5.31
-- ...
+- Capacitor added to creator 0.0.8
 
 ## 0.5.30
 - Changed the default starter to use the cjs import, also to enable codesplitting - creator 0.0.8

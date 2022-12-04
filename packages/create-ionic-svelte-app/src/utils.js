@@ -56,6 +56,7 @@ Option              Short   Quiet Default   Values                      Descript
 --framework         -f      svelte-kit      svelte-kit|svelte-kit-lib   Setup as Svelte Kit library project or library
 --path              -p      ''              relative or absolute path   Location to install, name is appended
 --ionicons          -i      false           true|false                  Ìnclude Ionic icon library Ionicons
+--capacitor         -c      false           true|false                  Install dependencies for Capacitor
 
 Quiet mode is for automated installs for testing, CI/CD.  It will take all of the default values in the
 Quiet Default column, but you can provide any other flags to override as you see fit.  If you just want

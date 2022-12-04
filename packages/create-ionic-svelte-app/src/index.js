@@ -81,6 +81,16 @@ async function main() {
 			console.log(cyan('  https://vitest.dev'));
 		}
 
+		if (options.capacitor) {
+			console.log(bold('✔ Capacitor'));
+			console.log(cyan('  https://capacitorjs.com/docs/getting-started'));
+		}
+
+		if (options.ionicons) {
+			console.log(bold('✔ Ionicons'));
+			console.log(cyan('  https://ionicsvelte.firebaseapp.com/components/Icon'));
+		}
+
 		console.log('\nInstall community-maintained integrations:');
 		console.log(cyan('  https://github.com/svelte-add/svelte-adders'));
 
@@ -95,8 +105,9 @@ async function main() {
 		//	console.log(`  ${i++}: ${bold(cyan('npm install'))} (or pnpm install, etc)`);
 		// prettier-ignore
 		console.log(`  ${i++}: ${bold(cyan('git init && git add -A && git commit -m "Initial commit"'))} (optional)`);
+		if (options.capacitor) console.log(`  ${i++}: ${bold(cyan('npx cap init'))}`);
+		if (options.capacitor) console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android @capacitor/ios'))} (either of them optional)`);
 		console.log(`  ${i++}: ${bold(cyan('npm run dev -- --open'))}`);
-
 		console.log(`\nTo close the dev server, hit ${bold(cyan('Ctrl-C'))}`);
 		console.log(`\nStuck? Visit us at ${cyan('https://svelte.dev/chat')}`);
 
@@ -118,7 +129,8 @@ async function parseArgs() {
 			m: 'monorepo',
 			q: 'quiet',
 			v: 'verbose',
-			i: 'ionicons'
+			i: 'ionicons',
+			c: 'capacitor'
 		},
 		boolean: [
 			'help',
@@ -129,7 +141,8 @@ async function parseArgs() {
 			'playwright',
 			'verbose',
 			'vitest',
-			'ionicons'
+			'ionicons',
+			'capacitor'
 		],
 	});
 
@@ -268,6 +281,18 @@ Problems? Open an issue on ${cyan('https://github.com/Tommertom/svelte-ionic-npm
 			type: 'toggle',
 			name: 'ionicons',
 			message: 'Add Ionicons?',
+			initial: false,
+			active: 'Yes',
+			inactive: 'No'
+		}
+		questions.push(q);
+	}
+
+	if (!('capacitor' in opts)) {
+		const q = {
+			type: 'toggle',
+			name: 'capacitor',
+			message: 'Add Capacitor dependencies?',
 			initial: false,
 			active: 'Yes',
 			inactive: 'No'

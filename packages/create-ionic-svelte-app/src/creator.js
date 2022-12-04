@@ -25,6 +25,7 @@ export class IonicSvelteOptions {
 
 	// Ionic
 	ionicons = false;
+	capacitor = false;
 
 	// create-skeleton-app additions
 	// _ = []; //catch all for extraneous params from mri, used to capture project name.
@@ -83,6 +84,7 @@ export async function createIonicSvelte(opts) {
 		'@sveltejs/adapter-static'
 
 	];
+	if (opts?.capacitor) packages.push('@capacitor/cli');
 
 	// if (opts?.typography) packages.push('@tailwindcss/typography');
 	// if (opts?.forms) packages.push('@tailwindcss/forms');
@@ -107,7 +109,8 @@ export async function createIonicSvelte(opts) {
 	}
 
 
-	packages = ['@ionic/core@6.3.8', 'ionic-svelte']
+	packages = ['@ionic/core@6.3.8', 'ionic-svelte'];
+	if (opts?.capacitor) packages.push('@capacitor/core');
 	// packages = [];
 	if (opts?.ionicons) packages.push('ionicons/icons');
 
