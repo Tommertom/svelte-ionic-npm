@@ -105,8 +105,11 @@ async function main() {
 		//	console.log(`  ${i++}: ${bold(cyan('npm install'))} (or pnpm install, etc)`);
 		// prettier-ignore
 		console.log(`  ${i++}: ${bold(cyan('git init && git add -A && git commit -m "Initial commit"'))} (optional)`);
-		if (options.capacitor) console.log(`  ${i++}: ${bold(cyan('npx cap init'))}`);
-		if (options.capacitor) console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android @capacitor/ios'))} (either of them optional)`);
+		if (options.capacitor) {
+			console.log(`  ${i++}: ${bold(cyan('npx cap init'))}`);
+			console.log(`  ${i++}: edit  ${bold(cyan('capacitor.config.ts'))} - ${bold(cyan("webDir: 'build'"))}`);
+			console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android @capacitor/ios'))} (either of them optional)`);
+		}
 		console.log(`  ${i++}: ${bold(cyan('npm run dev -- --open'))}`);
 		console.log(`\nTo close the dev server, hit ${bold(cyan('Ctrl-C'))}`);
 		console.log(`\nStuck? Visit us at ${cyan('https://svelte.dev/chat')}`);
@@ -166,7 +169,8 @@ export async function askForMissingParams(opts) {
 	const disclaimer = `
 ${bold(cyan('Welcome to Ionic Svelte '))}
 
-This script will install a SvelteKit project using their SvelteKit create script. And then adds Ionic power to it.
+This script will install a SvelteKit project using their SvelteKit create script. 
+And then adds Ionic power to it - Ionic Elements, Ionicons (optional) and CapacitorJS (optional)
 
 ${bold(red('This is BETA software; expect bugs and missing features.'))}
 

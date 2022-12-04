@@ -112,7 +112,7 @@ export async function createIonicSvelte(opts) {
 	packages = ['@ionic/core@6.3.8', 'ionic-svelte'];
 	if (opts?.capacitor) packages.push('@capacitor/core');
 	// packages = [];
-	if (opts?.ionicons) packages.push('ionicons/icons');
+	if (opts?.ionicons) packages.push('ionicons');
 
 	console.log('Working: Adding ' + grey(packages.toString()));
 
@@ -146,12 +146,12 @@ export async function createIonicSvelte(opts) {
 	}
 
 	// Just to help with any user error reports
-	if (opts.verbose) {
-		const stdout = result?.stdout.toString();
-		if (stdout.length) console.log(bold(cyan('stdout:')), stdout);
-		const stderr = result?.stderr.toString();
-		if (stderr.length) console.log(bold(red('stderr:')), stderr);
-	}
+	// if (opts.verbose) {
+	// 	const stdout = result?.stdout.toString();
+	// 	if (stdout.length) console.log(bold(cyan('stdout:')), stdout);
+	// 	const stderr = result?.stderr.toString();
+	// 	if (stderr.length) console.log(bold(red('stderr:')), stderr);
+	// }
 
 	console.log('Working: Writing configs and default files');
 	out('svelte.config.js', createSvelteConfig());
@@ -260,7 +260,7 @@ function createSvelteKitLayout(opts) {
 	/* 
 		The next command loads and registers all Ionic Webcomponents for you to use.
 
-		This adds at least >800kb (uncompressed) to your bundle.
+		This adds at least >800kb (uncompressed) to your bundle - 80 components (so do your math!!)
 
 		You can also choose to import each component you want to use separately.
 
