@@ -1,2 +1,2 @@
-import { defineCustomElement } from "@ionic/core/components/ion-slides";
+import { defineCustomElement } from '@ionic/core/components/ion-slides';
 defineCustomElement();

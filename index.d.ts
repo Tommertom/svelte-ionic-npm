@@ -15,11 +15,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the accordion cannot be interacted with.
@@ -68,11 +115,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, all accordions inside of the accordion group will animate when expanding or collapsing.
@@ -132,11 +226,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the action sheet will animate.
@@ -241,11 +382,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the alert will animate.
@@ -362,11 +550,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
     }
 
 
@@ -379,11 +614,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
     }
 
 
@@ -396,11 +678,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -461,11 +790,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the backdrop will stop propagation on tap.
@@ -501,11 +877,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -530,11 +953,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the breadcrumb will take on a different look to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
@@ -623,11 +1093,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -675,11 +1192,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The type of button.
@@ -804,11 +1368,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If true, buttons will disappear when its parent toolbar has fully collapsed if the toolbar is not the first toolbar. If the toolbar is the first toolbar, the buttons will be hidden and will only be shown once all toolbars have fully collapsed.  Only applies in `ios` mode with `collapse` set to `true` on `ion-header`.  Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)
@@ -827,11 +1438,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, a button tag will be rendered and the card will be tappable.
@@ -910,11 +1568,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The mode determines which platform styles to use.
@@ -933,11 +1638,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -968,11 +1720,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -997,11 +1796,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -1026,11 +1872,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the checkbox is selected.
@@ -1100,11 +1993,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -1141,11 +2081,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The amount to offset the column, in terms of how many columns it should shift to the end of the total available.
@@ -1302,11 +2289,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -1370,11 +2404,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The text to display on the picker's cancel button.
@@ -1581,11 +2662,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -1622,11 +2750,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active. That means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible.
@@ -1663,11 +2838,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the fab button will be show a close icon.
@@ -1780,11 +3002,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the fab list will show all fab buttons in the list.
@@ -1809,11 +3078,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Describes the scroll effect that will be applied to the footer. Only applies in iOS mode.
@@ -1844,11 +3160,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the grid will have a fixed width based on the screen size.
@@ -1867,11 +3230,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Describes the scroll effect that will be applied to the header. Only applies in iOS mode.  Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)
@@ -1902,11 +3312,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * This attribute defines the alternative text describing the image. Users will see this text displayed if the image URL is wrong, the image is not in one of the supported formats, or if the image is not yet downloaded.
@@ -1946,11 +3403,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the infinite scroll will be hidden and scroll event listeners will be removed.  Set this to true to disable the infinite scroll from actively trying to receive new data while scrolling. This is useful when it is known that there is no more data that can be added, and the infinite scroll is no longer needed.
@@ -1986,11 +3490,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * An animated SVG spinner that shows while loading.
@@ -2015,11 +3566,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * This attribute is ignored.
@@ -2220,11 +3818,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, a button tag will be rendered and the item will be tappable.
@@ -2345,11 +3990,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -2380,11 +4072,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
     }
 
 
@@ -2397,11 +4136,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -2468,11 +4254,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The side the option button should be on. Possible values: `"start"` and `"end"`. If you have multiple `ion-item-options`, a side must be provided for each.
@@ -2496,11 +4329,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the user cannot interact with the sliding item.
@@ -2524,11 +4404,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -2559,11 +4486,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the list will have margin around it and rounded corners.
@@ -2594,11 +4568,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -2629,11 +4650,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the loading indicator will animate.
@@ -2744,11 +4812,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The `id` of the main content. When using a router this is typically `ion-router-outlet`. When not using a router, this is typically your main view's `ion-content`. This is not the id of the `ion-content` inside of your `ion-menu`.
@@ -2823,11 +4938,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Automatically hides the menu button when the corresponding menu is not active
@@ -2876,11 +5038,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Automatically hides the content when the corresponding menu is not active.  By default, it's `true`. Change it to `false` in order to keep `ion-menu-toggle` always visible regardless the state of the menu.
@@ -2905,11 +5114,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the modal will animate.
@@ -3081,11 +5337,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the nav should animate the transition of components.
@@ -3138,11 +5441,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Component to navigate to. Only used if the `routerDirection` is `"forward"` or `"root"`.
@@ -3179,11 +5529,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -3208,11 +5605,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the picker will animate.
@@ -3317,11 +5761,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Describes how to align the popover content with the `reference` point. Defaults to `'center'` for `ios` mode, and `'start'` for `md` mode.
@@ -3506,11 +5997,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If the buffer and value are smaller than 1, the buffer circles will show. The buffer should be between [0, 1].
@@ -3559,11 +6097,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -3616,11 +6201,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the radios can be deselected.
@@ -3656,11 +6288,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The start position of the range active bar. This feature is only available with a single knob (dualKnobs="false"). Valid values are greater than or equal to the min value and less than or equal to the max value.
@@ -3788,11 +6467,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Time it takes to close the refresher. Does not apply when the refresher content uses a spinner, enabling the native refresher.
@@ -3856,11 +6582,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * A static icon or a spinner to display when you begin to pull down. A spinner name can be provided to gradually show tick marks when pulling down on iOS devices.
@@ -3897,11 +6670,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
     }
 
 
@@ -3914,11 +6734,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the reorder will be hidden.
@@ -3942,11 +6809,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * Sets the type of ripple-effect:  - `bounded`: the ripple effect expands from the user's click position - `unbounded`: the ripple effect expands from the center of the button and overflows the container.  NOTE: Surfaces for bounded ripples should have the overflow property set to hidden, while surfaces for unbounded ripples should have it set to visible.
@@ -3965,11 +6879,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * A navigation hook that is fired when the route tries to enter. Returning `true` allows the navigation to proceed, while returning `false` causes it to be cancelled. Returning a `NavigationHookOptions` object causes the router to redirect to the path specified.
@@ -4017,11 +6978,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * A redirect route, redirects "from" a URL "to" another URL. This property is that "from" URL. It needs to be an exact match of the navigated URL in order to apply.  The path specified in this value is always an absolute path, even if the initial `/` slash is not specified.
@@ -4051,11 +7059,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The root path to use when matching URLs. By default, this is set to "/", but you can specify an alternate prefix for all URL paths.
@@ -4090,11 +7145,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -4143,11 +7245,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the router-outlet should animate the transition of components.
@@ -4178,11 +7327,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
     }
 
 
@@ -4195,11 +7391,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, enable searchbar animation.
@@ -4356,11 +7599,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -4420,11 +7710,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the user cannot interact with the segment button.
@@ -4467,11 +7804,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The text to display on the cancel button.
@@ -4581,11 +7965,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the user cannot interact with the select option. This property does not apply when `interface="action-sheet"` as `ion-action-sheet` does not allow for disabled buttons.
@@ -4610,11 +8041,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the skeleton text will animate.
@@ -4633,11 +8111,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
     }
 
 
@@ -4650,11 +8175,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The mode determines which platform styles to use.
@@ -4771,11 +8343,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -4812,11 +8431,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The `id` of the main content. When using a router this is typically `ion-router-outlet`. When not using a router, this is typically your main view's `ion-content`. This is not the id of the `ion-content` inside of your `ion-menu`.
@@ -4852,11 +8518,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The component to display inside of the tab.
@@ -4881,11 +8594,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -4922,11 +8682,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the user cannot interact with the tab button.
@@ -4993,11 +8800,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * (event : { tab: string; }) => void :  Emitted when the navigation has finished transitioning to a new component.
@@ -5020,11 +8874,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -5049,11 +8950,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the textarea container will grow and shrink based on the contents of the textarea.
@@ -5212,11 +9160,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
     }
 
 
@@ -5229,11 +9224,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -5258,11 +9300,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the toast will animate.
@@ -5385,11 +9474,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * If `true`, the toggle is selected.
@@ -5459,11 +9595,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
@@ -5488,11 +9671,58 @@ declare namespace svelte.JSX {
       /**
        * slots - See documentation for parent component on available slots
        */
-      "slot"?: string | undefined; // is this the way to type slots?
+      "slot"?: string | undefined;
 
       "class"?: string | undefined;
       "style"?: string | undefined;
-      "on:click"?: (ev?: any) => void;
+
+      "on:click"?: (ev?: Event) => void;
+      "on:focus"?: (ev?: Event) => void;
+      "on:blur"?: (ev?: Event) => void;
+      "on:fullscreenchange"?: (ev?: Event) => void;
+      "on:fullscreenerror"?: (ev?: Event) => void;
+      "on:scroll"?: (ev?: Event) => void;
+      "on:cut"?: (ev?: Event) => void;
+      "on:copy"?: (ev?: Event) => void;
+      "on:paste"?: (ev?: Event) => void;
+      "on:keydown"?: (ev?: Event) => void;
+      "on:keypress"?: (ev?: Event) => void;
+      "on:keyup"?: (ev?: Event) => void;
+      "on:auxclick"?: (ev?: Event) => void;
+      "on:contextmenu"?: (ev?: Event) => void;
+      "on:dblclick"?: (ev?: Event) => void;
+      "on:mousedown"?: (ev?: Event) => void;
+      "on:mouseenter"?: (ev?: Event) => void;
+      "on:mouseleave"?: (ev?: Event) => void;
+      "on:mousemove"?: (ev?: Event) => void;
+      "on:mouseover"?: (ev?: Event) => void;
+      "on:mouseout"?: (ev?: Event) => void;
+      "on:mouseup"?: (ev?: Event) => void;
+      "on:pointerlockchange"?: (ev?: Event) => void;
+      "on:pointerlockerror"?: (ev?: Event) => void;
+      "on:select"?: (ev?: Event) => void;
+      "on:wheel"?: (ev?: Event) => void;
+      "on:drag"?: (ev?: Event) => void;
+      "on:dragend"?: (ev?: Event) => void;
+      "on:dragenter"?: (ev?: Event) => void;
+      "on:dragstart"?: (ev?: Event) => void;
+      "on:dragleave"?: (ev?: Event) => void;
+      "on:dragover"?: (ev?: Event) => void;
+      "on:drop"?: (ev?: Event) => void;
+      "on:touchcancel"?: (ev?: Event) => void;
+      "on:touchend"?: (ev?: Event) => void;
+      "on:touchmove"?: (ev?: Event) => void;
+      "on:touchstart"?: (ev?: Event) => void;
+      "on:pointerover"?: (ev?: Event) => void;
+      "on:pointerenter"?: (ev?: Event) => void;
+      "on:pointerdown"?: (ev?: Event) => void;
+      "on:pointermove"?: (ev?: Event) => void;
+      "on:pointerup"?: (ev?: Event) => void;
+      "on:pointercancel"?: (ev?: Event) => void;
+      "on:pointerout"?: (ev?: Event) => void;
+      "on:pointerleave"?: (ev?: Event) => void;
+      "on:gotpointercapture"?: (ev?: Event) => void;
+      "on:lostpointercapture"?: (ev?: Event) => void;
 
       /**
       * The approximate width of each footer template's cell. This dimension is used to help determine how many cells should be created when initialized, and to help calculate the height of the scrollable area. This height value can only use `px` units. Note that the actual rendered size of each cell comes from the app's CSS, whereas this approximation is used to help calculate initial dimensions before the item has been rendered.

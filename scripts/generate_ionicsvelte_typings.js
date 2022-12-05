@@ -8,11 +8,58 @@ const defaultDefinitions = `
 /**
  * slots - See documentation for parent component on available slots
  */
-"slot"?: string | undefined; // this is a hack - help needed, how to type slots properly
+"slot"?: string | undefined; 
 
 "class"?:string | undefined;
 "style"?:string | undefined;
-"on:click"? : (ev?:any) => void;
+
+"on:click"? : (ev?:Event) => void;
+"on:focus"?: (ev?: Event) => void;
+"on:blur"?: (ev?: Event) => void;
+"on:fullscreenchange"?: (ev?: Event) => void;
+"on:fullscreenerror"?: (ev?: Event) => void;
+"on:scroll"?: (ev?: Event) => void;
+"on:cut"?: (ev?: Event) => void;
+"on:copy"?: (ev?: Event) => void;
+"on:paste"?: (ev?: Event) => void;
+"on:keydown"?: (ev?: Event) => void;
+"on:keypress"?: (ev?: Event) => void;
+"on:keyup"?: (ev?: Event) => void;
+"on:auxclick"?: (ev?: Event) => void;
+"on:contextmenu"?: (ev?: Event) => void;
+"on:dblclick"?: (ev?: Event) => void;
+"on:mousedown"?: (ev?: Event) => void;
+"on:mouseenter"?: (ev?: Event) => void;
+"on:mouseleave"?: (ev?: Event) => void;
+"on:mousemove"?: (ev?: Event) => void;
+"on:mouseover"?: (ev?: Event) => void;
+"on:mouseout"?: (ev?: Event) => void;
+"on:mouseup"?: (ev?: Event) => void;
+"on:pointerlockchange"?: (ev?: Event) => void;
+"on:pointerlockerror"?: (ev?: Event) => void;
+"on:select"?: (ev?: Event) => void;
+"on:wheel"?: (ev?: Event) => void;
+"on:drag"?: (ev?: Event) => void;
+"on:dragend"?: (ev?: Event) => void;
+"on:dragenter"?: (ev?: Event) => void;
+"on:dragstart"?: (ev?: Event) => void;
+"on:dragleave"?: (ev?: Event) => void;
+"on:dragover"?: (ev?: Event) => void;
+"on:drop"?: (ev?: Event) => void;
+"on:touchcancel"?: (ev?: Event) => void;
+"on:touchend"?: (ev?: Event) => void;
+"on:touchmove"?: (ev?: Event) => void;
+"on:touchstart"?: (ev?: Event) => void;
+"on:pointerover"?: (ev?: Event) => void;
+"on:pointerenter"?: (ev?: Event) => void;
+"on:pointerdown"?: (ev?: Event) => void;
+"on:pointermove"?: (ev?: Event) => void;
+"on:pointerup"?: (ev?: Event) => void;
+"on:pointercancel"?: (ev?: Event) => void;
+"on:pointerout"?: (ev?: Event) => void;
+"on:pointerleave"?: (ev?: Event) => void;
+"on:gotpointercapture"?: (ev?: Event) => void;
+"on:lostpointercapture"?: (ev?: Event) => void;
 `;
 
 const doStuff = () => {
@@ -41,7 +88,7 @@ const doStuff = () => {
       const { props, events } = component;
 
       const tagWithoutIon = component.tag.replace('ion-', '');
-      const tagCapitalFirstLetter = tagWithoutIon.charAt(0).toUpperCase() + tagWithoutIon.slice(1);
+      // const tagCapitalFirstLetter = tagWithoutIon.charAt(0).toUpperCase() + tagWithoutIon.slice(1);
 
       // if (props.length > 0) {
       // pre-amble of this tag

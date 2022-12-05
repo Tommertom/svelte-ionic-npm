@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.32
+- Typings - Added on-handlers for all components per component
+
 ## 0.5.31
 - Capacitor added to creator 0.0.8
 - Ionicons bug fix in creator - disabled verbose logging for the time being
