@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.33
+- Creator 0.0.15 - some  fixes & better reference for npx cap init (webdir flag) 
+
 ## 0.5.32
 - Typings - Added on-handlers for all components per component
 

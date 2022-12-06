@@ -183,8 +183,11 @@ export async function createIonicSvelte(opts) {
 
 		// tsconfig
 		if (opts.types == 'typescript') {
-			const tsconfig = fs.readFileSync(dist(`../${opts.name}/tsconfig.json`), 'utf-8');
-			const tsconfignew = tsconfig.replace('"compilerOptions": {', `"compilerOptions": {
+
+			try {
+				const tsconfig = fs.readFileSync('tsconfig.json', 'utf-8');
+				//	console.log('Reading tsconfig ', tsconfig);
+				const tsconfignew = tsconfig.replace('"compilerOptions": {', `"compilerOptions": {
 		"typeRoots": [
 			"./node_modules/ionic-svelte"
 		],
@@ -192,7 +195,11 @@ export async function createIonicSvelte(opts) {
 			"ionic-svelte"
 		],`);
 
-			out(path.resolve(process.cwd(), './', 'tsconfig.json'), tsconfignew)
+				//	console.log('New tsconfig ', tsconfignew);
+				out(path.resolve(process.cwd(), './', 'tsconfig.json'), tsconfignew)
+			} catch (e) {
+				console.warn('TSconfig read/write error - ', e);
+			}
 		}
 	}
 

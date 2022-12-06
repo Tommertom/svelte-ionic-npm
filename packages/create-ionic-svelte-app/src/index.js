@@ -106,8 +106,8 @@ async function main() {
 		// prettier-ignore
 		console.log(`  ${i++}: ${bold(cyan('git init && git add -A && git commit -m "Initial commit"'))} (optional)`);
 		if (options.capacitor) {
-			console.log(`  ${i++}: ${bold(cyan('npx cap init'))}`);
-			console.log(`  ${i++}: edit  ${bold(cyan('capacitor.config.ts'))} - ${bold(cyan("webDir: 'build'"))}`);
+			console.log(`  ${i++}: ${bold(cyan('npx cap init --web-dir build'))}`);
+			//	console.log(`  ${i++}: edit  ${bold(cyan('capacitor.config.ts'))} - ${bold(cyan("webDir: 'build'"))}`);
 			console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android @capacitor/ios'))} (either of them optional)`);
 		}
 		console.log(`  ${i++}: ${bold(cyan('npm run dev -- --open'))}`);
