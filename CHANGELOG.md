@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file.
 - BREAKING change for IonTabs - If you are using IonTabs, please import `IonTabsLegacy.svelte`
 - Implemented IonTabs which uses SvelteKit Layout System
 - If you are not using SvelteKit -> please continue using `IonTabsLegacy.svelte`
+- See - https://github.com/Tommertom/ionic-svelte-tabs-howto
+- Important notes when migrating away from legacy:
+	- Change your icon reference and include imports `import {close} from 'ionicons/icons';`
+	- Complete the `+layout.svelte` as per howto
+	- Create the subfolders for the routes
+	- Place your components in `+page.svelte` files
+	- Make sure they are wrapped in `ion-tab` with `tab` property 
 
 ## 0.5.34
 - Minor text update for creator - explanation CapacitorJS
