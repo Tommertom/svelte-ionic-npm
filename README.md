@@ -65,7 +65,7 @@ Integration of Ionic
 	import '../theme/variables.css';
 
 	/* load and register all components - you can also import separately to code split */
-    import 'ionic-svelte/components/ion-app';
+    import 'ionic-svelte/components/all';
 
 	/* run base configuration code from ionic/core */
 	setupIonicSvelte();
@@ -147,14 +147,13 @@ Sample `tsconfig.json`:
 }
 ```
 
-## Tree shaking
-In order to support tree shaking I am looking at ways to split the import of ionic webcomponents, as of when they are needed. Now they are all loaded in one module, leading at least one chunk being fairly big.
+## Code Splitting to reduce bundle size
+In order to reduce bundle size or limit the size of individual chunks, you can replace the 
+Example: if you replace the line  `import 'ionic-svelte/components/all';` with imports like below. This can reduce the bundle for that chunk drastically. The import of `all` will result to at least an 800kb chunk (80 components), so it is worth it to change this. 
 
-For now, the idea is to support CommonJS imports, in order to maintain style encapsulation DX as we know in Svelte.
+Please note, you only need to import a component only once, as the import registers the webcomponent globally. So this saves you lots of imports, reducing the bundle as well (compared to tree-shaking)
 
-```
-	Example: if you replace the line import 'ionic-svelte/components/all'; with the imports below, you will see the resulting bundle being much smaller
-	
+```	
 	import 'ionic-svelte/components/ion-app';
 	import 'ionic-svelte/components/ion-card';
 	import 'ionic-svelte/components/ion-card-title';
