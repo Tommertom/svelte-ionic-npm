@@ -172,6 +172,9 @@ ${bold(cyan('Welcome to Ionic Svelte '))}
 This script will install a SvelteKit project using their SvelteKit create script. 
 And then adds Ionic power to it - Ionic Elements, Ionicons (optional) and CapacitorJS (optional)
 
+- Ionicons - free package of icons to use in your app
+- CapacitorJs - deploy you app as Android/iOS/Electron app, and use its plugin ecosystem to build cross-platform experience, also supporting PWA!
+
 ${bold(red('This is BETA software; expect bugs and missing features.'))}
 
 Problems? Open an issue on ${cyan('https://github.com/Tommertom/svelte-ionic-npm/issues')}.

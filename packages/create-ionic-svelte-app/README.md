@@ -15,7 +15,7 @@ Is all you need to get started. It also supports using `npm`, `pnpm` and `yarn`.
 https://ionicsvelte.firebaseapp.com/
 
 # Acknownledgement
-This starter code is copied from Create Skeleton App. 
+This starter code is copied from Create Skeleton App.  https://github.com/skeletonlabs/create-skeleton-app
 
 Support Skeleton!
 

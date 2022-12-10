@@ -54,7 +54,6 @@ export async function createIonicSvelte(opts) {
 	let s = 0;
 	opts.verbose = true;
 
-
 	opts.path = path.resolve(
 		opts?.path,
 		opts.name.replace(/\s+/g, '-').toLowerCase(),
@@ -73,6 +72,7 @@ export async function createIonicSvelte(opts) {
 	//create-svelte will build the base install for us
 	// npm create svelte@latest my-project
 	create(opts.path, opts);
+
 	process.chdir(opts.path);
 
 	// install packages
@@ -81,8 +81,8 @@ export async function createIonicSvelte(opts) {
 	// the order matters due to dependency resolution, because yarn
 	let packages = [
 		'svelte-preprocess',
-		'@sveltejs/adapter-static'
-
+		'@sveltejs/adapter-static',
+		'vite@4'
 	];
 	if (opts?.capacitor) packages.push('@capacitor/cli');
 
@@ -98,6 +98,7 @@ export async function createIonicSvelte(opts) {
 	let result = spawnSync(opts.packagemanager, ['add', '-D', ...packages], {
 		shell: true,
 	});
+
 	if (opts.packagemanager != 'yarn'
 		&& result?.stderr.toString().length
 		&& (result?.stderr.toString().includes('ERR_PNPM') || result?.stderr.toString().includes('ERR!'))) {

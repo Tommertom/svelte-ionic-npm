@@ -15,14 +15,16 @@
 
 <br>
 
-
 ## How to get started - npm create ionic-svelte-app@latest
 On the CLI just type `npm create ionic-svelte-app@latest` to spin a SvelteKit project from the CLI. This will
 do all the lifting for you to create a SvelteKit SPA app.
 
-
 <img alt="create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-npm/raw/main/packages/create-ionic-svelte-app/create-ionic-svelte-app.png" width="45%">
 
+## Show me Ionic!
+A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com. This also has a handy tool to show the source code for Svelte - and even Angular, VanillaJS, Vue, React and stencil!
+
+And the code on how to use the components - repo at https://github.com/Tommertom/svelte-ionic-app
 
 ## How to get started - manual import of ionic-svelte library
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit). Skip this part if you already have a project
@@ -110,7 +112,7 @@ Due to router incompatability, there are three special compontents included that
 - IonPage - wrapping the page and providing the ion-lifecycle hooks. And implementing a basic animation
 - IonBackButton - a rudimentary fix to the IonBackButton
 
-To be imported from the package: `import IonTab from 'ionic-svelte/components/IonTabs.svelte';` etc..
+To be imported from the package: `import { IonTab } from 'ionic-svelte';` etc..
 
 ## Typesafety and type-ahead support
 The package provides typings for all webcomponents. These can be included in your IDE by adding the following to your the `compilerOptions` section in `tsconfig.json`:
@@ -166,10 +168,6 @@ And never forget to at least `import 'ionic-svelte/components/ion-app';`.
 	import 'ionic-svelte/components/ion-button';
 ```
 
-## Show me Ionic!
-A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com.
-
-And the code repo at https://github.com/Tommertom/svelte-ionic-app
 
 ## Known issues with the library
 
