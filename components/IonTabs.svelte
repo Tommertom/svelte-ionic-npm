@@ -1,74 +1,87 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { page } from "$app/stores";
 
-  import * as ionIcons from "ionicons/icons";
+  import { goto } from "$app/navigation";
 
-  let ionTabBarElement;
-
-  export let tabs;
-  export let selected: string | undefined = undefined;
-  export let ionTabsDidChange = (event) => {};
-  export let ionNavWillLoad = (event) => {};
-  export let ionTabsWillChange = (event) => {};
+  export let ionTabsDidChange = () => {};
+  export let ionTabsWillChange = () => {};
   export let slot = "bottom";
 
-  // selected-tab does not seem to work - so we brute force it into the right method
-  // https://github.com/ionic-team/ionic-framework/issues/20060
-  let tries = 0;
-  let controller;
-  const selectTab = async () => {
-    if (controller && controller.select) {
-      controller.select(selected).then(async (x) => {
-        const y = await controller.getSelected();
-      });
-    }
+  let ionTabBarElement: HTMLIonTabsElement;
 
-    // somehow the tabs-present method does not run well on the first time, even though it gives positive response
-    if (tries < 5) {
-      setTimeout(() => {
-        tries++;
-        selectTab();
-      }, 5);
-    }
-  };
+  export let tabs: {
+    label: string;
+    icon: string;
+    tab: string;
+  }[] = [];
 
-  onMount(() => {
+  let controller: HTMLIonTabsElement;
+  onMount(async () => {
     controller = ionTabBarElement;
-    if (selected) {
-      selectTab();
+    const { pathname } = $page.url;
+    let tabInPathName = pathname.split("/").at(-1);
+
+    if (tabInPathName && tabs.length > 0) {
+      // if we have don't have a route to a tab, let's take the first one
+      if (!tabs.map((tab) => tab.tab).includes(tabInPathName)) {
+        await goto(tabInPathName + "/" + tabs[0]?.tab);
+        controller.select(tabs[0]?.tab);
+      }
+    } else {
+      // panic - incorrect route or tabs provided
+      console.warn("Incorrect route or tabs supplied for IonTabs", $page.url, tabs);
+      goto("/");
+      return;
     }
   });
+
+  const tabBarClick = async (selectedTab: string) => {
+    await goto(selectedTab);
+    controller.select(selectedTab);
+  };
 </script>
 
 <ion-tabs
   on:ionTabsDidChange={ionTabsDidChange}
-  on:ionNavWillLoad={ionNavWillLoad}
   on:ionTabsWillChange={ionTabsWillChange}
   bind:this={ionTabBarElement}
 >
-  {#each tabs as tab}
-    <ion-tab tab={tab.tab}>
-      <svelte:component this={tab.component} />
-    </ion-tab>
-  {/each}
+  <slot />
 
   {#if slot === "bottom" || slot === ""}
-    <ion-tab-bar slot="bottom" selected-tab={selected}>
+    <ion-tab-bar slot="bottom">
       {#each tabs as tab}
-        <ion-tab-button tab={tab.tab}>
+        <ion-tab-button
+          tab={tab.tab}
+          on:keydown={() => {
+            tabBarClick(tab.tab);
+          }}
+          on:click={() => {
+            tabBarClick(tab.tab);
+          }}
+        >
           <ion-label>{tab.label}</ion-label>
-          <ion-icon icon={ionIcons[tab.icon]} />
+          <ion-icon icon={tab.icon} />
         </ion-tab-button>
       {/each}
     </ion-tab-bar>
   {/if}
 
   {#if slot === "top"}
-    <ion-tab-bar slot="top" selected-tab={selected}>
+    <ion-tab-bar slot="top">
       {#each tabs as tab}
-        <ion-tab-button tab={tab.tab}>
+        <ion-tab-button
+          tab={tab.tab}
+          on:keydown={() => {
+            tabBarClick(tab.tab);
+          }}
+          on:click={() => {
+            tabBarClick(tab.tab);
+          }}
+        >
           <ion-label>{tab.label}</ion-label>
-          <ion-icon icon={ionIcons[tab.icon]} />
+          <ion-icon icon={tab.icon} />
         </ion-tab-button>
       {/each}
     </ion-tab-bar>

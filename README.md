@@ -168,11 +168,6 @@ And never forget to at least `import 'ionic-svelte/components/ion-app';`.
 	import 'ionic-svelte/components/ion-button';
 ```
 
-
-## Known issues with the library
-
-IonPage - ionViewWillLeave will fire together with ionViewDidLeave - because of issue in Kit
-
 ## How to contribute?
 Would you like to contribute to this project? Great!
 

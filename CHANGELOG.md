@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.35/0.5.36
+- BREAKING change for IonTabs - If you are using IonTabs, please import `IonTabsLegacy.svelte`
+- Implemented IonTabs which uses SvelteKit Layout System
+- If you are not using SvelteKit -> please continue using `IonTabsLegacy.svelte`
+
 ## 0.5.34
 - Minor text update for creator - explanation CapacitorJS
 - fixed Vite4 dependency in creator
