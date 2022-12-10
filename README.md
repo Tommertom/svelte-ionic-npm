@@ -24,9 +24,8 @@ do all the lifting for you to create a SvelteKit SPA app.
 <img alt="create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-npm/raw/main/packages/create-ionic-svelte-app/create-ionic-svelte-app.png" width="45%">
 
 
-## How to get started with this library?
-
-Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)
+## How to get started - manual import of ionic-svelte library
+Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit). Skip this part if you already have a project
 
 ```
 npm create svelte@latest my-app
@@ -34,7 +33,7 @@ cd my-app
 npm install
 ```
 
-We need adapter static, because Ionic pages must run as SPA.
+We need adapter static + `ssr=false`, because Ionic pages must run as SPA.
 
 - `npm i -D @sveltejs/adapter-static`
 - `import adapter from '@sveltejs/adapter-static'` in `svelte.config.js`
@@ -60,11 +59,15 @@ Integration of Ionic
 
 ```
 <script lang="ts">
-	import { setupIonicSvelte } from 'ionic-svelte';
+	import { setupIonicBase } from 'ionic-svelte';
 
 	/* Theme variables */
 	import '../theme/variables.css';
 
+	/* load and register all components - you can also import separately to code split */
+    import 'ionic-svelte/components/ion-app';
+
+	/* run base configuration code from ionic/core */
 	setupIonicSvelte();
 </script>
 
@@ -98,7 +101,7 @@ Here content
 </ion-card>
 ```
 
-`setupIonicSvelte` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicSvelte` a bit).
+`setupIonicBase` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicBase` a bit).
 
 ## Special components
 Due to router incompatability, there are three special compontents included that override/replace the ionic standard webcomponents:
@@ -149,6 +152,19 @@ In order to support tree shaking I am looking at ways to split the import of ion
 
 For now, the idea is to support CommonJS imports, in order to maintain style encapsulation DX as we know in Svelte.
 
+```
+	Example: if you replace the line import 'ionic-svelte/components/all'; with the imports below, you will see the resulting bundle being much smaller
+	
+	import 'ionic-svelte/components/ion-app';
+	import 'ionic-svelte/components/ion-card';
+	import 'ionic-svelte/components/ion-card-title';
+	import 'ionic-svelte/components/ion-card-subtitle';
+	import 'ionic-svelte/components/ion-card-header';
+	import 'ionic-svelte/components/ion-card-content';
+	import 'ionic-svelte/components/ion-chip';
+	import 'ionic-svelte/components/ion-button';
+```
+
 ## Show me Ionic!
 A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com.
 
@@ -159,21 +175,18 @@ And the code repo at https://github.com/Tommertom/svelte-ionic-app
 IonPage - ionViewWillLeave will fire together with ionViewDidLeave - because of issue in Kit
 
 ## How to contribute?
-
 Would you like to contribute to this project? Great!
 
-What is there to do
+First and foremost - share you feedback!!!!!
+- For issues with `ionic-svelte` library - https://github.com/Tommertom/svelte-ionic-npm/issues
+- Or find me on Ionic's discord server, with a separate Ionic Svelte Channel - https://discordapp.com/channels/520266681499779082/1049388501629681675
 
+And if you want to do more - what is there to do:
 - EASY - fix typos (also great for your Github online profile - there are many), add examples for components
-- MEDIUM - fix some minor bugs ( e.g. SvelteSpring), improve layout of pages (e.g. SvelteTransition)
+- MEDIUM - fix some minor bugs ( e.g. SvelteSpring), improve layout of pages (e.g. SvelteTransition) 
 - HARD - look at the open issues below
 
 When you do a PR, make sure you explain what you did and why!
-
-## REPLS
-
-REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/main/REPLS.md
-These are Ionic 4 components only.
 
 ## Issues - help needed/workaround provided
 
@@ -211,9 +224,6 @@ Please note - if you use a library such as https://svelte-forms-lib-sapper-docs.
 
 - Many "File not found errors" on css.map files. I frankly don't really mind these. Maybe it is easy to get rid of these, but for now, I leave it.
 
-## Things to do maybe one day...
-
-- dark mode selector
 
 ## Things not being implemented
 
