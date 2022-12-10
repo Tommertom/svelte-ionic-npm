@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 
 ## 0.5.30
 - Changed the default starter to use the cjs import, also to enable codesplitting - creator 0.0.8
-- Config routine changed for base `+layout.svelte`
+- `setupIonicSvelte()` deprecated -  Changed config routine to `setupIonicBase();` 
 
 ```
 <script lang="ts">
@@ -41,11 +41,14 @@ Should become:
 	/* Call Ionic's setup routine */
 	setupIonicBase();
 
+	/* Import all components - or do partial loading - see below */
+	import 'ionic-svelte/components/all';
+
 	/* Theme variables */
 	import '../theme/variables.css';
 
 	/*
-		The next command loads and registers all Ionic Webcomponents for you to use.
+		This part - import 'ionic-svelte/components/all'; -  loads all components at once.
 
 		This adds at least >800kb (uncompressed) to your bundle.
 
@@ -67,9 +70,9 @@ Should become:
 	
 		Please don't forget to import ion-app in this file when you decide to code-split:
 		
-	            import 'ionic-svelte/components/ion-app';
+	    import 'ionic-svelte/components/ion-app';
 	*/
-	import 'ionic-svelte/components/all';
+	
 </script>
 
 <ion-app>

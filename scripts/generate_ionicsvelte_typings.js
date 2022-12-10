@@ -4,6 +4,48 @@ const fs = require("fs");
 // load static
 const coreJson = require("./core.json"); // 6.3.8 downloaded
 
+// const axios = require('axios');
+
+// axios.get('https://unpkg.com/@ionic/doc/core.json',
+//   {
+//     timeout: 1000
+//   }).then(function (response) {
+//     // handle success
+//     console.log(response);
+//   })
+
+
+
+// const request = require('request');
+
+// request('https://unpkg.com/@ionic/docs@6.3.8/core.json', { json: true }, (err, res, body) => {
+//   if (err) { return console.log(err); }
+//   console.log(body.url);
+//   console.log(body.explanation);
+// });
+
+// const https = require('https');
+
+// https.get('https://unpkg.com/@ionic/docs@6.3.8/core.json', (resp) => {
+//   let data = '';
+
+//   // A chunk of data has been received.
+//   resp.on('data', (chunk) => {
+//     data += chunk;
+//   });
+
+//   // The whole response has been received. Print out the result.
+//   resp.on('end', () => {
+//     console.log(JSON.parse(data).explanation);
+//   });
+
+// }).on("error", (err) => {
+//   console.log("Error: " + err.message);
+// });
+
+
+
+
 const defaultDefinitions = `
 /**
  * slots - See documentation for parent component on available slots
@@ -83,7 +125,7 @@ const doStuff = () => {
   `;
 
   components
-    // .filter(component => component.tag == 'ion-input')
+    //  .filter(component => component.tag == 'ion-button')
     .forEach(component => {
       const { props, events } = component;
 
