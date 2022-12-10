@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## 0.5.34
 - Minor text update for creator - explanation CapacitorJS
 - fixed Vite4 dependency in creator
+- Package size reduction
 
 ## 0.5.33
 - Creator 0.0.15 - some  fixes & better reference for npx cap init (webdir flag) 

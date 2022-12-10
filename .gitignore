@@ -14,4 +14,4 @@ node_modules
 .eslintignore
 .eslintrc.cjs
 firebase.json 
-/scripts/node_modules
+
