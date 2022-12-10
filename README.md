@@ -151,7 +151,9 @@ Sample `tsconfig.json`:
 In order to reduce bundle size or limit the size of individual chunks, you can replace the 
 Example: if you replace the line  `import 'ionic-svelte/components/all';` with imports like below. This can reduce the bundle for that chunk drastically. The import of `all` will result to at least an 800kb chunk (80 components), so it is worth it to change this. 
 
-Please note, you only need to import a component only once, as the import registers the webcomponent globally. So this saves you lots of imports, reducing the bundle as well (compared to tree-shaking)
+Please note, you only need to import a component only once, as the import registers the webcomponent globally. So this saves you lots of imports, reducing the bundle as well (compared to tree-shaking).
+
+And never forget to at least `import 'ionic-svelte/components/ion-app';`.
 
 ```	
 	import 'ionic-svelte/components/ion-app';
