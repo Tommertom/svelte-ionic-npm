@@ -18,6 +18,7 @@
 
   let controller: HTMLIonTabsElement;
   onMount(async () => {
+    // reassignment needed after onMount
     controller = ionTabBarElement;
     const { pathname } = $page.url;
     let tabInPathName = pathname.split("/").at(-1);
@@ -29,8 +30,8 @@
         controller.select(tabs[0]?.tab);
       }
     } else {
-      // panic - incorrect route or tabs provided
-      console.warn("Incorrect route or tabs supplied for IonTabs", $page.url, tabs);
+      // panic - incorrect route or no tabs provided
+      console.warn("Incorrect route or no tabs supplied for IonTabs", $page.url, tabs);
       goto("/");
       return;
     }

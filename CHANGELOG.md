@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.37
+- Fixed issues in typings (camelcase to kebabcase for props, and fixed urls to api docs)
+
 ## 0.5.35/0.5.36
 - BREAKING change for IonTabs - If you are using IonTabs, please import `IonTabsLegacy.svelte`
 - Implemented IonTabs which uses SvelteKit Layout System

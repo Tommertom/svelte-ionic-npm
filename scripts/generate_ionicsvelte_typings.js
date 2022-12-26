@@ -1,6 +1,14 @@
 // todo - using https://unpkg.com/@ionic/docs@6.3.8/core.json
 const fs = require("fs");
 
+const kebabize = str => {
+  return str.split('').map((letter, idx) => {
+    return letter.toUpperCase() === letter
+      ? `${idx !== 0 ? '-' : ''}${letter.toLowerCase()}`
+      : letter;
+  }).join('');
+}
+
 // load static
 const coreJson = require("./core.json"); // 6.3.8 downloaded
 
@@ -45,8 +53,8 @@ const coreJson = require("./core.json"); // 6.3.8 downloaded
 
 
 
-
-const defaultDefinitions = `
+// taken from stencil-public-runtime.d.ts
+const DOMAttributes = `
 /**
  * slots - See documentation for parent component on available slots
  */
@@ -54,54 +62,123 @@ const defaultDefinitions = `
 
 "class"?:string | undefined;
 "style"?:string | undefined;
-
-"on:click"? : (ev?:Event) => void;
-"on:focus"?: (ev?: Event) => void;
-"on:blur"?: (ev?: Event) => void;
-"on:fullscreenchange"?: (ev?: Event) => void;
-"on:fullscreenerror"?: (ev?: Event) => void;
-"on:scroll"?: (ev?: Event) => void;
-"on:cut"?: (ev?: Event) => void;
-"on:copy"?: (ev?: Event) => void;
-"on:paste"?: (ev?: Event) => void;
-"on:keydown"?: (ev?: Event) => void;
-"on:keypress"?: (ev?: Event) => void;
-"on:keyup"?: (ev?: Event) => void;
-"on:auxclick"?: (ev?: Event) => void;
-"on:contextmenu"?: (ev?: Event) => void;
-"on:dblclick"?: (ev?: Event) => void;
-"on:mousedown"?: (ev?: Event) => void;
-"on:mouseenter"?: (ev?: Event) => void;
-"on:mouseleave"?: (ev?: Event) => void;
-"on:mousemove"?: (ev?: Event) => void;
-"on:mouseover"?: (ev?: Event) => void;
-"on:mouseout"?: (ev?: Event) => void;
-"on:mouseup"?: (ev?: Event) => void;
-"on:pointerlockchange"?: (ev?: Event) => void;
-"on:pointerlockerror"?: (ev?: Event) => void;
-"on:select"?: (ev?: Event) => void;
-"on:wheel"?: (ev?: Event) => void;
-"on:drag"?: (ev?: Event) => void;
-"on:dragend"?: (ev?: Event) => void;
-"on:dragenter"?: (ev?: Event) => void;
-"on:dragstart"?: (ev?: Event) => void;
-"on:dragleave"?: (ev?: Event) => void;
-"on:dragover"?: (ev?: Event) => void;
-"on:drop"?: (ev?: Event) => void;
-"on:touchcancel"?: (ev?: Event) => void;
-"on:touchend"?: (ev?: Event) => void;
-"on:touchmove"?: (ev?: Event) => void;
-"on:touchstart"?: (ev?: Event) => void;
-"on:pointerover"?: (ev?: Event) => void;
-"on:pointerenter"?: (ev?: Event) => void;
-"on:pointerdown"?: (ev?: Event) => void;
-"on:pointermove"?: (ev?: Event) => void;
-"on:pointerup"?: (ev?: Event) => void;
-"on:pointercancel"?: (ev?: Event) => void;
-"on:pointerout"?: (ev?: Event) => void;
-"on:pointerleave"?: (ev?: Event) => void;
-"on:gotpointercapture"?: (ev?: Event) => void;
-"on:lostpointercapture"?: (ev?: Event) => void;
+"part"?:string | undefined;
+"exportparts"?:string | undefined;
+"on:Copy"?: (event: ClipboardEvent) => void;
+"on:CopyCapture"?: (event: ClipboardEvent) => void;
+"on:Cut"?: (event: ClipboardEvent) => void;
+"on:CutCapture"?: (event: ClipboardEvent) => void;
+"on:Paste"?: (event: ClipboardEvent) => void;
+"on:PasteCapture"?: (event: ClipboardEvent) => void;
+"on:CompositionEnd"?: (event: CompositionEvent) => void;
+"on:CompositionEndCapture"?: (event: CompositionEvent) => void;
+"on:CompositionStart"?: (event: CompositionEvent) => void;
+"on:CompositionStartCapture"?: (event: CompositionEvent) => void;
+"on:CompositionUpdate"?: (event: CompositionEvent) => void;
+"on:CompositionUpdateCapture"?: (event: CompositionEvent) => void;
+"on:Focus"?: (event: FocusEvent) => void;
+"on:FocusCapture"?: (event: FocusEvent) => void;
+"on:Focusin"?: (event: FocusEvent) => void;
+"on:FocusinCapture"?: (event: FocusEvent) => void;
+"on:Focusout"?: (event: FocusEvent) => void;
+"on:FocusoutCapture"?: (event: FocusEvent) => void;
+"on:Blur"?: (event: FocusEvent) => void;
+"on:BlurCapture"?: (event: FocusEvent) => void;
+"on:Change"?: (event: Event) => void;
+"on:ChangeCapture"?: (event: Event) => void;
+"on:Input"?: (event: Event) => void;
+"on:InputCapture"?: (event: Event) => void;
+"on:Reset"?: (event: Event) => void;
+"on:ResetCapture"?: (event: Event) => void;
+"on:Submit"?: (event: Event) => void;
+"on:SubmitCapture"?: (event: Event) => void;
+"on:Invalid"?: (event: Event) => void;
+"on:InvalidCapture"?: (event: Event) => void;
+"on:Load"?: (event: Event) => void;
+"on:LoadCapture"?: (event: Event) => void;
+"on:Error"?: (event: Event) => void;
+"on:ErrorCapture"?: (event: Event) => void;
+"on:KeyDown"?: (event: KeyboardEvent) => void;
+"on:KeyDownCapture"?: (event: KeyboardEvent) => void;
+"on:KeyPress"?: (event: KeyboardEvent) => void;
+"on:KeyPressCapture"?: (event: KeyboardEvent) => void;
+"on:KeyUp"?: (event: KeyboardEvent) => void;
+"on:KeyUpCapture"?: (event: KeyboardEvent) => void;
+"on:AuxClick"?: (event: MouseEvent) => void;
+"on:Click"?: (event: MouseEvent) => void;
+"on:ClickCapture"?: (event: MouseEvent) => void;
+"on:ContextMenu"?: (event: MouseEvent) => void;
+"on:ContextMenuCapture"?: (event: MouseEvent) => void;
+"on:DblClick"?: (event: MouseEvent) => void;
+"on:DblClickCapture"?: (event: MouseEvent) => void;
+"on:Drag"?: (event: DragEvent) => void;
+"on:DragCapture"?: (event: DragEvent) => void;
+"on:DragEnd"?: (event: DragEvent) => void;
+"on:DragEndCapture"?: (event: DragEvent) => void;
+"on:DragEnter"?: (event: DragEvent) => void;
+"on:DragEnterCapture"?: (event: DragEvent) => void;
+"on:DragExit"?: (event: DragEvent) => void;
+"on:DragExitCapture"?: (event: DragEvent) => void;
+"on:DragLeave"?: (event: DragEvent) => void;
+"on:DragLeaveCapture"?: (event: DragEvent) => void;
+"on:DragOver"?: (event: DragEvent) => void;
+"on:DragOverCapture"?: (event: DragEvent) => void;
+"on:DragStart"?: (event: DragEvent) => void;
+"on:DragStartCapture"?: (event: DragEvent) => void;
+"on:Drop"?: (event: DragEvent) => void;
+"on:DropCapture"?: (event: DragEvent) => void;
+"on:MouseDown"?: (event: MouseEvent) => void;
+"on:MouseDownCapture"?: (event: MouseEvent) => void;
+"on:MouseEnter"?: (event: MouseEvent) => void;
+"on:MouseLeave"?: (event: MouseEvent) => void;
+"on:MouseMove"?: (event: MouseEvent) => void;
+"on:MouseMoveCapture"?: (event: MouseEvent) => void;
+"on:MouseOut"?: (event: MouseEvent) => void;
+"on:MouseOutCapture"?: (event: MouseEvent) => void;
+"on:MouseOver"?: (event: MouseEvent) => void;
+"on:MouseOverCapture"?: (event: MouseEvent) => void;
+"on:MouseUp"?: (event: MouseEvent) => void;
+"on:MouseUpCapture"?: (event: MouseEvent) => void;
+"on:TouchCancel"?: (event: TouchEvent) => void;
+"on:TouchCancelCapture"?: (event: TouchEvent) => void;
+"on:TouchEnd"?: (event: TouchEvent) => void;
+"on:TouchEndCapture"?: (event: TouchEvent) => void;
+"on:TouchMove"?: (event: TouchEvent) => void;
+"on:TouchMoveCapture"?: (event: TouchEvent) => void;
+"on:TouchStart"?: (event: TouchEvent) => void;
+"on:TouchStartCapture"?: (event: TouchEvent) => void;
+"on:PointerDown"?: (event: PointerEvent) => void;
+"on:PointerDownCapture"?: (event: PointerEvent) => void;
+"on:PointerMove"?: (event: PointerEvent) => void;
+"on:PointerMoveCapture"?: (event: PointerEvent) => void;
+"on:PointerUp"?: (event: PointerEvent) => void;
+"on:PointerUpCapture"?: (event: PointerEvent) => void;
+"on:PointerCancel"?: (event: PointerEvent) => void;
+"on:PointerCancelCapture"?: (event: PointerEvent) => void;
+"on:PointerEnter"?: (event: PointerEvent) => void;
+"on:PointerEnterCapture"?: (event: PointerEvent) => void;
+"on:PointerLeave"?: (event: PointerEvent) => void;
+"on:PointerLeaveCapture"?: (event: PointerEvent) => void;
+"on:PointerOver"?: (event: PointerEvent) => void;
+"on:PointerOverCapture"?: (event: PointerEvent) => void;
+"on:PointerOut"?: (event: PointerEvent) => void;
+"on:PointerOutCapture"?: (event: PointerEvent) => void;
+"on:GotPointerCapture"?: (event: PointerEvent) => void;
+"on:GotPointerCaptureCapture"?: (event: PointerEvent) => void;
+"on:LostPointerCapture"?: (event: PointerEvent) => void;
+"on:LostPointerCaptureCapture"?: (event: PointerEvent) => void;
+"on:Scroll"?: (event: UIEvent) => void;
+"on:ScrollCapture"?: (event: UIEvent) => void;
+"on:Wheel"?: (event: WheelEvent) => void;
+"on:WheelCapture"?: (event: WheelEvent) => void;
+"on:AnimationStart"?: (event: AnimationEvent) => void;
+"on:AnimationStartCapture"?: (event: AnimationEvent) => void;
+"on:AnimationEnd"?: (event: AnimationEvent) => void;
+"on:AnimationEndCapture"?: (event: AnimationEvent) => void;
+"on:AnimationIteration"?: (event: AnimationEvent) => void;
+"on:AnimationIterationCapture"?: (event: AnimationEvent) => void;
+"on:TransitionEnd"?: (event: TransitionEvent) => void;
+"on:TransitionEndCapture"?: (event: TransitionEvent) => void;
 `;
 
 const doStuff = () => {
@@ -144,7 +221,7 @@ const doStuff = () => {
       `;
 
       // slots support
-      typingOutput = typingOutput + defaultDefinitions;
+      typingOutput = typingOutput + DOMAttributes;
 
       // let's dump the props
       console.log('has props', props);
@@ -154,9 +231,9 @@ const doStuff = () => {
         typingOutput = typingOutput + `
           /**
           * ${prop.docs.replace(/\n/g, ' ')}
-          * API info: https://ionicframework.com/docs/api/${tagWithoutIon}#${prop.name}
+          * API info: https://ionicframework.com/docs/api/${tagWithoutIon}#${prop.name.toLowerCase()}
           */
-          "${prop.name}"?: ${prop.type};
+          "${kebabize(prop.name)}"?: ${prop.type};
         `;
       })
 
@@ -226,3 +303,5 @@ const doStuff = () => {
 };
 
 doStuff();
+
+
