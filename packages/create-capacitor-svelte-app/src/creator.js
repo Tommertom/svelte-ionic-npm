@@ -4,7 +4,7 @@ import process from 'process';
 import { spawnSync } from 'node:child_process';
 import fs from 'fs-extra';
 import path from 'path';
-import { dist, whichPMRuns, mkdirp, getIonicVariables, getDemoIonicApp } from './utils.js';
+import { dist, whichPMRuns, mkdirp, getIonicVariables, getDemoIonicApp, getDemoCapacitorApp } from './utils.js';
 import { bold, red, cyan, grey } from 'kleur/colors';
 
 // NOTE: Any changes here must also be reflected in the --help output in utils.ts and shortcut expansions in bin.ts.
@@ -25,7 +25,8 @@ export class IonicSvelteOptions {
 
 	// Ionic
 	ionicons = false;
-	capacitor = false;
+	capacitor = true;
+	ionic = false;
 
 	// create-skeleton-app additions
 	// _ = []; //catch all for extraneous params from mri, used to capture project name.
@@ -65,7 +66,7 @@ export async function createIonicSvelte(opts) {
 	}
 
 	if (!(opts?.quiet)) {
-		console.log('Working: Creating base Svelte Kit install supercharged with Capacitor.');
+		console.log('Working: Creating base Svelte Kit install supercharged with Ionic.');
 	}
 	fs.mkdirp(opts.path);
 
@@ -82,7 +83,7 @@ export async function createIonicSvelte(opts) {
 	let packages = [
 		'svelte-preprocess',
 		'@sveltejs/adapter-static',
-		'vite@4'
+		//	'vite@4'
 	];
 	if (opts?.capacitor) packages.push('@capacitor/cli');
 
@@ -103,14 +104,15 @@ export async function createIonicSvelte(opts) {
 		&& result?.stderr.toString().length
 		&& (result?.stderr.toString().includes('ERR_PNPM') || result?.stderr.toString().includes('ERR!'))) {
 		console.log(
-			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
+			'Create-Capacitor-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
 		);
 		process.exit();
 	}
 
 
-	packages = ['@ionic/core@6.3.8', 'ionic-svelte'];
+	packages = [];
+	if (opts?.ionic) packages = ['@ionic/core@6.3.8', 'ionic-svelte'];
 	if (opts?.capacitor) packages.push('@capacitor/core');
 	// packages = [];
 	if (opts?.ionicons) packages.push('ionicons');
@@ -124,7 +126,7 @@ export async function createIonicSvelte(opts) {
 		&& result?.stderr.toString().length
 		&& (result?.stderr.toString().includes('ERR_PNPM') || result?.stderr.toString().includes('ERR!'))) {
 		console.log(
-			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
+			'Create-Capacitor-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
 		);
 		process.exit();
@@ -140,7 +142,7 @@ export async function createIonicSvelte(opts) {
 		&& result?.stderr.toString().length
 		&& (result?.stderr.toString().includes('ERR_PNPM') || result?.stderr.toString().includes('ERR!'))) {
 		console.log(
-			'Create-Ionic-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
+			'Create-Capacitor-Svelte App - we received an error from the package manager - please submit issue on https://github.com/Tommertom/svelte-ionic-npm/issues \n',
 			result?.stderr.toString(),
 		);
 		process.exit();
@@ -159,31 +161,44 @@ export async function createIonicSvelte(opts) {
 
 	if (opts.framework == 'svelte-kit' || opts.framework == 'svelte-kit-lib') {
 		mkdirp(path.join('src', 'lib'))
-		mkdirp(path.join('src', 'theme'))
 
-		out(
-			path.resolve(process.cwd(), 'src/routes/', '+layout.svelte'),
-			createSvelteKitLayout(opts),
-		);
+
+		if (opts?.ionic) {
+			mkdirp(path.join('src', 'theme'))
+			out(
+				path.resolve(process.cwd(), 'src/routes/', '+layout.svelte'),
+				createSvelteKitLayout(opts),
+			);
+
+
+			out(
+				path.resolve(process.cwd(), 'src/theme/', 'variables.css'),
+				getIonicVariables()
+			);
+
+
+			out(
+				path.resolve(process.cwd(), 'src/routes/', '+page.svelte'),
+				getDemoIonicApp()
+			);
+		}
+
+		if (!opts?.ionic) {
+			out(
+				path.resolve(process.cwd(), 'src/routes/', '+page.svelte'),
+				getDemoCapacitorApp()
+			);
+		}
 
 		out(
 			path.resolve(process.cwd(), 'src/routes/', '+layout.ts'),
 			`export const ssr = false;`
 		);
 
-		out(
-			path.resolve(process.cwd(), 'src/theme/', 'variables.css'),
-			getIonicVariables()
-		);
 
-
-		out(
-			path.resolve(process.cwd(), 'src/routes/', '+page.svelte'),
-			getDemoIonicApp()
-		);
 
 		// tsconfig
-		if (opts.types == 'typescript') {
+		if (opts.types == 'typescript' && opts?.ionic) {
 
 			try {
 				const tsconfig = fs.readFileSync('tsconfig.json', 'utf-8');

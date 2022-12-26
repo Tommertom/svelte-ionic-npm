@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.5.37
+## 0.5.37/38/39/40/41/42
 - Fixed issues in typings (camelcase to kebabcase for props, and fixed urls to api docs)
 
 ## 0.5.35/0.5.36
