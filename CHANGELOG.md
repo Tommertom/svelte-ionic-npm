@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Creator scripts for Capacitor and Ionic 
+- Updated to have HMR enabled by default
+- Additional instructions for users
+
 ## 0.5.37/38/39/40/41/42
 - Fixed issues in typings (camelcase to kebabcase for props, and fixed urls to api docs)
 

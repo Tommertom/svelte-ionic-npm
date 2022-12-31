@@ -202,6 +202,33 @@ export async function createIonicSvelte(opts) {
 				console.warn('TSconfig read/write error - ', e);
 			}
 		}
+
+		// capacitor
+		if (opts?.capacitor) {
+			// hot reload support - change the vite build script
+			try {
+				const packagagejson = fs.readFileSync('package.json', 'utf-8');
+				//	console.log('Reading tsconfig ', tsconfig);
+				const packagagejsonnew = packagagejson.replace('"dev": "vite dev"', `"dev": "vite dev --host"`);
+
+				//	console.log('New tsconfig ', tsconfignew);
+				out(path.resolve(process.cwd(), './', 'package.json'), packagagejsonnew)
+			} catch (e) {
+				console.warn('TSconfig read/write error - ', e);
+			}
+
+
+
+			out(
+				'capacitor.config.json',
+				`{
+					"server": {
+					  "url": "http://192.168.137.1:5173/",
+					  "cleartext": true
+					}
+				}`
+			);
+		}
 	}
 
 	return opts;

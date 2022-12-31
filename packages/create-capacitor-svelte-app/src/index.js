@@ -84,6 +84,7 @@ async function main() {
 		if (options.capacitor) {
 			console.log(bold('✔ Capacitor'));
 			console.log(cyan('  https://capacitorjs.com/docs/getting-started'));
+			console.log(bold('  Please note - the project is configured with HMR - remove server entry in capacitor.config.json for final build'));
 		}
 
 		if (options.ionic) {
@@ -111,13 +112,17 @@ async function main() {
 		// prettier-ignore
 		if (options.capacitor) {
 			console.log(`  ${i++}: ${bold(cyan('npx cap init --web-dir build'))}`);
+			console.log(`  ${i++}: configure hot reload ${bold(cyan('url'))} entry in ${bold(cyan('capacitor.config.json'))} (optional) - https://capacitorjs.com/docs/guides/live-reload`);
 			//	console.log(`  ${i++}: edit  ${bold(cyan('capacitor.config.ts'))} - ${bold(cyan("webDir: 'build'"))}`);
 			console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android @capacitor/ios'))} (either of them optional)`);
+			console.log(`  ${i++}: ${bold(cyan('npx cap add android ios'))} (either of them optional)`);
+			console.log(`  ${i++}: ${bold(cyan('npm run build'))} to fill the ${bold(cyan('build'))} directory`);
+			console.log(`  ${i++}: ${bold(cyan('npx cap open android or ios'))} to open the project and mark as trusted`);
 		}
 		console.log(`  ${i++}: ${bold(cyan('git init && git add -A && git commit -m "Initial commit"'))} (optional)`);
 		console.log(`  ${i++}: ${bold(cyan('npm run dev -- --open'))}`);
 		console.log(`\nTo close the dev server, hit ${bold(cyan('Ctrl-C'))}`);
-		console.log(`\nStuck? Visit us at ${cyan('https://svelte.dev/chat')}`);
+		console.log(`\nStuck? Visit us at Ionic's discord ${cyan('https://discordapp.com/channels/520266681499779082/1049388501629681675')}`);
 
 		console.log(grey(`\nNeed some help or found an issue with this installer? Visit us on Github https://github.com/Tommertom/svelte-ionic-npm`));
 	}
@@ -316,7 +321,7 @@ Problems? Open an issue on ${cyan('https://github.com/Tommertom/svelte-capacitor
 		const q = {
 			type: 'toggle',
 			name: 'ionic',
-			message: 'Add Ionic UI dependencies?',
+			message: 'Add Ionic UI components?',
 			initial: false,
 			active: 'Yes',
 			inactive: 'No'
