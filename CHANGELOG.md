@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Update to creator scripts (both)
+- Running npx cap init from the script
+- Feedback on capacitor config so user can tweak where needed
+
 ## Creator scripts for Capacitor and Ionic 
 - Updated to have HMR enabled by default
 - Additional instructions for users

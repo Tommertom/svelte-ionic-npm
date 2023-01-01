@@ -239,6 +239,11 @@ export async function createIonicSvelte(opts) {
 				}
 			}`
 		);
+
+		// run npx cap init name name
+		let result = spawnSync('npx cap init', [opts.name, opts.name + '.ionic.io', '--web-dir build'], {
+			shell: true,
+		})
 	}
 
 	return opts;

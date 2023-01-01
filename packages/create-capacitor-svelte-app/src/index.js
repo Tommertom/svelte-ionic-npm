@@ -100,26 +100,29 @@ async function main() {
 		console.log('\nInstall community-maintained integrations:');
 		console.log(cyan('  https://github.com/svelte-add/svelte-adders'));
 
+		console.log(`\nCapacitor configuration - see: ${bold(cyan('capacitor.config.json'))}`);
+		console.log(`  App name ${bold(cyan(opts.name))}`);
+		console.log(`  Package name ${bold(cyan(opts.name + '.ionic.io'))}`);
+		console.log(`  Vite dev server url ${bold(cyan('http://192.168.137.1:5173/'))}`);
+
 		console.log('\nNext steps:');
 		let i = 1;
 
 		const relative = opts.name;
 		if (relative !== '') {
-			console.log(`  ${i++}: ${bold(cyan(`cd ${relative}`))}`);
+			console.log(`  ${i++}: ${bold(cyan(`cd ${relative}`))} `);
 		}
 
-		//	console.log(`  ${i++}: ${bold(cyan('npm install'))} (or pnpm install, etc)`);
+		console.log(`  ${i++}: ${bold(cyan('git init && git add -A && git commit -m "Initial commit"'))} (optional)`);
+
+		//	console.log(`  ${ i++ }: ${ bold(cyan('npm install')) } (or pnpm install, etc)`);
 		// prettier-ignore
 		if (options.capacitor) {
-			console.log(`  ${i++}: ${bold(cyan('npx cap init --web-dir build'))}`);
-			console.log(`  ${i++}: configure hot reload ${bold(cyan('url'))} entry in ${bold(cyan('capacitor.config.json'))} (optional) - https://capacitorjs.com/docs/guides/live-reload`);
-			//	console.log(`  ${i++}: edit  ${bold(cyan('capacitor.config.ts'))} - ${bold(cyan("webDir: 'build'"))}`);
-			console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android @capacitor/ios'))} (either of them optional)`);
-			console.log(`  ${i++}: ${bold(cyan('npx cap add android ios'))} (either of them optional)`);
+			console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android'))} and/or ${bold(cyan('@capacitor/ios'))}`);
+			console.log(`  ${i++}: ${bold(cyan('npx cap add android'))} and/or ${bold(cyan('ios'))}`);
 			console.log(`  ${i++}: ${bold(cyan('npm run build'))} to fill the ${bold(cyan('build'))} directory`);
-			console.log(`  ${i++}: ${bold(cyan('npx cap open android or ios'))} to open the project and mark as trusted`);
+			console.log(`  ${i++}: ${bold(cyan('npx cap open android'))} or ${bold(cyan('ios'))} to open the project and mark as trusted`);
 		}
-		console.log(`  ${i++}: ${bold(cyan('git init && git add -A && git commit -m "Initial commit"'))} (optional)`);
 		console.log(`  ${i++}: ${bold(cyan('npm run dev -- --open'))}`);
 		console.log(`\nTo close the dev server, hit ${bold(cyan('Ctrl-C'))}`);
 		console.log(`\nStuck? Visit us at Ionic's discord ${cyan('https://discordapp.com/channels/520266681499779082/1049388501629681675')}`);

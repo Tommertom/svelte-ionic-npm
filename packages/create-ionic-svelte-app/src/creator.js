@@ -65,7 +65,7 @@ export async function createIonicSvelte(opts) {
 	}
 
 	if (!(opts?.quiet)) {
-		console.log('Working: Creating base Svelte Kit install supercharged with Capacitor.');
+		console.log('Working: Creating base Svelte Kit install supercharged with Ionic.');
 	}
 	fs.mkdirp(opts.path);
 
@@ -217,8 +217,6 @@ export async function createIonicSvelte(opts) {
 				console.warn('TSconfig read/write error - ', e);
 			}
 
-
-
 			out(
 				'capacitor.config.json',
 				`{
@@ -228,6 +226,11 @@ export async function createIonicSvelte(opts) {
 					}
 				}`
 			);
+
+			// run npx cap init name name
+			let result = spawnSync('npx cap init', [opts.name, opts.name + '.ionic.io', '--web-dir build'], {
+				shell: true,
+			})
 		}
 	}
 
