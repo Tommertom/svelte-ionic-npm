@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.44
+- NavController added (experimental) - to support IonNav easy DX
+- IonNav.svelte introduced as wrapper for Ionic's Nav navigation stack.
+
+## 0.5.43
+- Added `IonNav` component for better API support on an IonNav (experimental)
+
 ## Update to creator scripts (both)
 - Running npx cap init from the script
 - Feedback on capacitor config so user can tweak where needed

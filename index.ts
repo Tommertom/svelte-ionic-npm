@@ -121,6 +121,7 @@ export {
 } from "@ionic/core/components";
 
 export * from "./utils/controllers";
+export { navController } from "./utils/navController";
 
 export * from "./utils/platform";
 
@@ -161,8 +162,31 @@ export const registerMenu = (menuId: string): boolean => {
   return !!menu;
 };
 
-// component export
 
+import type { SvelteComponent } from 'svelte';
+export const createNavPageFromSvelte = (
+  component: new (...args: any) => SvelteComponent,
+  componentProps: {}
+) => {
+  const divWrapper = document.createElement('div');
+  const contentID = 'id' + Date.now();
+  divWrapper.id = contentID;
+
+  let navContent = document.createElement('div');
+
+  divWrapper.appendChild(navContent);
+  document.body.appendChild(divWrapper);
+
+  const svelteComponent = new component({
+    target: navContent,
+    componentProps
+  });
+
+  return divWrapper;
+};
+
+
+// special component export
 // @ts-ignore
 export { default as IonTabs } from "./components/IonTabs.svelte";
 // @ts-ignore
@@ -170,4 +194,4 @@ export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
 // @ts-ignore
 export { default as IonPage } from "./components/IonPage.svelte";
 // @ts-ignore
-export { default as IonBackButton } from "./components/IonBackButton.svelte";
+export { default as IonNav } from "./components/IonNav.svelte";
