@@ -2,8 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.45
+- Typings changed using svelte/elements
+
 ## 0.5.44
-- NavController added (experimental) - to support IonNav easy DX
+- NavController added (experimental) - to support IonNav easy DX - not working
 - IonNav.svelte introduced as wrapper for Ionic's Nav navigation stack.
 
 ## 0.5.43
