@@ -96,7 +96,7 @@ async function main() {
 		console.log(cyan('  https://github.com/svelte-add/svelte-adders'));
 
 		if (options.capacitor) {
-			console.log(`\nCapacitor configuration - see: ${bold(cyan('capacitor.config.json'))}`);
+			console.log(`\nCapacitor configuration - see: ${bold(cyan('capacitor.config.json|ts'))}`);
 			console.log(`  App name ${bold(cyan(opts.name))}`);
 			console.log(`  Package name ${bold(cyan(opts.name + '.ionic.io'))}`);
 			console.log(`  Vite dev server url ${bold(cyan('http://192.168.137.1:5173/'))}`);
@@ -118,8 +118,15 @@ async function main() {
 			console.log(`  ${i++}: ${bold(cyan('npx cap open android'))} or ${bold(cyan('ios'))} to open the project and mark as trusted`);
 		}
 		console.log(`  ${i++}: ${bold(cyan('npm run dev -- --open'))}`);
-
 		console.log(`\nTo close the dev server, hit ${bold(cyan('Ctrl-C'))}`);
+
+		if (options.capacitor && opts.types != 'typescript') {
+			console.log(`\nWant HMR in Capacitor dev mode? Rename ${bold(cyan('_server'))} to ${bold(cyan('server'))} in ${bold(cyan('capacitor.config.json'))}`);
+		}
+		if (options.capacitor && opts.types == 'typescript') {
+			console.log(`\nUse the ${bold(cyan('-hmr'))} flag after your ${bold(cyan('npx cap run/open/sync'))} commands to use HMR together with ${bold(cyan('npm run dev'))}`);
+		}
+
 		console.log(`\nStuck? Visit us at Ionic's discord ${cyan('https://discordapp.com/channels/520266681499779082/1049388501629681675')}`);
 
 		console.log(grey(`\nNeed some help or found an issue with this installer? Visit us on Github https://github.com/Tommertom/svelte-ionic-npm`));

@@ -6,6 +6,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import { dist, whichPMRuns, mkdirp, getIonicVariables, getDemoIonicApp } from './utils.js';
 import { bold, red, cyan, grey } from 'kleur/colors';
+import { getTSCapacitorConfig } from './utils.js';
+import ip from 'ip';
 
 // NOTE: Any changes here must also be reflected in the --help output in utils.ts and shortcut expansions in bin.ts.
 // Probably a good idea to do a search on the values you are changing to catch any other areas they are used in
@@ -217,20 +219,26 @@ export async function createIonicSvelte(opts) {
 				console.warn('TSconfig read/write error - ', e);
 			}
 
-			out(
+			if (opts.types != 'typescript') out(
 				'capacitor.config.json',
 				`{
-					"server": {
-					  "url": "http://192.168.137.1:5173/",
-					  "cleartext": true
-					}
-				}`
+		"webDir":"build",
+		"appId":"${opts.name}.ionic.io",
+		"appName":"${opts.name}",
+		"_server": {
+		  "url": "${ip.address()}:5173/",
+		  "cleartext": true
+		}
+	}`
 			);
 
-			// run npx cap init name name
-			let result = spawnSync('npx cap init', [opts.name, opts.name + '.ionic.io', '--web-dir build'], {
-				shell: true,
-			})
+			if (opts.types == 'typescript') out('capacitor.config.ts',
+				getTSCapacitorConfig({
+					appId: opts.name + '.ionic.io',
+					appName: opts.name,
+					ip: ip.address() // 'http://192.168.137.1'
+				})
+			)
 		}
 	}
 

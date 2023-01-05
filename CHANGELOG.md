@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## Creator scripts updated
+- Better HMR support (via dynamic config) - generated for *.json or *.ts approach
+
 ## 0.5.45
 - Typings changed using svelte/elements
 
