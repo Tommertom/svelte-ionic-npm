@@ -1,6 +1,6 @@
 {
   "name": "create-capacitor-svelte-app",
-  "version": "0.0.9",
+  "version": "0.0.13",
   "description": "Use this CLI app to setup a new Capacitor application in a new SvelteKit project.",
   "keywords": [
     "capacitor",
@@ -40,6 +40,7 @@
   "dependencies": {
     "create-svelte": "^2.0.0-next.193",
     "fs-extra": "^10.1.0",
+    "ip": "^1.1.8",
     "kleur": "^4.1.5",
     "mri": "^1.2.0",
     "prompts": "^2.4.2"
@@ -48,7 +49,6 @@
     "bumpp": "^8.2.1",
     "eslint": "^8.28.0",
     "fs": "^0.0.1-security",
-    "ip": "^1.1.8",
     "path": "^0.12.7",
     "standard-version": "^9.5.0",
     "svelte": "^3.53.1"

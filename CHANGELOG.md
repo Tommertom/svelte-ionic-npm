@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.47/0.5.48
+- Typings update (exporting the default functions)
+
+## 0.5.46
+- Typings update - some more debugging
+
 ## Creator scripts updated
 - Better HMR support (via dynamic config) - generated for *.json or *.ts approach
 

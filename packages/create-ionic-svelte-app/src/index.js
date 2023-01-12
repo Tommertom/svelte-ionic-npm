@@ -115,6 +115,7 @@ async function main() {
 			console.log(`  ${i++}: ${bold(cyan('npm i @capacitor/android'))} and/or ${bold(cyan('@capacitor/ios'))}`);
 			console.log(`  ${i++}: ${bold(cyan('npx cap add android'))} and/or ${bold(cyan('ios'))}`);
 			console.log(`  ${i++}: ${bold(cyan('npm run build'))} to fill the ${bold(cyan('build'))} directory`);
+			console.log(`  ${i++}: ${bold(cyan('npx cap sync'))} sync the build into the target folder`);
 			console.log(`  ${i++}: ${bold(cyan('npx cap open android'))} or ${bold(cyan('ios'))} to open the project and mark as trusted`);
 		}
 		console.log(`  ${i++}: ${bold(cyan('npm run dev -- --open'))}`);

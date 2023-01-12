@@ -1,6 +1,6 @@
 {
   "name": "ionic-svelte",
-  "version": "0.5.45",
+  "version": "0.5.48",
   "private": false,
   "homepage": "https://ionicsvelte.firebaseapp.com",
   "repository": {
@@ -17,6 +17,7 @@
   ],
   "main": "index.ts",
   "module": "index.ts",
+  "types": "index.d.ts",
   "bugs": {
     "url": "https://github.com/Tommertom/svelte-ionic-npm/issues"
   },

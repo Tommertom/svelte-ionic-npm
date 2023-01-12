@@ -226,7 +226,7 @@ export async function createIonicSvelte(opts) {
 		"appId":"${opts.name}.ionic.io",
 		"appName":"${opts.name}",
 		"_server": {
-		  "url": "${ip.address()}:5173/",
+		  "url": "http://${ip.address()}:5173/",
 		  "cleartext": true
 		}
 	}`
@@ -309,10 +309,6 @@ function createSvelteKitLayout(opts) {
 	/*
 		This part - import 'ionic-svelte/components/all'; -  loads all components at once.
 
-		This adds at least >800kb (uncompressed) to your bundle.
-
-		You can also choose to import each component you want to use separately. Example:
-
 		This adds at least >800kb (uncompressed) to your bundle - 80 components (so do your math!!)
 
 		You can also choose to import each component you want to use separately and leave out others.
@@ -321,7 +317,7 @@ function createSvelteKitLayout(opts) {
 		to do this elsewhere if you like to code-split differently. 
 
 		Example: if you replace the line import 'ionic-svelte/components/all'; with the imports below, you will see the resulting bundle being much smaller
-		
+
 		import 'ionic-svelte/components/ion-app';
 		import 'ionic-svelte/components/ion-card';
 		import 'ionic-svelte/components/ion-card-title';
@@ -331,7 +327,7 @@ function createSvelteKitLayout(opts) {
 		import 'ionic-svelte/components/ion-chip';
 		import 'ionic-svelte/components/ion-button';
 
-		Click the ionic-svelte-components-all-import below to go to the full list of possible imports.
+		Click the ionic-svelte-components-all-import above to go to the full list of possible imports.
 
 		Please don't forget to import ion-app in this file when you decide to code-split:
 
