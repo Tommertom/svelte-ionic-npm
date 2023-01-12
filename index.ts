@@ -121,7 +121,7 @@ export {
 } from "@ionic/core/components";
 
 export * from "./utils/controllers";
-export { navController } from "./utils/navController";
+export { navController, setActiveNavElement } from "./utils/navcontroller";
 
 export * from "./utils/platform";
 
@@ -161,30 +161,6 @@ export const registerMenu = (menuId: string): boolean => {
   }
   return !!menu;
 };
-
-
-import type { SvelteComponent } from 'svelte';
-export const createNavPageFromSvelte = (
-  component: new (...args: any) => SvelteComponent,
-  componentProps: {}
-) => {
-  const divWrapper = document.createElement('div');
-  const contentID = 'id' + Date.now();
-  divWrapper.id = contentID;
-
-  let navContent = document.createElement('div');
-
-  divWrapper.appendChild(navContent);
-  document.body.appendChild(divWrapper);
-
-  const svelteComponent = new component({
-    target: navContent,
-    componentProps
-  });
-
-  return divWrapper;
-};
-
 
 // special component export
 // @ts-ignore

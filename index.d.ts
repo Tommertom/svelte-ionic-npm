@@ -17,6 +17,29 @@ export function createNavPageFromSvelte(
   component: new (...args: any) => SvelteComponent,
   componentProps: {}
 );
+export function setActiveNavElement(element: HTMLIonNavElement);
+
+export { default as IonTabs } from "./components/IonTabs.svelte";
+export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
+export { default as IonPage } from "./components/IonPage.svelte";
+export { default as IonNav } from "./components/IonNav.svelte";
+
+// thank you ChatGPT!
+export const navController: {
+  canGoBack: (view?: ViewController) => boolean | undefined;
+  getActive: () => ViewController | undefined;
+  getByIndex: (index: number) => ViewController | undefined;
+  getPrevious: (view?: ViewController) => ViewController | undefined;
+  insert: <T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  insertPages: (insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  pop: (opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  popTo: (indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  popToRoot: (opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  push: <T extends NavComponent>(component: T, componentProps?: ComponentProps<T>, opts?: NavOptions, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  removeIndex: (startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  setPages: (views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+  setRoot: <T extends NavComponent>(component: T, componentProps?: ComponentProps<T>, opts?: NavOptions, done?: TransitionDoneFn) => Promise<boolean> | undefined;
+}
 
 // not exported by @ionic/core
 export type NavigationHookResult = boolean | NavigationHookOptions;

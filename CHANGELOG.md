@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.50
+- Added navController and IonNav.svelte for better nav APIs - experimental, will make a HOWTO to show how it works
+
+## 0.5.49
+- Typings update (exporting the default pages)
+
 ## 0.5.47/0.5.48
 - Typings update (exporting the default functions)
 

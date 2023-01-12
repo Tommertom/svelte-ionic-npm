@@ -1,19 +1,19 @@
-/*
-    Wrapper for Ionic's Nav component. Only needed because we need an overlay for each nav component pushed to 
-    the stack, which requires a bit of conversion.
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import type { NavComponentWithProps, ComponentProps, NavComponent, NavOptions, TransitionDoneFn, ViewController } from "@ionic/core";
+import type { SvelteComponent } from "svelte";
 
-    I believe in the angular/vue/react implementations this is done via some sort of framework delegated,
-    which seems a bit more work compared to a navController - which actually used to be a v3 component
-    to manage page stacks.
-*/
-import type { NavComponent, NavOptions, TransitionDoneFn, ViewController } from '@ionic/core';
-import type { SvelteComponent } from 'svelte';
+import { writable, get } from "svelte/store"
 
-const getIonNav = (): HTMLIonNavElement | null => { return document.querySelector('ion-nav') as HTMLIonNavElement; };
+// not sure if we need to stick to a writable - strictly spoken not necessary
+const ion_nav = writable<HTMLIonNavElement>(undefined)
+
+export function setActiveNavElement(element: HTMLIonNavElement) {
+    ion_nav.set(element);
+}
 
 const createHTMLCompFromSvelte = (
     component: new (...args: any) => SvelteComponent,
-    componentProps: {}
+    componentProps = {}
 ) => {
     const divWrapper = document.createElement('div');
     const contentID = 'id' + Date.now();
@@ -24,85 +24,115 @@ const createHTMLCompFromSvelte = (
     divWrapper.appendChild(navContent);
     document.body.appendChild(divWrapper);
 
+    const props = {
+        ...componentProps,
+        // ionNav
+    };
+
     const svelteComponent = new component({
         target: navContent,
-        ...componentProps
-
+        props
     });
 
     return divWrapper;
 };
 
 export const navController = {
-    canGoBack: (view?: ViewController) => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.canGoBack(view)
+
+    canGoBack: function (view?: ViewController) {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.canGoBack(view) : undefined;
     },
 
-    getActive: () => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.getActive()
+    getActive: function () {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.getActive() : undefined;
     },
 
-    getByIndex: (index: number) => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.getByIndex(index)
+    getByIndex: function (index: number) {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.getByIndex(index) : undefined;
     },
 
-    getPrevious: (view?: ViewController) => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.getPrevious(view)
+    getPrevious: function (view?: ViewController) {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.getPrevious(view) : undefined;
     },
 
-    insert: (insertIndex: number, component: SvelteComponent, componentProps?: any, opts?: NavOptions, done?: TransitionDoneFn) => {
-        const insertFn = getIonNav()?.insert;
-        const componentToInsert = createHTMLCompFromSvelte(component as any, componentProps);
-        if (insertFn !== undefined) return insertFn(insertIndex, componentToInsert as any, componentProps, opts as any, done)
+    insert: function <T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        // eslint-disable @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        const htmlcomponent = createHTMLCompFromSvelte(component, componentProps);
+        return _nav !== undefined ? _nav.insert(insertIndex, htmlcomponent, componentProps, opts, done) : undefined;
     },
 
-    /*
-export interface NavComponentWithProps<T = any> {
-  component: NavComponent;
-  componentProps?: ComponentProps<T> | null;
+    insertPages: function (insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        // eslint-disable @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        const htmlcomponents: NavComponent[] | NavComponentWithProps[] = insertComponents.map((component: NavComponent | NavComponentWithProps) => {
+            //@ts-ignore
+            return typeof component['component'] === 'undefined' ? component : {
+                //@ts-ignore
+                component: createHTMLCompFromSvelte(component['component'], component['componentProps']),
+                //@ts-ignore
+                componentProps: component['componentProps']
+            }
+        });
+        return _nav !== undefined ? _nav.insertPages(insertIndex, htmlcomponents, opts, done) : undefined;
+    },
+
+    pop: function (opts?: NavOptions | null, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.pop(opts, done) : undefined;
+    },
+
+    popTo: function (indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.popTo(indexOrViewCtrl, opts, done) : undefined;
+    },
+
+    popToRoot: function (opts?: NavOptions | null, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.popToRoot(opts, done) : undefined;
+    },
+
+    push: function <T extends NavComponent>(component: T, componentProps?: ComponentProps<T>, opts?: NavOptions, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        const htmlcomponent = createHTMLCompFromSvelte(component, componentProps);
+        return _nav !== undefined ? _nav.push(htmlcomponent, componentProps, opts, done) : undefined;
+    },
+
+    removeIndex: function (startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        return _nav !== undefined ? _nav.removeIndex(startIndex, removeCount, opts, done) : undefined;
+    },
+
+    setPages: function (views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        // eslint-disable @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        const htmlcomponents: NavComponent[] | NavComponentWithProps[] = views.map((component: NavComponent | NavComponentWithProps) => {
+            //@ts-ignore
+            return typeof component['component'] === 'undefined' ? component : {
+                //@ts-ignore
+                component: createHTMLCompFromSvelte(component['component'], component['componentProps']),
+                //@ts-ignore
+                componentProps: component['componentProps']
+            }
+        });
+        return _nav !== undefined ? _nav.setPages(htmlcomponents, opts, done) : undefined;
+    },
+
+    setRoot: function <T extends NavComponent>(component: T, componentProps?: ComponentProps<T>, opts?: NavOptions, done?: TransitionDoneFn) {
+        const _nav = get(ion_nav);
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        const htmlcomponent = createHTMLCompFromSvelte(component, componentProps);
+        return _nav !== undefined ? _nav.setRoot(htmlcomponent, componentProps, opts, done) : undefined;
+    },
 }
-    */
-    insertPages: (insertIndex: number, insertComponents: NavComponent[], opts?: NavOptions, done?: TransitionDoneFn) => {
-        console.error('navController - insertPages not implemented');
-    },
 
-    pop: (opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.pop(opts, done);
-    },
-
-    popTo: (indexOrViewCtrl: number | ViewController, opts?: NavOptions, done?: TransitionDoneFn) => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.popTo(indexOrViewCtrl, opts, done);
-    },
-
-    popToRoot: (opts?: NavOptions, done?: TransitionDoneFn) => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.popToRoot(opts, done);
-    },
-
-    push: (component: SvelteComponent, componentProps?: any, opts?: NavOptions, done?: TransitionDoneFn) => {
-        const pushFn = getIonNav()?.push;
-        const componentToInsert = createHTMLCompFromSvelte(component as any, componentProps);
-        if (pushFn !== undefined) return pushFn(componentToInsert as any, componentProps, opts as any, done)
-    },
-
-    removeIndex: (startIndex: number, removeCount?: number, opts?: NavOptions, done?: TransitionDoneFn) => {
-        const ionNav = getIonNav();
-        if (ionNav !== null) return ionNav.removeIndex(startIndex, removeCount, opts, done);
-    },
-
-    setPages: (views: NavComponent[], opts?: NavOptions, done?: TransitionDoneFn) => {
-        console.error('navController - setPages not implemented');
-    },
-
-    setRoot: (component: SvelteComponent, componentProps?: any, opts?: NavOptions, done?: TransitionDoneFn) => {
-        const setRootFn = getIonNav()?.setRoot;
-        const componentToInsert = createHTMLCompFromSvelte(component as any, componentProps);
-        if (setRootFn !== undefined) return setRootFn(componentToInsert as any, componentProps, opts as any, done)
-    }
-};

@@ -1,9 +1,11 @@
 <script lang="ts">
   import { onMount, type SvelteComponent } from "svelte";
-  export let NavHome;
+  import { setActiveNavElement } from "../utils/navcontroller";
 
-  //@ts-ignore
-  export let ionNav: HTMLIonNavElement = undefined; // can this be used by the parent to get the ionNav inside?
+  export let NavHome: any;
+
+  //@ts-ignore We need this export so the NavHome element has access to ion-nav and its methods
+  export let ionNav: HTMLIonNavElement = undefined;
 
   const createHTMLCompFromSvelte = (
     component: new (...args: any) => SvelteComponent,
@@ -31,14 +33,13 @@
     return divWrapper;
   };
 
-  let root;
+  let root: HTMLElement;
 
   onMount(() => {
+    //@ts-ignore
     root = createHTMLCompFromSvelte(NavHome, {});
+    setActiveNavElement(ionNav);
   });
-
-  // needs to implement all props and slots https://ionicframework.com/docs/api/nav
-  // and how to expose methods?
 </script>
 
 <ion-nav bind:this={ionNav} {...$$props} {root} on:ionNavDidChange on:ionNavWillChange />
