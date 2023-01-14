@@ -2,8 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.5.54
+## 0.5.54/55
 - Updated README to cover HOWTOs
+- Changed description for SSR/SPA
 
 ## 0.5.53
 - Forgot about the typings for controllers! Added them

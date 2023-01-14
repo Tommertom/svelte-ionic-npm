@@ -33,7 +33,9 @@ cd my-app
 npm install
 ```
 
-We need adapter static + `ssr=false`, because Ionic pages must run as SPA.
+We need adapter static + `ssr=false`, because Ionic package cannot run in SSR=true.
+
+I am chosing to deploy via adapter-static (to Firebase hosting), but if you deploy to Cloudflare, Vercel or Netflify you can opt to do differently. I checked with Vercel and that works still very well. 
 
 - `npm i -D @sveltejs/adapter-static`
 - `import adapter from '@sveltejs/adapter-static'` in `svelte.config.js`
@@ -49,11 +51,11 @@ adapter: adapter({
 		})
 ```
 
-- Pages that use Ionic must be a SPA - so these routes need to have ssr disabled in their layout files. Kit example: `src/routes/+layout.ts` and add `export const ssr = false;`
+- Pages that use Ionic  need to have ssr disabled in their layout files (if not earlier present in parent layout). Kit example: `src/routes/+layout.ts` and add `export const ssr = false;`
 
 Integration of Ionic
 
-- `npm i @ionic/core@6.3.0 ionic-svelte` - using Ionic 6.3.0
+- `npm i @ionic/core ionic-svelte` - (ionic svelte has typings until 6.4.2)
 - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-npm/main/starterfiles/theme/variables.css
 - the top-route layout file `+layout.svelte` (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
 
