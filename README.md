@@ -19,8 +19,6 @@
 On the CLI just type `npm create ionic-svelte-app@latest` to spin a SvelteKit project from the CLI. This will
 do all the lifting for you to create a SvelteKit SPA app.
 
-<img alt="npm create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/static/assets/svelte-ionic-logo.png" width="45%">
-
 ## Show me Ionic!
 A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com. This also has a handy tool to show the source code for Svelte - and even Angular, VanillaJS, Vue, React and stencil!
 
@@ -106,13 +104,19 @@ Here content
 `setupIonicBase` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicBase` a bit).
 
 ## Special components
-Due to router incompatability, there are three special compontents included that override/replace the ionic standard webcomponents:
+Due to router issues and overlays, there are three special compontents included that override/replace the ionic standard webcomponents:
 
 - IonTabs - fixing some default selected tabs as well as fixing compatibility with the router
 - IonPage - wrapping the page and providing the ion-lifecycle hooks. And implementing a basic animation
-- IonBackButton - a rudimentary fix to the IonBackButton
+- IonNav - supporting IonNav
 
 To be imported from the package: `import { IonTab } from 'ionic-svelte';` etc..
+
+See HOWTOs on how to implement tabs and nav. For Page - just check  https://ionicsvelte.firebaseapp.com/
+
+https://github.com/Tommertom/ionic-svelte-tabs-howto
+
+https://github.com/Tommertom/ionic-svelte-nav-howto 
 
 ## Typesafety and type-ahead support
 The package provides typings for all webcomponents. These can be included in your IDE by adding the following to your the `compilerOptions` section in `tsconfig.json`:
@@ -184,9 +188,7 @@ When you do a PR, make sure you explain what you did and why!
 
 ## Issues - help needed/workaround provided
 
-- IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
-
-- Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx - you can also make your own and do a history.back?
+- Ion Back Button - requires `default-href` to show in toolbar (page transitions need to add `can-go-back` class)
 
 - IonTabs needs to manually call the select method of ion-tabs to ensure the selectedTab prop is really acted upon. Issue known: https://github.com/ionic-team/ionic-framework/issues/20060. Gives a brief undesireable view on the wrong tab. Might need to look into the angular/react/vue way as these packages don't have this issue. Probably tabs is wired up in the router.
 
@@ -214,7 +216,7 @@ Please note - if you use a library such as https://svelte-forms-lib-sapper-docs.
 
 - Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 
-- ItemSliding sometimes does not catch the gesture
+- ItemSliding sometimes does not catch the gesture - known issue - needs fix in @ionic/core
 
 - Many "File not found errors" on css.map files. I frankly don't really mind these. Maybe it is easy to get rid of these, but for now, I leave it.
 
