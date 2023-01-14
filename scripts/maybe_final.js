@@ -1,4 +1,6 @@
 // todo - using https://unpkg.com/@ionic/docs@6.3.8/core.json
+// todo - using https://unpkg.com/@ionic/docs@6.4.2/core.json
+
 const fs = require("fs");
 
 const kebabize = str => {
@@ -51,8 +53,7 @@ const doStuff = () => {
     component: new (...args: any) => SvelteComponent,
     componentProps: {}
   );
-  export function setActiveNavElement(element: HTMLIonNavElement);
-
+ 
   export { default as IonTabs } from "./components/IonTabs.svelte";
   export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
   export { default as IonPage } from "./components/IonPage.svelte";
@@ -75,7 +76,16 @@ export const navController: {
   setRoot: <T extends NavComponent>(component: T, componentProps?: ComponentProps<T>, opts?: NavOptions, done?: TransitionDoneFn) => Promise<boolean> | undefined;
 }
 
- 
+// we overload (modalcontroller and popovercontroller) from ionic-core with same types, so let's mirror these
+export {
+  modalController, popoverController, actionSheetController,
+  alertController,
+  loadingController,
+  menuController,
+  pickerController,
+  toastController
+} from "@ionic/core";
+
   // not exported by @ionic/core
   export type NavigationHookResult = boolean | NavigationHookOptions;
   export interface NavigationHookOptions {
@@ -115,7 +125,7 @@ export const navController: {
 
       // pre-amble of this tag
       console.log('Processing ', component.tag, toPascalCase(component.tag))
-      componentDeclarations = componentDeclarations + `'${component.tag}': ${tagAsPascal} | HTMLBaseAttributes; \n`;
+      componentDeclarations = componentDeclarations + `'${component.tag}': ${tagAsPascal} & HTMLBaseAttributes; \n`;
       /**
  * ${component.tag}
  * More info: https://ionicframework.com/docs/api/${tagWithoutIon}

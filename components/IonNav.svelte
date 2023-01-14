@@ -1,15 +1,18 @@
 <script lang="ts">
   import { onMount, type SvelteComponent } from "svelte";
-  import { setActiveNavElement } from "../utils/navcontroller";
 
-  export let NavHome: any;
+  export let root: any;
+  export let animated = true;
+  export let animation: ((baseEl: any, opts?: any) => Animation) | undefined = undefined;
+  export let rootParams: undefined | { [key: string]: any } = undefined;
+  export let swipeGesture: boolean | undefined = undefined;
 
-  //@ts-ignore We need this export so the NavHome element has access to ion-nav and its methods
-  export let ionNav: HTMLIonNavElement = undefined;
+  //@ts-ignore - if we export ionNav, then the root element actually has access to ion-nav via this variable
+  let ionNav: HTMLIonNavElement = undefined;
 
   const createHTMLCompFromSvelte = (
     component: new (...args: any) => SvelteComponent,
-    componentProps: {}
+    componentProps: { [key: string]: any } = {}
   ) => {
     const divWrapper = document.createElement("div");
     const contentID = "id" + Date.now();
@@ -33,13 +36,21 @@
     return divWrapper;
   };
 
-  let root: HTMLElement;
+  let rootComponent: HTMLElement;
 
   onMount(() => {
     //@ts-ignore
-    root = createHTMLCompFromSvelte(NavHome, {});
-    setActiveNavElement(ionNav);
+    rootComponent = createHTMLCompFromSvelte(root, {});
   });
 </script>
 
-<ion-nav bind:this={ionNav} {...$$props} {root} on:ionNavDidChange on:ionNavWillChange />
+<ion-nav
+  bind:this={ionNav}
+  {animated}
+  {animation}
+  root-params={rootParams}
+  swipe-gesture={swipeGesture}
+  root={rootComponent}
+  on:ionNavDidChange
+  on:ionNavWillChange
+/>

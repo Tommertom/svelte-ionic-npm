@@ -1,6 +1,6 @@
 {
   "name": "create-capacitor-svelte-app",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Use this CLI app to setup a new Capacitor application in a new SvelteKit project.",
   "keywords": [
     "capacitor",

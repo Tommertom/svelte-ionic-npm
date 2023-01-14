@@ -19,7 +19,7 @@
 On the CLI just type `npm create ionic-svelte-app@latest` to spin a SvelteKit project from the CLI. This will
 do all the lifting for you to create a SvelteKit SPA app.
 
-<img alt="create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-npm/raw/main/packages/create-ionic-svelte-app/create-ionic-svelte-app.png" width="45%">
+<img alt="npm create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/static/assets/svelte-ionic-logo.png" width="45%">
 
 ## Show me Ionic!
 A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com. This also has a handy tool to show the source code for Svelte - and even Angular, VanillaJS, Vue, React and stencil!

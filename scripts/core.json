@@ -1,5 +1,5 @@
 {
-    "timestamp": "2022-11-22T15:08:33",
+    "timestamp": "2023-01-11T13:33:58",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.18.0",
@@ -8305,7 +8305,7 @@
                     },
                     "signature": "setFocus() => Promise<void>",
                     "parameters": [],
-                    "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.",
+                    "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.",
                     "docsTags": []
                 }
             ],
@@ -8403,8 +8403,14 @@
             "slots": [],
             "parts": [],
             "dependents": [],
-            "dependencies": [],
-            "dependencyGraph": {}
+            "dependencies": [
+                "ion-icon"
+            ],
+            "dependencyGraph": {
+                "ion-input": [
+                    "ion-icon"
+                ]
+            }
         },
         {
             "filePath": "./src/components/item/item.tsx",
@@ -11431,7 +11437,7 @@
                 },
                 {
                     "name": "canDismiss",
-                    "type": "(() => Promise<boolean>) | boolean | undefined",
+                    "type": "((data?: any, role?: string | undefined) => Promise<boolean>) | boolean | undefined",
                     "mutable": false,
                     "attr": "can-dismiss",
                     "reflectToAttr": false,
@@ -11439,7 +11445,10 @@
                     "docsTags": [],
                     "values": [
                         {
-                            "type": "(() => Promise<boolean>)"
+                            "type": "((data?: any, role?: string"
+                        },
+                        {
+                            "type": "undefined) => Promise<boolean>)"
                         },
                         {
                             "type": "boolean"
@@ -14183,7 +14192,7 @@
             "filePath": "./src/components/radio-group/radio-group.tsx",
             "encapsulation": "none",
             "tag": "ion-radio-group",
-            "docs": "The Radio Group component mandates that only one radio button\nwithin the group can be selected at any given time. Since `ion-radio`\nis a shadow DOM component, it cannot natively perform this behavior\nusing the `name` attribute.",
+            "docs": "",
             "docsTags": [],
             "usage": {},
             "props": [
@@ -20256,7 +20265,7 @@
                     "reflectToAttr": false,
                     "docs": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called.",
                     "docsTags": [],
-                    "default": "0",
+                    "default": "config.getNumber('toastDuration', 0)",
                     "values": [
                         {
                             "type": "number"
@@ -20795,7 +20804,7 @@
                     "reflectToAttr": false,
                     "docs": "Enables the on/off accessibility switch labels within the toggle.",
                     "docsTags": [],
-                    "default": "undefined",
+                    "default": "config.get('toggleOnOffLabels')",
                     "values": [
                         {
                             "type": "boolean"

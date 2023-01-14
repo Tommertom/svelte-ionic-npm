@@ -17,7 +17,6 @@ export function createNavPageFromSvelte(
   component: new (...args: any) => SvelteComponent,
   componentProps: {}
 );
-export function setActiveNavElement(element: HTMLIonNavElement);
 
 export { default as IonTabs } from "./components/IonTabs.svelte";
 export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
@@ -40,6 +39,16 @@ export const navController: {
   setPages: (views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean> | undefined;
   setRoot: <T extends NavComponent>(component: T, componentProps?: ComponentProps<T>, opts?: NavOptions, done?: TransitionDoneFn) => Promise<boolean> | undefined;
 }
+
+// we overload (modalcontroller and popovercontroller) from ionic-core with same types, so let's mirror these
+export {
+  modalController, popoverController, actionSheetController,
+  alertController,
+  loadingController,
+  menuController,
+  pickerController,
+  toastController
+} from "@ionic/core";
 
 // not exported by @ionic/core
 export type NavigationHookResult = boolean | NavigationHookOptions;
@@ -2362,7 +2371,7 @@ declare global {
       * Determines whether or not a modal can dismiss when calling the `dismiss` method.  If the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss. If the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.
       * API info: https://ionicframework.com/docs/api/modal#candismiss
       */
-      "can-dismiss"?: (() => Promise<boolean>) | boolean | undefined;
+      "can-dismiss"?: ((data?: any, role?: string | undefined) => Promise<boolean>) | boolean | undefined;
 
       /**
       * Animation to use when the modal is presented.
@@ -4454,96 +4463,96 @@ declare global {
 
 
     interface IntrinsicElements {
-      'ion-accordion': IonAccordion | HTMLBaseAttributes;
-      'ion-accordion-group': IonAccordionGroup | HTMLBaseAttributes;
-      'ion-action-sheet': IonActionSheet | HTMLBaseAttributes;
-      'ion-alert': IonAlert | HTMLBaseAttributes;
-      'ion-app': IonApp | HTMLBaseAttributes;
-      'ion-avatar': IonAvatar | HTMLBaseAttributes;
-      'ion-back-button': IonBackButton | HTMLBaseAttributes;
-      'ion-backdrop': IonBackdrop | HTMLBaseAttributes;
-      'ion-badge': IonBadge | HTMLBaseAttributes;
-      'ion-breadcrumb': IonBreadcrumb | HTMLBaseAttributes;
-      'ion-breadcrumbs': IonBreadcrumbs | HTMLBaseAttributes;
-      'ion-button': IonButton | HTMLBaseAttributes;
-      'ion-buttons': IonButtons | HTMLBaseAttributes;
-      'ion-card': IonCard | HTMLBaseAttributes;
-      'ion-card-content': IonCardContent | HTMLBaseAttributes;
-      'ion-card-header': IonCardHeader | HTMLBaseAttributes;
-      'ion-card-subtitle': IonCardSubtitle | HTMLBaseAttributes;
-      'ion-card-title': IonCardTitle | HTMLBaseAttributes;
-      'ion-checkbox': IonCheckbox | HTMLBaseAttributes;
-      'ion-chip': IonChip | HTMLBaseAttributes;
-      'ion-col': IonCol | HTMLBaseAttributes;
-      'ion-content': IonContent | HTMLBaseAttributes;
-      'ion-datetime': IonDatetime | HTMLBaseAttributes;
-      'ion-datetime-button': IonDatetimeButton | HTMLBaseAttributes;
-      'ion-fab': IonFab | HTMLBaseAttributes;
-      'ion-fab-button': IonFabButton | HTMLBaseAttributes;
-      'ion-fab-list': IonFabList | HTMLBaseAttributes;
-      'ion-footer': IonFooter | HTMLBaseAttributes;
-      'ion-grid': IonGrid | HTMLBaseAttributes;
-      'ion-header': IonHeader | HTMLBaseAttributes;
-      'ion-img': IonImg | HTMLBaseAttributes;
-      'ion-infinite-scroll': IonInfiniteScroll | HTMLBaseAttributes;
-      'ion-infinite-scroll-content': IonInfiniteScrollContent | HTMLBaseAttributes;
-      'ion-input': IonInput | HTMLBaseAttributes;
-      'ion-item': IonItem | HTMLBaseAttributes;
-      'ion-item-divider': IonItemDivider | HTMLBaseAttributes;
-      'ion-item-group': IonItemGroup | HTMLBaseAttributes;
-      'ion-item-option': IonItemOption | HTMLBaseAttributes;
-      'ion-item-options': IonItemOptions | HTMLBaseAttributes;
-      'ion-item-sliding': IonItemSliding | HTMLBaseAttributes;
-      'ion-label': IonLabel | HTMLBaseAttributes;
-      'ion-list': IonList | HTMLBaseAttributes;
-      'ion-list-header': IonListHeader | HTMLBaseAttributes;
-      'ion-loading': IonLoading | HTMLBaseAttributes;
-      'ion-menu': IonMenu | HTMLBaseAttributes;
-      'ion-menu-button': IonMenuButton | HTMLBaseAttributes;
-      'ion-menu-toggle': IonMenuToggle | HTMLBaseAttributes;
-      'ion-modal': IonModal | HTMLBaseAttributes;
-      'ion-nav': IonNav | HTMLBaseAttributes;
-      'ion-nav-link': IonNavLink | HTMLBaseAttributes;
-      'ion-note': IonNote | HTMLBaseAttributes;
-      'ion-picker': IonPicker | HTMLBaseAttributes;
-      'ion-popover': IonPopover | HTMLBaseAttributes;
-      'ion-progress-bar': IonProgressBar | HTMLBaseAttributes;
-      'ion-radio': IonRadio | HTMLBaseAttributes;
-      'ion-radio-group': IonRadioGroup | HTMLBaseAttributes;
-      'ion-range': IonRange | HTMLBaseAttributes;
-      'ion-refresher': IonRefresher | HTMLBaseAttributes;
-      'ion-refresher-content': IonRefresherContent | HTMLBaseAttributes;
-      'ion-reorder': IonReorder | HTMLBaseAttributes;
-      'ion-reorder-group': IonReorderGroup | HTMLBaseAttributes;
-      'ion-ripple-effect': IonRippleEffect | HTMLBaseAttributes;
-      'ion-route': IonRoute | HTMLBaseAttributes;
-      'ion-route-redirect': IonRouteRedirect | HTMLBaseAttributes;
-      'ion-router': IonRouter | HTMLBaseAttributes;
-      'ion-router-link': IonRouterLink | HTMLBaseAttributes;
-      'ion-router-outlet': IonRouterOutlet | HTMLBaseAttributes;
-      'ion-row': IonRow | HTMLBaseAttributes;
-      'ion-searchbar': IonSearchbar | HTMLBaseAttributes;
-      'ion-segment': IonSegment | HTMLBaseAttributes;
-      'ion-segment-button': IonSegmentButton | HTMLBaseAttributes;
-      'ion-select': IonSelect | HTMLBaseAttributes;
-      'ion-select-option': IonSelectOption | HTMLBaseAttributes;
-      'ion-skeleton-text': IonSkeletonText | HTMLBaseAttributes;
-      'ion-slide': IonSlide | HTMLBaseAttributes;
-      'ion-slides': IonSlides | HTMLBaseAttributes;
-      'ion-spinner': IonSpinner | HTMLBaseAttributes;
-      'ion-split-pane': IonSplitPane | HTMLBaseAttributes;
-      'ion-tab': IonTab | HTMLBaseAttributes;
-      'ion-tab-bar': IonTabBar | HTMLBaseAttributes;
-      'ion-tab-button': IonTabButton | HTMLBaseAttributes;
-      'ion-tabs': IonTabs | HTMLBaseAttributes;
-      'ion-text': IonText | HTMLBaseAttributes;
-      'ion-textarea': IonTextarea | HTMLBaseAttributes;
-      'ion-thumbnail': IonThumbnail | HTMLBaseAttributes;
-      'ion-title': IonTitle | HTMLBaseAttributes;
-      'ion-toast': IonToast | HTMLBaseAttributes;
-      'ion-toggle': IonToggle | HTMLBaseAttributes;
-      'ion-toolbar': IonToolbar | HTMLBaseAttributes;
-      'ion-virtual-scroll': IonVirtualScroll | HTMLBaseAttributes;
+      'ion-accordion': IonAccordion & HTMLBaseAttributes;
+      'ion-accordion-group': IonAccordionGroup & HTMLBaseAttributes;
+      'ion-action-sheet': IonActionSheet & HTMLBaseAttributes;
+      'ion-alert': IonAlert & HTMLBaseAttributes;
+      'ion-app': IonApp & HTMLBaseAttributes;
+      'ion-avatar': IonAvatar & HTMLBaseAttributes;
+      'ion-back-button': IonBackButton & HTMLBaseAttributes;
+      'ion-backdrop': IonBackdrop & HTMLBaseAttributes;
+      'ion-badge': IonBadge & HTMLBaseAttributes;
+      'ion-breadcrumb': IonBreadcrumb & HTMLBaseAttributes;
+      'ion-breadcrumbs': IonBreadcrumbs & HTMLBaseAttributes;
+      'ion-button': IonButton & HTMLBaseAttributes;
+      'ion-buttons': IonButtons & HTMLBaseAttributes;
+      'ion-card': IonCard & HTMLBaseAttributes;
+      'ion-card-content': IonCardContent & HTMLBaseAttributes;
+      'ion-card-header': IonCardHeader & HTMLBaseAttributes;
+      'ion-card-subtitle': IonCardSubtitle & HTMLBaseAttributes;
+      'ion-card-title': IonCardTitle & HTMLBaseAttributes;
+      'ion-checkbox': IonCheckbox & HTMLBaseAttributes;
+      'ion-chip': IonChip & HTMLBaseAttributes;
+      'ion-col': IonCol & HTMLBaseAttributes;
+      'ion-content': IonContent & HTMLBaseAttributes;
+      'ion-datetime': IonDatetime & HTMLBaseAttributes;
+      'ion-datetime-button': IonDatetimeButton & HTMLBaseAttributes;
+      'ion-fab': IonFab & HTMLBaseAttributes;
+      'ion-fab-button': IonFabButton & HTMLBaseAttributes;
+      'ion-fab-list': IonFabList & HTMLBaseAttributes;
+      'ion-footer': IonFooter & HTMLBaseAttributes;
+      'ion-grid': IonGrid & HTMLBaseAttributes;
+      'ion-header': IonHeader & HTMLBaseAttributes;
+      'ion-img': IonImg & HTMLBaseAttributes;
+      'ion-infinite-scroll': IonInfiniteScroll & HTMLBaseAttributes;
+      'ion-infinite-scroll-content': IonInfiniteScrollContent & HTMLBaseAttributes;
+      'ion-input': IonInput & HTMLBaseAttributes;
+      'ion-item': IonItem & HTMLBaseAttributes;
+      'ion-item-divider': IonItemDivider & HTMLBaseAttributes;
+      'ion-item-group': IonItemGroup & HTMLBaseAttributes;
+      'ion-item-option': IonItemOption & HTMLBaseAttributes;
+      'ion-item-options': IonItemOptions & HTMLBaseAttributes;
+      'ion-item-sliding': IonItemSliding & HTMLBaseAttributes;
+      'ion-label': IonLabel & HTMLBaseAttributes;
+      'ion-list': IonList & HTMLBaseAttributes;
+      'ion-list-header': IonListHeader & HTMLBaseAttributes;
+      'ion-loading': IonLoading & HTMLBaseAttributes;
+      'ion-menu': IonMenu & HTMLBaseAttributes;
+      'ion-menu-button': IonMenuButton & HTMLBaseAttributes;
+      'ion-menu-toggle': IonMenuToggle & HTMLBaseAttributes;
+      'ion-modal': IonModal & HTMLBaseAttributes;
+      'ion-nav': IonNav & HTMLBaseAttributes;
+      'ion-nav-link': IonNavLink & HTMLBaseAttributes;
+      'ion-note': IonNote & HTMLBaseAttributes;
+      'ion-picker': IonPicker & HTMLBaseAttributes;
+      'ion-popover': IonPopover & HTMLBaseAttributes;
+      'ion-progress-bar': IonProgressBar & HTMLBaseAttributes;
+      'ion-radio': IonRadio & HTMLBaseAttributes;
+      'ion-radio-group': IonRadioGroup & HTMLBaseAttributes;
+      'ion-range': IonRange & HTMLBaseAttributes;
+      'ion-refresher': IonRefresher & HTMLBaseAttributes;
+      'ion-refresher-content': IonRefresherContent & HTMLBaseAttributes;
+      'ion-reorder': IonReorder & HTMLBaseAttributes;
+      'ion-reorder-group': IonReorderGroup & HTMLBaseAttributes;
+      'ion-ripple-effect': IonRippleEffect & HTMLBaseAttributes;
+      'ion-route': IonRoute & HTMLBaseAttributes;
+      'ion-route-redirect': IonRouteRedirect & HTMLBaseAttributes;
+      'ion-router': IonRouter & HTMLBaseAttributes;
+      'ion-router-link': IonRouterLink & HTMLBaseAttributes;
+      'ion-router-outlet': IonRouterOutlet & HTMLBaseAttributes;
+      'ion-row': IonRow & HTMLBaseAttributes;
+      'ion-searchbar': IonSearchbar & HTMLBaseAttributes;
+      'ion-segment': IonSegment & HTMLBaseAttributes;
+      'ion-segment-button': IonSegmentButton & HTMLBaseAttributes;
+      'ion-select': IonSelect & HTMLBaseAttributes;
+      'ion-select-option': IonSelectOption & HTMLBaseAttributes;
+      'ion-skeleton-text': IonSkeletonText & HTMLBaseAttributes;
+      'ion-slide': IonSlide & HTMLBaseAttributes;
+      'ion-slides': IonSlides & HTMLBaseAttributes;
+      'ion-spinner': IonSpinner & HTMLBaseAttributes;
+      'ion-split-pane': IonSplitPane & HTMLBaseAttributes;
+      'ion-tab': IonTab & HTMLBaseAttributes;
+      'ion-tab-bar': IonTabBar & HTMLBaseAttributes;
+      'ion-tab-button': IonTabButton & HTMLBaseAttributes;
+      'ion-tabs': IonTabs & HTMLBaseAttributes;
+      'ion-text': IonText & HTMLBaseAttributes;
+      'ion-textarea': IonTextarea & HTMLBaseAttributes;
+      'ion-thumbnail': IonThumbnail & HTMLBaseAttributes;
+      'ion-title': IonTitle & HTMLBaseAttributes;
+      'ion-toast': IonToast & HTMLBaseAttributes;
+      'ion-toggle': IonToggle & HTMLBaseAttributes;
+      'ion-toolbar': IonToolbar & HTMLBaseAttributes;
+      'ion-virtual-scroll': IonVirtualScroll & HTMLBaseAttributes;
 
     }
   }

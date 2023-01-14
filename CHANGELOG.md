@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.53
+- Forgot about the typings for controllers! Added them
+
+## 0.5.52
+- Bumped ionic to 6.4.2 for creator scripts and ionic-svelte
+- Ionic Nav and navController cleanup for better API:
+
+Now you can load the ion-nav via `<IonNav root={SvelteRootComponent}/>` and this "NavHome" can use the `navController` to `push` new Sveltecomponents on the stack. 
+
+See HOWTO - https://github.com/Tommertom/ionic-svelte-nav-howto
+
+## 0.5.51
+- Typescript update after receiving good support from Svelte community
+
 ## 0.5.50
 - Added navController and IonNav.svelte for better nav APIs - experimental, will make a HOWTO to show how it works
 

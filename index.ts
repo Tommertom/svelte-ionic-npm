@@ -121,7 +121,7 @@ export {
 } from "@ionic/core/components";
 
 export * from "./utils/controllers";
-export { navController, setActiveNavElement } from "./utils/navcontroller";
+export { navController } from "./utils/navcontroller";
 
 export * from "./utils/platform";
 

@@ -1,6 +1,6 @@
 {
   "name": "ionic-svelte",
-  "version": "0.5.50",
+  "version": "0.5.53",
   "private": false,
   "homepage": "https://ionicsvelte.firebaseapp.com",
   "repository": {
@@ -26,5 +26,11 @@
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write ."
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "svelte": "^3.55.1"
+  },
+  "dependencies": {
+    "@ionic/core": "^6.4.2"
+  }
 }
