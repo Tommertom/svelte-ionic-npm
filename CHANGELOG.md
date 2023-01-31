@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.56
+- Platform types added
+
 ## 0.5.54/55
 - Updated README to cover HOWTOs
 - Changed description for SSR/SPA

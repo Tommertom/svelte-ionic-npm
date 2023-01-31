@@ -9,6 +9,7 @@ import type { AccordionGroupChangeEventDetail, ActionSheetAttributes, ActionShee
 import type { IonicConfig, IonicSafeString, AlertAttributes, CounterFormatter, PinFormatter, SelectCompareFn, ToastAttributes } from "@ionic/core";
 import { Cell } from '@ionic/core';
 import { SvelteComponent } from 'svelte';
+import type { Readable, Writable } from 'svelte/store';
 
 export function setupIonicSvelte(config?: IonicConfig);
 export function setupIonicBase(config?: IonicConfig);
@@ -49,6 +50,48 @@ export {
   pickerController,
   toastController
 } from "@ionic/core";
+
+
+// platform.ts
+declare const PLATFORMS_MAP: any;
+export type Platforms = keyof typeof PLATFORMS_MAP;
+
+interface IsPlatformSignature {
+  (plt: Platforms): boolean;
+  (win: Window, plt: Platforms): boolean;
+}
+
+export declare const getPlatforms: (win?: any) => any;
+export declare const isPlatform: IsPlatformSignature;
+export function setupPlatforms(win: any);
+export type PlatformConfig = Partial<typeof PLATFORMS_MAP>;
+export const networkStatus: Readable<"online" | "offline">;
+
+export declare let resize: Readable<string>;
+export declare let keyboardDidShow: Readable<string>;
+export declare let keyboardDidHide: Readable<string>;
+
+export declare let resume: Readable<string>;
+export declare let pause: Readable<string>;
+export declare let backButton: Readable<string>;
+export declare let keydown: Readable<string>;
+
+export declare const backButtonSubscribeWithPriority: (
+  handler: () => void,
+  priority?: number
+) => void;
+
+export declare const height: () => number;
+export declare const width: () => number;
+export declare const url: () => string;
+export declare const isPortrait: () => boolean;
+export declare const isLandscape: () => boolean;
+export declare const getQueryParam: (key: string) => string | null;
+export declare const isRTL: () => boolean;
+export declare const is: (platformName: Platforms) => boolean;
+
+export declare let prefersDark: Writable<string>;
+export declare const toggleDarkTheme: (shouldAdd: any) => void;
 
 // not exported by @ionic/core
 export type NavigationHookResult = boolean | NavigationHookOptions;

@@ -1,5 +1,5 @@
 import { config } from "@ionic/core/dist/collection/global/config";
-import { readable, derived } from "svelte/store";
+import { readable } from "svelte/store";
 
 let _win: Window;
 let _doc: Document;
@@ -205,13 +205,13 @@ const readableEventFactory = (args: {
 
 // SSR friendly
 export let resize = readable("", (set) => {
-  return () => {};
+  return () => { };
 });
 export let keyboardDidShow = readable("", (set) => {
-  return () => {};
+  return () => { };
 });
 export let keyboardDidHide = readable("", (set) => {
-  return () => {};
+  return () => { };
 });
 if (typeof window !== "undefined") {
   resize = readableEventFactory({
@@ -235,16 +235,16 @@ if (typeof window !== "undefined") {
 }
 
 export let resume = readable("", (set) => {
-  return () => {};
+  return () => { };
 });
 export let pause = readable("", (set) => {
-  return () => {};
+  return () => { };
 });
 export let backButton = readable("", (set) => {
-  return () => {};
+  return () => { };
 });
 export let keydown = readable("", (set) => {
-  return () => {};
+  return () => { };
 });
 if (typeof document !== "undefined") {
   resume = readableEventFactory({
@@ -339,7 +339,7 @@ import { writable } from "svelte/store";
 export const prefersDark = writable(
   typeof window !== "undefined"
     ? window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
+    window.matchMedia("(prefers-color-scheme: dark)").matches
     : ""
 );
 if (typeof window !== "undefined")
