@@ -153,12 +153,19 @@ export {
       events.forEach(event => {
 
         //     "on:ionSlideReachEnd"?: () => void;
-        componentTypes = componentTypes + `
-              /**
-              * (event : ${event.detail}) => void :  ${event.docs.replace(/\n/g, ' ')}
-              */
-              "on:${event.event}"?: (event : ${event.detail}) => void;
-            `;
+
+        const entryToAdd = event.detail !== 'void' ? `
+        /**
+        * (event : ${event.detail}) => void :  ${event.docs.replace(/\n/g, ' ')}
+        */
+        "on:${event.event}"?: (event : CustomEvent<${event.detail}>) => void;
+      `: `
+      /**
+      * () => void :  ${event.docs.replace(/\n/g, ' ')}
+      */
+      "on:${event.event}"?: () => void;
+    `;
+        componentTypes = componentTypes + entryToAdd;
       })
 
       // close definition

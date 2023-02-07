@@ -10,7 +10,7 @@ const kebabize = str => {
 }
 
 // load static
-const coreJson = require("./core.json"); // 6.3.8 downloaded
+const coreJson = require("../core.json"); // 6.3.8 downloaded
 
 // const axios = require('axios');
 

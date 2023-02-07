@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.57
+- Event types fixed - needed CustomEvent wrapper - https://github.com/ionic-team/ionic-framework/issues/26747
+
 ## 0.5.56
 - Platform types added
 
