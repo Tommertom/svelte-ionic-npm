@@ -118,7 +118,7 @@ export {
   components
     //  .filter(component => component.tag == 'ion-button')
     .forEach(component => {
-      const { props, events } = component;
+      const { props, events, tag } = component;
 
       const tagWithoutIon = component.tag.replace('ion-', '');
       const tagAsPascal = toPascalCase(component.tag);
@@ -154,11 +154,13 @@ export {
 
         //     "on:ionSlideReachEnd"?: () => void;
 
+        const htmlElementType = 'HTML' + toPascalCase(tag) + 'Element'
+
         const entryToAdd = event.detail !== 'void' ? `
         /**
         * (event : ${event.detail}) => void :  ${event.docs.replace(/\n/g, ' ')}
         */
-        "on:${event.event}"?: (event : CustomEvent<${event.detail}> & { target: HTMLBaseElement } ) => void;
+        "on:${event.event}"?: (event : CustomEvent<${event.detail}> & { target: ${htmlElementType} } ) => void;
       `: `
       /**
       * () => void :  ${event.docs.replace(/\n/g, ' ')}
