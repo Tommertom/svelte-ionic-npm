@@ -158,7 +158,7 @@ export {
         /**
         * (event : ${event.detail}) => void :  ${event.docs.replace(/\n/g, ' ')}
         */
-        "on:${event.event}"?: (event : CustomEvent<${event.detail}>) => void;
+        "on:${event.event}"?: (event : CustomEvent<${event.detail}> & { target: HTMLBaseElement } ) => void;
       `: `
       /**
       * () => void :  ${event.docs.replace(/\n/g, ' ')}

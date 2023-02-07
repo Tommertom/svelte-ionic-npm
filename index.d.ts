@@ -149,7 +149,7 @@ declare global {
             /**
             * (event : AccordionGroupChangeEventDetail<any>) => void :  Emitted when the value property has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<AccordionGroupChangeEventDetail<any>>) => void;
+            "on:ionChange"?: (event: CustomEvent<AccordionGroupChangeEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -230,7 +230,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the alert has dismissed.
             */
-            "on:ionActionSheetDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionActionSheetDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the alert has presented.
@@ -240,7 +240,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the alert has dismissed.
             */
-            "on:ionActionSheetWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionActionSheetWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the alert has presented.
@@ -338,7 +338,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the alert has dismissed.
             */
-            "on:ionAlertDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionAlertDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the alert has presented.
@@ -348,7 +348,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the alert has dismissed.
             */
-            "on:ionAlertWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionAlertWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the alert has presented.
@@ -575,7 +575,7 @@ declare global {
             /**
             * (event : BreadcrumbCollapsedClickEventDetail) => void :  Emitted when the collapsed indicator is clicked on.
             */
-            "on:ionCollapsedClick"?: (event: CustomEvent<BreadcrumbCollapsedClickEventDetail>) => void;
+            "on:ionCollapsedClick"?: (event: CustomEvent<BreadcrumbCollapsedClickEventDetail> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -891,7 +891,7 @@ declare global {
             /**
             * (event : CheckboxChangeEventDetail<any>) => void :  Emitted when the checked property has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<CheckboxChangeEventDetail<any>>) => void;
+            "on:ionChange"?: (event: CustomEvent<CheckboxChangeEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted when the checkbox has focus.
@@ -1117,17 +1117,17 @@ declare global {
             /**
             * (event : ScrollDetail) => void :  Emitted while scrolling. This event is disabled by default. Set `scrollEvents` to `true` to enable.
             */
-            "on:ionScroll"?: (event: CustomEvent<ScrollDetail>) => void;
+            "on:ionScroll"?: (event: CustomEvent<ScrollDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : ScrollBaseDetail) => void :  Emitted when the scroll has ended. This event is disabled by default. Set `scrollEvents` to `true` to enable.
             */
-            "on:ionScrollEnd"?: (event: CustomEvent<ScrollBaseDetail>) => void;
+            "on:ionScrollEnd"?: (event: CustomEvent<ScrollBaseDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : ScrollBaseDetail) => void :  Emitted when the scroll has started. This event is disabled by default. Set `scrollEvents` to `true` to enable.
             */
-            "on:ionScrollStart"?: (event: CustomEvent<ScrollBaseDetail>) => void;
+            "on:ionScrollStart"?: (event: CustomEvent<ScrollBaseDetail> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -1320,7 +1320,7 @@ declare global {
             /**
             * (event : DatetimeChangeEventDetail) => void :  Emitted when the value (selected date) has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<DatetimeChangeEventDetail>) => void;
+            "on:ionChange"?: (event: CustomEvent<DatetimeChangeEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted when the datetime has focus.
@@ -1806,22 +1806,22 @@ declare global {
             /**
             * (event : FocusEvent) => void :  Emitted when the input loses focus.
             */
-            "on:ionBlur"?: (event: CustomEvent<FocusEvent>) => void;
+            "on:ionBlur"?: (event: CustomEvent<FocusEvent> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : InputChangeEventDetail) => void :  Emitted when the value has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+            "on:ionChange"?: (event: CustomEvent<InputChangeEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : FocusEvent) => void :  Emitted when the input has focus.
             */
-            "on:ionFocus"?: (event: CustomEvent<FocusEvent>) => void;
+            "on:ionFocus"?: (event: CustomEvent<FocusEvent> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : InputEvent) => void :  Emitted when a keyboard input occurred.
             */
-            "on:ionInput"?: (event: CustomEvent<InputEvent>) => void;
+            "on:ionInput"?: (event: CustomEvent<InputEvent> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -2032,7 +2032,7 @@ declare global {
             /**
             * (event : any) => void :  Emitted when the item has been fully swiped.
             */
-            "on:ionSwipe"?: (event: CustomEvent<any>) => void;
+            "on:ionSwipe"?: (event: CustomEvent<any> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -2047,7 +2047,7 @@ declare global {
             /**
             * (event : any) => void :  Emitted when the sliding position changes.
             */
-            "on:ionDrag"?: (event: CustomEvent<any>) => void;
+            "on:ionDrag"?: (event: CustomEvent<any> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -2200,7 +2200,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the loading has dismissed.
             */
-            "on:ionLoadingDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionLoadingDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the loading has presented.
@@ -2210,7 +2210,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the loading has dismissed.
             */
-            "on:ionLoadingWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionLoadingWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the loading has presented.
@@ -2460,7 +2460,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the modal has dismissed. Shorthand for ionModalDidDismiss.
             */
-            "on:didDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:didDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the modal has presented. Shorthand for ionModalWillDismiss.
@@ -2470,12 +2470,12 @@ declare global {
             /**
             * (event : ModalBreakpointChangeEventDetail) => void :  Emitted after the modal breakpoint has changed.
             */
-            "on:ionBreakpointDidChange"?: (event: CustomEvent<ModalBreakpointChangeEventDetail>) => void;
+            "on:ionBreakpointDidChange"?: (event: CustomEvent<ModalBreakpointChangeEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the modal has dismissed.
             */
-            "on:ionModalDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionModalDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the modal has presented.
@@ -2485,7 +2485,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the modal has dismissed.
             */
-            "on:ionModalWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionModalWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the modal has presented.
@@ -2495,7 +2495,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the modal has dismissed. Shorthand for ionModalWillDismiss.
             */
-            "on:willDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:willDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the modal has presented. Shorthand for ionModalWillPresent.
@@ -2669,7 +2669,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the picker has dismissed.
             */
-            "on:ionPickerDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionPickerDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the picker has presented.
@@ -2679,7 +2679,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the picker has dismissed.
             */
-            "on:ionPickerWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionPickerWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the picker has presented.
@@ -2825,7 +2825,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the popover has dismissed. Shorthand for ionPopoverDidDismiss.
             */
-            "on:didDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:didDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the popover has presented. Shorthand for ionPopoverWillDismiss.
@@ -2835,7 +2835,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the popover has dismissed.
             */
-            "on:ionPopoverDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionPopoverDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the popover has presented.
@@ -2845,7 +2845,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the popover has dismissed.
             */
-            "on:ionPopoverWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionPopoverWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the popover has presented.
@@ -2855,7 +2855,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the popover has dismissed. Shorthand for ionPopoverWillDismiss.
             */
-            "on:willDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:willDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the popover has presented. Shorthand for ionPopoverWillPresent.
@@ -2971,7 +2971,7 @@ declare global {
             /**
             * (event : RadioGroupChangeEventDetail<any>) => void :  Emitted when the value has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<RadioGroupChangeEventDetail<any>>) => void;
+            "on:ionChange"?: (event: CustomEvent<RadioGroupChangeEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3075,7 +3075,7 @@ declare global {
             /**
             * (event : RangeChangeEventDetail) => void :  Emitted when the value property has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<RangeChangeEventDetail>) => void;
+            "on:ionChange"?: (event: CustomEvent<RangeChangeEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted when the range has focus.
@@ -3085,12 +3085,12 @@ declare global {
             /**
             * (event : RangeKnobMoveEndEventDetail) => void :  Emitted when the user finishes moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.
             */
-            "on:ionKnobMoveEnd"?: (event: CustomEvent<RangeKnobMoveEndEventDetail>) => void;
+            "on:ionKnobMoveEnd"?: (event: CustomEvent<RangeKnobMoveEndEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : RangeKnobMoveStartEventDetail) => void :  Emitted when the user starts moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.
             */
-            "on:ionKnobMoveStart"?: (event: CustomEvent<RangeKnobMoveStartEventDetail>) => void;
+            "on:ionKnobMoveStart"?: (event: CustomEvent<RangeKnobMoveStartEventDetail> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3140,7 +3140,7 @@ declare global {
             /**
             * (event : RefresherEventDetail) => void :  Emitted when the user lets go of the content and has pulled down further than the `pullMin` or pulls the content down and exceeds the pullMax. Updates the refresher state to `refreshing`. The `complete()` method should be called when the async operation has completed.
             */
-            "on:ionRefresh"?: (event: CustomEvent<RefresherEventDetail>) => void;
+            "on:ionRefresh"?: (event: CustomEvent<RefresherEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted when the user begins to start pulling down.
@@ -3192,7 +3192,7 @@ declare global {
             /**
             * (event : ItemReorderEventDetail) => void :  Event that needs to be listened to in order to complete the reorder action. Once the event has been emitted, the `complete()` method then needs to be called in order to finalize the reorder action.
             */
-            "on:ionItemReorder"?: (event: CustomEvent<ItemReorderEventDetail>) => void;
+            "on:ionItemReorder"?: (event: CustomEvent<ItemReorderEventDetail> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3241,7 +3241,7 @@ declare global {
             /**
             * (event : any) => void :  Used internally by `ion-router` to know when this route did change.
             */
-            "on:ionRouteDataChanged"?: (event: CustomEvent<any>) => void;
+            "on:ionRouteDataChanged"?: (event: CustomEvent<any> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3262,7 +3262,7 @@ declare global {
             /**
             * (event : any) => void :  Internal event that fires when any value of this rule is added/removed from the DOM, or any of his public properties changes.  `ion-router` captures this event in order to update his internal registry of router rules.
             */
-            "on:ionRouteRedirectChanged"?: (event: CustomEvent<any>) => void;
+            "on:ionRouteRedirectChanged"?: (event: CustomEvent<any> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3283,12 +3283,12 @@ declare global {
             /**
             * (event : RouterEventDetail) => void :  Emitted when the route had changed
             */
-            "on:ionRouteDidChange"?: (event: CustomEvent<RouterEventDetail>) => void;
+            "on:ionRouteDidChange"?: (event: CustomEvent<RouterEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : RouterEventDetail) => void :  Event emitted when the route is about to change
             */
-            "on:ionRouteWillChange"?: (event: CustomEvent<RouterEventDetail>) => void;
+            "on:ionRouteWillChange"?: (event: CustomEvent<RouterEventDetail> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3487,7 +3487,7 @@ declare global {
             /**
             * (event : SearchbarChangeEventDetail) => void :  Emitted when the value has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<SearchbarChangeEventDetail>) => void;
+            "on:ionChange"?: (event: CustomEvent<SearchbarChangeEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted when the clear input button is clicked.
@@ -3502,7 +3502,7 @@ declare global {
             /**
             * (event : KeyboardEvent) => void :  Emitted when a keyboard input occurred.
             */
-            "on:ionInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+            "on:ionInput"?: (event: CustomEvent<KeyboardEvent> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3553,7 +3553,7 @@ declare global {
             /**
             * (event : SegmentChangeEventDetail) => void :  Emitted when the value property has changed and any dragging pointer has been released from `ion-segment`.
             */
-            "on:ionChange"?: (event: CustomEvent<SegmentChangeEventDetail>) => void;
+            "on:ionChange"?: (event: CustomEvent<SegmentChangeEventDetail> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3678,7 +3678,7 @@ declare global {
             /**
             * (event : SelectChangeEventDetail<any>) => void :  Emitted when the value has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<SelectChangeEventDetail<any>>) => void;
+            "on:ionChange"?: (event: CustomEvent<SelectChangeEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted when the overlay is dismissed.
@@ -3881,7 +3881,7 @@ declare global {
             /**
             * (event : { visible: boolean; }) => void :  Expression to be called when the split-pane visibility has changed
             */
-            "on:ionSplitPaneVisible"?: (event: CustomEvent<{ visible: boolean; }>) => void;
+            "on:ionSplitPaneVisible"?: (event: CustomEvent<{ visible: boolean; }> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -3992,12 +3992,12 @@ declare global {
             /**
             * (event : { tab: string; }) => void :  Emitted when the navigation has finished transitioning to a new component.
             */
-            "on:ionTabsDidChange"?: (event: CustomEvent<{ tab: string; }>) => void;
+            "on:ionTabsDidChange"?: (event: CustomEvent<{ tab: string; }> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : { tab: string; }) => void :  Emitted when the navigation is about to transition to a new component.
             */
-            "on:ionTabsWillChange"?: (event: CustomEvent<{ tab: string; }>) => void;
+            "on:ionTabsWillChange"?: (event: CustomEvent<{ tab: string; }> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -4148,22 +4148,22 @@ declare global {
             /**
             * (event : FocusEvent) => void :  Emitted when the input loses focus.
             */
-            "on:ionBlur"?: (event: CustomEvent<FocusEvent>) => void;
+            "on:ionBlur"?: (event: CustomEvent<FocusEvent> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : TextareaChangeEventDetail) => void :  Emitted when the input value has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<TextareaChangeEventDetail>) => void;
+            "on:ionChange"?: (event: CustomEvent<TextareaChangeEventDetail> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : FocusEvent) => void :  Emitted when the input has focus.
             */
-            "on:ionFocus"?: (event: CustomEvent<FocusEvent>) => void;
+            "on:ionFocus"?: (event: CustomEvent<FocusEvent> & { target: HTMLBaseElement }) => void;
 
             /**
             * (event : InputEvent) => void :  Emitted when a keyboard input occurred.
             */
-            "on:ionInput"?: (event: CustomEvent<InputEvent>) => void;
+            "on:ionInput"?: (event: CustomEvent<InputEvent> & { target: HTMLBaseElement }) => void;
 
         }
 
@@ -4282,7 +4282,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted after the toast has dismissed.
             */
-            "on:ionToastDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionToastDidDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted after the toast has presented.
@@ -4292,7 +4292,7 @@ declare global {
             /**
             * (event : OverlayEventDetail<any>) => void :  Emitted before the toast has dismissed.
             */
-            "on:ionToastWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>>) => void;
+            "on:ionToastWillDismiss"?: (event: CustomEvent<OverlayEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted before the toast has presented.
@@ -4353,7 +4353,7 @@ declare global {
             /**
             * (event : ToggleChangeEventDetail<any>) => void :  Emitted when the value property has changed.
             */
-            "on:ionChange"?: (event: CustomEvent<ToggleChangeEventDetail<any>>) => void;
+            "on:ionChange"?: (event: CustomEvent<ToggleChangeEventDetail<any>> & { target: HTMLBaseElement }) => void;
 
             /**
             * () => void :  Emitted when the toggle has focus.
