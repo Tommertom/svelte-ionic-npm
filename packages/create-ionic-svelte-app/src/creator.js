@@ -178,7 +178,6 @@ export async function createIonicSvelte(opts) {
 			getIonicVariables()
 		);
 
-
 		out(
 			path.resolve(process.cwd(), 'src/routes/', '+page.svelte'),
 			getDemoIonicApp()

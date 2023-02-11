@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Creator scripts fixes
+- added dark mode variables (they were missing)
+- fixed HMR flag url - there needs to be http:// 
+
 ## 0.5.57/58
 - Event types fixed - needed CustomEvent wrapper - https://github.com/ionic-team/ionic-framework/issues/26747
 
