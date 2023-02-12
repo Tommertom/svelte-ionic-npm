@@ -1,5 +1,5 @@
 {
-    "timestamp": "2023-01-11T13:33:58",
+    "timestamp": "2023-02-08T14:09:58",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.18.0",
@@ -2489,18 +2489,7 @@
                     "passive": false
                 }
             ],
-            "styles": [
-                {
-                    "name": "--background",
-                    "annotation": "prop",
-                    "docs": "Background of the breadcrumbs"
-                },
-                {
-                    "name": "--color",
-                    "annotation": "prop",
-                    "docs": "Text color of the breadcrumbs"
-                }
-            ],
+            "styles": [],
             "slots": [],
             "parts": [],
             "dependents": [],

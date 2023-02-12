@@ -112,7 +112,7 @@ export async function createIonicSvelte(opts) {
 	}
 
 
-	packages = ['@ionic/core@6.4.2', 'ionic-svelte'];
+	packages = ['@ionic/core@6.5.3', 'ionic-svelte'];
 	if (opts?.capacitor) packages.push('@capacitor/core');
 	// packages = [];
 	if (opts?.ionicons) packages.push('ionicons');
