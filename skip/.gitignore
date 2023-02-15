@@ -14,4 +14,15 @@ node_modules
 .eslintignore
 .eslintrc.cjs
 firebase.json 
+utils
+starterfiles
+scripts
+packages
+components
+CHANGELOG.md
+index.d.ts
+index.ts
+package-lock.json
+package.json
+skip
 
